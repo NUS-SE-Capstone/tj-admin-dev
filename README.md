@@ -1,19 +1,15 @@
-# 天机学堂
-#### 项目简介
-> 由学成在线项目升级 为天机学堂 主要包含课程录播、销售（优惠券）、评论、笔记、等相关功能实现。升级之后包含用户端和管理后台两个部分
-项目迭代日志：
-- v1 迭代时间2022.7月11日 - 2022.7.31号
-- 主要实现主要流程 包含用户（老师）、课程、搜索、购买、课程学习、优惠券 、财务 等相关功能
+# Talent Jet
+
 #### 产品原型及设计
 
 - 产品原型
-    - 用户端 - 魏帅明： https://codesign.qq.com/app/design/ALwE9V58VljX1Dp/axure/O6ym7ZRVvqZAYED
-    - 管理后台 - 刘烁：https://codesign.qq.com/s/zm5q0XqWX7ZRBb6/preview/prototype/bOEvq0r2Bm03PAY
+    - 用户端： https://codesign.qq.com/app/design/ALwE9V58VljX1Dp/axure/O6ym7ZRVvqZAYED
+    - 管理后台：https://codesign.qq.com/s/zm5q0XqWX7ZRBb6/preview/prototype/bOEvq0r2Bm03PAY
 
 - 设计稿：
-    - 用户端 - 李芳华： https://codesign.qq.com/app/design/ALwE9V58VljX1Dp/Yyg5Zp2QdxN92lK/inspect
+    - 用户端： https://codesign.qq.com/app/design/ALwE9V58VljX1Dp/Yyg5Zp2QdxN92lK/inspect
 
-    - 管理后台 - 王静： https://codesign.qq.com/s/zm5q0XqWX7ZRBb6/GPEpZGAprra9w3z/inspect
+    - 管理后台： https://codesign.qq.com/s/zm5q0XqWX7ZRBb6/GPEpZGAprra9w3z/inspect
 
 #### 访问地址
 #### 运行环境 - 初始开发环境及工具
