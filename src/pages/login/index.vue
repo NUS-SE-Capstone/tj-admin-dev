@@ -1,7 +1,7 @@
 <!-- 登录页面 -->
 <template>
   <div class="loginWrapper fx-fd-col fx-sb">
-    <video autoplay loop muted="" preload class="loginVideo">
+    <video autoplay loop muted="" class="loginVideo">
       <source src="@/assets/login.mp4" type="video/mp4">
      </video>
     <div class="fx-1 fx-al-ct">
