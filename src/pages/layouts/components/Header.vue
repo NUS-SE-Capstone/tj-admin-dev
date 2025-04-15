@@ -38,7 +38,7 @@
           Welcome to Talent Jet!
         </div>
         <div class="fx-al-ct" v-if="isToken && userInfo">
-          <router-link to="/my/index">
+          <!-- <router-link to="/my/index">
             <img
               class="headIcon"
               :src="userInfo.icon"
@@ -46,7 +46,7 @@
               alt=""
             />
             <div>{{ userInfo.name || "admin" }}</div>
-          </router-link>
+          </router-link> -->
           <span class="vline"></span>
           <div class="back" @click="goLogin()">
             <img src="@/assets/out.png" alt="" style="width:19px;height: 15px;" class="out"/>

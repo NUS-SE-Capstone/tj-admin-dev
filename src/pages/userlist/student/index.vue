@@ -80,7 +80,7 @@ studentsData.value = [
 let fromData = ref({}); //新增编辑表单数据
 // ------生命周期------
 onMounted(() => {
-  // init();
+  init();
 });
 // ------定义方法------
 // 获取初始值
@@ -131,7 +131,7 @@ const handleCurrentChange = (val) => {
 };
 // 打开编辑弹层
 const handleEdit = (id) => {
-  title.value = "编辑学员信息";
+  title.value = "Edit Student Info";
   dialogFormVisible.value = true;
   getDetailData(id);
 };

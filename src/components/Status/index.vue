@@ -2,18 +2,18 @@
   <div class="deleteDialog">
     <el-dialog
       v-model="dialogVisible"
-      title="确认禁用"
+      title="Confirmation"
       :show-close="false"
     >
       
-      此操作将禁用 {{statusText}}，是否继续？
+      Will Ban {{statusText}}, Continue？
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >再想想</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >确认禁用</el-button
+            >Confirm</el-button
           >
         </span>
       </template>

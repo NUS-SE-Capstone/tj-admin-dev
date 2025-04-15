@@ -2,11 +2,11 @@
 export const statusData = [
   {
     value: 1,
-    label: "正常",
+    label: "Enabled",
   },
   {
     value: 0,
-    label: "禁用",
+    label: "Disabled",
   },
 ]
 // 难易程度数据
@@ -278,11 +278,11 @@ export const questionsData = [
 export const sexData = [
   {
     value: 1,
-    label: "男",
+    label: "Male",
   },
   {
     value: 2,
-    label: "女",
+    label: "Female",
   }
 ]
 // 优惠券发放方式
