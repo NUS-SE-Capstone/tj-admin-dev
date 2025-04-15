@@ -4,12 +4,12 @@
       <el-form ref="ruleForm" :inline="true" :model="searchData">
         <el-row :gutter="30">
           <el-col :span="6">
-            <!-- <el-form-item label="学员状态" prop="status">
+            <el-form-item label="Status" prop="status">
               <div class="el-input">
                 <el-select
                   v-model="searchData.status"
                   clearable
-                  placeholder="请选择"
+                  placeholder="Please choose"
                   style="width: 100%"
                 >
                   <el-option
@@ -20,7 +20,7 @@
                   ></el-option>
                 </el-select>
               </div>
-            </el-form-item> -->
+            </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="Student Name" prop="name">

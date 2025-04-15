@@ -15,8 +15,8 @@ NProgress.configure({ showSpinner: false });
 const { whiteListRouters } = permissionStore;
 // 登录状态效验
 router.beforeEach(async (to, from, next) => {
-  next();
-  return;
+  // next();
+  // return;
   NProgress.start();
   const { token } = userStore;
   

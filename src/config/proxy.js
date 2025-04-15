@@ -1,8 +1,7 @@
 export default {
   development: {
     // 开发环境接口请求
-    // host: 'https://tjxt-dev.itheima.net/api',
-    host: 'http://api.tianji.com',
+    host: 'http://127.0.0.1:10010',
     // 开发环境 cdn 路径
     cdn: '',
   },

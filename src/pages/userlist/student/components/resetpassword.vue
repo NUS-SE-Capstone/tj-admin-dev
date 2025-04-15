@@ -1,21 +1,21 @@
 <template>
   <div class="deleteDialog">
-    <el-dialog v-model="dialogVisible" title="重置密码" :show-close="false">
+    <el-dialog v-model="dialogVisible" title="Reset Password" :show-close="false">
       <p>
-        请确认，是否重置
-        <span class="fontColor333 ft-wt-600">{{ studentsName }}</span> 的密码？
+        Please Confirm to reset
+        <span class="fontColor333 ft-wt-600">{{ studentsName }}</span> password ？
       </p>
       <p>
-        重置后，初始密码为
-        <span class="fontColor">123456</span> ，请通知学员尽快修改密码
+        After reset，Inital Password is 
+        <span class="fontColor">123456</span>
       </p>
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >重置</el-button
+            >Reset</el-button
           >
         </span>
       </template>

@@ -11,11 +11,11 @@
       label-width="105px"
       class="demo-ruleForm"
     >
-      <el-form-item label="学员昵称：" prop="name">
+      <el-form-item label="Name：" prop="name">
         <div class="el-input">
           <el-input
             v-model="fromData.name"
-            placeholder="请输入"
+            placeholder="Please Input"
             @input="nameTextInput"
           />
           <span class="numText" :class="nameNumVal === 0 ? 'tip' : ''"
@@ -23,11 +23,11 @@
           >
         </div>
       </el-form-item>
-      <el-form-item label="学员手机号：" prop="cellPhone">
-        <el-input v-model="fromData.cellPhone" placeholder="请输入" />
+      <el-form-item label="CellPhone：" prop="cellPhone">
+        <el-input v-model="fromData.cellPhone" placeholder="Please Input" />
       </el-form-item>
       <!-- 性别 -->
-      <el-form-item label="性别：" prop="gender" algin="center">
+      <el-form-item label="Gender：" prop="gender" algin="center">
         <el-radio-group v-model="fromData.gender">
           <el-radio
             v-for="(item, index) in sexData"
@@ -41,10 +41,10 @@
     <template #footer>
       <span class="dialog-footer">
         <el-button class="button buttonPrimary" @click="handleClose"
-          >取消</el-button
+          >Cancel</el-button
         >
         <el-button class="button primary" v-preventReClick @click="handleSubmit"
-          >保存</el-button
+          >Save</el-button
         >
       </span>
     </template>

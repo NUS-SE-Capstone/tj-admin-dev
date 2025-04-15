@@ -390,9 +390,9 @@ const params4 = reactive({types: '8,9'})   // 流量统计
 
 // mounted生命周期
 onMounted(() => {
-  getTodayData()
-  getNowTime()
-  gettop10Data()
+  // getTodayData()
+  // getNowTime()
+  // gettop10Data()
   // TODO计划合并逻辑-由于时间关系 先搁置
   // getChartsData({type: actId.value,params:params1})
   // getChartsData({type: actId.value,params:params2})

@@ -28,7 +28,7 @@
         <template #default="scope">
           <span>
             <!-- 如果scope.row.gender是为0为男性否则为女性 -->
-            {{ scope.row.gender == 0 ? "m" : "w" }}
+            {{ scope.row.gender == 0 ? "Male" : "Female" }}
           </span>
         </template>
       </el-table-column>
@@ -41,15 +41,15 @@
       </el-table-column>
       <el-table-column prop="createTime" min-width="220" :formatter="formatTime" label="register time">
       </el-table-column>
-      <!-- <el-table-column label="status" min-width="120">
+      <el-table-column label="status" min-width="120">
         <template #default="scope">
           <span
             class="iconTip"
             :class="scope.row.status === 0 ? 'forbidIcon' : 'normalIcon'"
           ></span>
-          {{ scope.row.status === 0 ? "禁用" : "正常" }}
+          {{ scope.row.status === 0 ? "Disabled" : "Enabled" }}
         </template>
-      </el-table-column> -->
+      </el-table-column>
       <el-table-column
         fixed="right"
         label="operate"
@@ -65,12 +65,12 @@
               :class="scope.row.status === 0 ? 'textForbidden' : 'textDefault'"
               >edit</span
             >
-            <!-- <span
+            <span
               @click="handleOpenStatus(scope.row)"
               :class="scope.row.status === 0 ? 'textDefault' : 'textWarning'"
             >
               {{ scope.row.status === 1 ? "ban" : "active" }}
-            </span> -->
+            </span>
             <span
               @click="handleresetpassword(scope.row)"
               :class="scope.row.status === 0 ? 'textForbidden' : 'textDefault'"
@@ -192,9 +192,9 @@ const handleStatus = async (status) => {
       if (res.code === 200) {
         let mes = "";
         if (status === 1) {
-          mes = "禁用成功!";
+          mes = "Ban Success!";
         } else {
-          mes = "启用成功!";
+          mes = "Enable Success!";
         }
         ElMessage({
 
