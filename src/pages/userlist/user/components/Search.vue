@@ -25,7 +25,7 @@
           <el-col :span="6">
             <el-form-item label="后台用户名称" prop="name">
               <el-input
-                placeholder="请输入"
+                placeholder="please input"
                 v-model="searchData.name"
                 clearable
                 class="el-input"
@@ -34,7 +34,7 @@
           </el-col>
           <el-col :span="6">
             <el-form-item label="后台用户手机号" prop="phone">
-              <el-input placeholder="请输入" clearable v-model="searchData.phone" />
+              <el-input placeholder="please input" clearable v-model="searchData.phone" />
             </el-form-item>
           </el-col>
           <el-col :span="6">

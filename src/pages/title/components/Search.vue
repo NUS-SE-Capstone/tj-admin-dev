@@ -54,7 +54,7 @@
           <el-col :span="6">
             <el-form-item label="题目名称" prop="keyword">
               <el-input
-                placeholder="请输入"
+                placeholder="please input"
                 clearable
                 v-model="searchData.keyword"
               />

@@ -9,7 +9,7 @@
               <div class="el-input">
                 <el-input
                 type="number"
-                  placeholder="请输入"
+                  placeholder="please input"
                   clearable
                   v-model="searchData.id"
                 />
@@ -79,7 +79,7 @@
             <el-form-item label="学员手机号" prop="mobile">
               <div class="el-input">
                 <el-input
-                  placeholder="请输入"
+                  placeholder="please input"
                   type="number"
                   clearable
                   v-model="searchData.mobile"

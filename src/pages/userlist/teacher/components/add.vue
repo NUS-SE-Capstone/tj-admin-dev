@@ -16,7 +16,7 @@
         <div class="el-input">
           <el-input
             v-model="fromData.name"
-            placeholder="请输入"
+            placeholder="please input"
             @input="nameTextInput"
           />
           <span class="numText" :class="nameNumVal === 0 ? 'tip' : ''"
@@ -37,7 +37,7 @@
       <el-form-item label="教师手机号：" prop="cellPhone">
         <el-input
           v-model="fromData.cellPhone"
-          placeholder="请输入"
+          placeholder="please input"
           @blur="checkteacherphone"
         />
       </el-form-item>
@@ -45,7 +45,7 @@
         <div class="el-input">
           <el-input
             v-model="fromData.job"
-            placeholder="请输入"
+            placeholder="please input"
             minlength="2"
             @input="jobTextInput"
           />
@@ -59,7 +59,7 @@
           <el-input
             v-model="fromData.intro"
             type="textarea"
-            placeholder="请输入"
+            placeholder="please input"
             resize="none"
             @input="introTextInput"
           />

@@ -31,7 +31,7 @@
         <el-input
           v-else
           v-model="fromData.cateNames"
-          placeholder="请输入"
+          placeholder="please input"
           :disabled="!fromData.canUpdate"
           @input="nameTextInput"
         />
@@ -41,7 +41,7 @@
       <div class="el-input">
         <el-input
           v-model="fromData.name"
-          placeholder="请输入"
+          placeholder="please input"
           :disabled="!fromData.canUpdate"
           @input="nameTextInput"
         />
@@ -80,7 +80,7 @@
           type="number"
           v-model="fromData.price"
           :disabled="!fromData.canUpdate"
-          placeholder="请输入"
+          placeholder="please input"
           clearable
           @input="textInputPrice"
           @blur="textBlurPrice"
@@ -124,7 +124,7 @@
           minlength="1"
           maxlength="2"
           :disabled="!fromData.canUpdate"
-          placeholder="请输入"
+          placeholder="please input"
           @input="inputValidDuration"
         ></el-input>
         <span class="text">月</span>
@@ -135,7 +135,7 @@
         <el-input
           v-model="fromData.introduce"
           type="textarea"
-          placeholder="请输入，最多可添加200个字"
+          placeholder="please input (less than 200 words)"
           resize="none"
           @input="introTextInput"
         />
@@ -149,7 +149,7 @@
         <el-input
           v-model="fromData.usePeople"
           type="textarea"
-          placeholder="请输入，最多可添加200个字"
+          placeholder="please input (less than 200 words)"
           resize="none"
           @input="usePeopleTextInput"
         />
@@ -183,7 +183,7 @@
         <el-input
           v-model="fromData.detail"
           type="textarea"
-          placeholder="请输入，最多可添加500个字"
+          placeholder="please input (less than 500 words)"
           resize="none"
           @input="detailTextInput"
         />

@@ -7,45 +7,45 @@ import YXIcon from "@/assets/icon_yx.svg"
 import OurseIcon from "@/assets/icon_course.svg"
 export default [
 
-  // {
-  //   path: "/curriculum",
-  //   component: Layout,
-  //   redirect: "/curriculum/index",
-  //   name: "curriculum",
-  //   meta: { title: "课程管理", icon: '&#xe60f;' },
-  //   children: [
-  //     {
-  //       path: "index",
-  //       name: "curriculum",
-  //       component: () => import("@/pages/curriculum/course/index.vue"),
-  //       meta: { title: "课程管理" },
-  //     },
-  //     {
-  //       path: "add/:id",
-  //       name: "curriculumAdd",
-  //       component: () => import("@/pages/curriculum/course/add.vue"),
-  //       meta: { title: "添加编辑", hidden: true, fmeta: {path: '/curriculum/index', title: '课程管理'} },
-  //     },
-  //     {
-  //       path: "details/:id",
-  //       name: "curriculumDetail",
-  //       component: () => import("@/pages/curriculum/course/details.vue"),
-  //       meta: { title: "课程详情", hidden: true, fmeta: {path: '/curriculum/index', title: '课程管理'} },
-  //     },
-  //     {
-  //       path: "type",
-  //       name: "type",
-  //       component: () => import("@/pages/curriculum/type/index.vue"),
-  //       meta: { title: "课程分类" },
-  //     },
-  //     {
-  //       path: "media",
-  //       name: "media",
-  //       component: () => import("@/pages/curriculum/media/index.vue"),
-  //       meta: { title: "媒资管理" },
-  //     }
-  //   ],
-  // },
+  {
+    path: "/curriculum",
+    component: Layout,
+    redirect: "/curriculum/index",
+    name: "curriculum",
+    meta: { title: "课程管理", icon: '&#xe60f;' },
+    children: [
+      {
+        path: "index",
+        name: "curriculum",
+        component: () => import("@/pages/curriculum/course/index.vue"),
+        meta: { title: "课程管理" },
+      },
+      {
+        path: "add/:id",
+        name: "curriculumAdd",
+        component: () => import("@/pages/curriculum/course/add.vue"),
+        meta: { title: "添加编辑", hidden: true, fmeta: {path: '/curriculum/index', title: '课程管理'} },
+      },
+      {
+        path: "details/:id",
+        name: "curriculumDetail",
+        component: () => import("@/pages/curriculum/course/details.vue"),
+        meta: { title: "课程详情", hidden: true, fmeta: {path: '/curriculum/index', title: '课程管理'} },
+      },
+      {
+        path: "type",
+        name: "type",
+        component: () => import("@/pages/curriculum/type/index.vue"),
+        meta: { title: "课程分类" },
+      },
+      {
+        path: "media",
+        name: "media",
+        component: () => import("@/pages/curriculum/media/index.vue"),
+        meta: { title: "媒资管理" },
+      }
+    ],
+  },
   // {
   //   path: "/title",
   //   component: Layout,

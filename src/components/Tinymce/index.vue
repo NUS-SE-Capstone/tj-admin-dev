@@ -4,7 +4,7 @@
     :id="tinymceId"
     tag-name="div"
     :init="init"
-    placeholder="请输入，最多可添加200个字"
+    placeholder="please input (less than 200 words)"
     @input="handleInput"
   />
   <!-- <span class="numText" :class="numVal === 0 ? 'tip' : ''"

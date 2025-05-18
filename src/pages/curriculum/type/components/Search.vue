@@ -26,7 +26,7 @@
           <el-col :span="6">
             <el-form-item label="分类名称" prop="name">
               <el-input
-                placeholder="请输入"
+                placeholder="please input"
                 v-model="searchData.name"
                 clearable
                 class="el-input"

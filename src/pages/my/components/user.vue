@@ -45,7 +45,7 @@
         <el-input
           type="password"
           v-model="staffsData.cellPhone"
-          placeholder="请输入"
+          placeholder="please input"
           maxlength="20"
           disabled
         ></el-input>

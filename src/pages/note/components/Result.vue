@@ -27,7 +27,7 @@
           <el-input
             v-model="fromData.remark"
             type="textarea"
-            placeholder="请输入"
+            placeholder="please input"
             resize="none"
             @input="useRemarkInput"
           />

@@ -9,7 +9,7 @@
               <div class="el-input">
                 <el-input
                   type="number"
-                  placeholder="请输入"
+                  placeholder="please input"
                   clearable
                   v-model="searchData.id"
                 />
@@ -40,7 +40,7 @@
               <div class="el-input">
                 <el-input
                 type="number"
-                  placeholder="请输入"
+                  placeholder="please input"
                   clearable
                   v-model="searchData.orderDetailId"
                 />
@@ -52,7 +52,7 @@
               <div class="el-input">
                 <el-input
                   type="number"
-                  placeholder="请输入"
+                  placeholder="please input"
                   clearable
                   v-model="searchData.orderId"
                 />
@@ -66,7 +66,7 @@
               <div class="el-input">
                 <el-input
                   type="number"
-                  placeholder="请输入"
+                  placeholder="please input"
                   clearable
                   v-model="searchData.mobile"
                 />
