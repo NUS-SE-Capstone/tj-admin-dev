@@ -36,7 +36,6 @@
         prop="courseAmount"
         label="courseAmount"
         min-width="180"
-        sortable
       >
       </el-table-column>
       <el-table-column prop="createTime" min-width="220" :formatter="formatTime" label="register time">

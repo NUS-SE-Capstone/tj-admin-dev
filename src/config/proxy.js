@@ -1,7 +1,7 @@
 export default {
   development: {
     // 开发环境接口请求
-    host: 'http://127.0.0.1:10010',
+    host: 'https://hangtang.ngrok.dev',
     // 开发环境 cdn 路径
     cdn: '',
   },
