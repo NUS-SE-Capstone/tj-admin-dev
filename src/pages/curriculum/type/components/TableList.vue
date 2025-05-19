@@ -13,7 +13,7 @@
     >
       <el-table-column
         prop="name"
-        label="分类名称"
+        label="Category Name"
         min-width="340"
         class-name="textLeft"
       >
@@ -22,24 +22,24 @@
           }}<span class="textInfo">{{ scope.row.children.length>0?'('+scope.row.children.length+')':'' }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="课程数量" prop="courseNum" min-width="160">
+      <el-table-column label="CourseNum" prop="courseNum" min-width="160">
       </el-table-column>
-      <el-table-column prop="index" label="排序" min-width="150">
+      <el-table-column prop="index" label="Index" min-width="150">
       </el-table-column>
-      <el-table-column prop="updateTime" min-width="220" label="更新时间" :formatter="formatTime">
+      <el-table-column prop="updateTime" min-width="220" label="Updated Time" :formatter="formatTime">
       </el-table-column>
-      <el-table-column label="状态" min-width="120">
+      <el-table-column label="Status" min-width="130">
         <template #default="scope">
           <span
             class="iconTip"
             :class="scope.row.status === 0 ? 'forbidIcon' : 'normalIcon'"
           ></span>
-          {{ scope.row.status === 0 ? "禁用" : "正常" }}
+          {{ scope.row.status === 0 ? "Disabled" : "Enabled" }}
         </template>
       </el-table-column>
       <el-table-column
         fixed="right"
-        label="操作"
+        label="Action"
         align="center"
         min-width="265"
         class-name="typeAction"
@@ -49,9 +49,9 @@
             <span @click="handleAdd(scope.row)" class="textDefault"
               >{{
                 scope.row.level === 1
-                  ? "添加二级分类"
+                  ? "Add lv2"
                   : scope.row.level === 2
-                  ? "添加三级分类"
+                  ? "Add lv3"
                   : ""
               }}
             </span>
@@ -59,17 +59,17 @@
               class="textForbidden"
               v-if="scope.row.level === 3"
               style="margin-left: 0"
-              >添加三级分类</span
+              >Add lv3</span
             >
-            <span @click="handleEdit(scope.row)" class="textDefault">编辑</span>
+            <span @click="handleEdit(scope.row)" class="textDefault">Edit</span>
             <span @click="handleOpenStatus(scope.row)" :class="scope.row.status === 1 ? 'textWarning' : 'textDefault'">
-              {{ scope.row.status === 1 ? "禁用" : "启用" }}
+              {{ scope.row.status === 1 ? "Disable" : "Enable" }}
             </span>
             <!-- 禁止的时候不能触发删除按钮，按钮置灰(textForbidden) -->
             <span
               @click="handleOpenDelete(scope.row)"
               :class="scope.row.status === 1 ? 'textForbidden' : 'textWarning'"
-              >删除</span
+              >Delete</span
             >
           </div>
         </template>
@@ -161,9 +161,9 @@ const handleStatus = async (status) => {
       if (res.code === 200) {
         let mes = ""
         if (status === 1) {
-          mes = "禁用成功!"
+          mes = "Disable success!"
         } else {
-          mes = "启用成功!"
+          mes = "Enable success!"
         }
         ElMessage({
 
@@ -221,7 +221,7 @@ const handleOpenDelete = (row) => {
   } else {
     ElMessage({
 
-      message: "该分类下含有课程，无法删除!",
+      message: "This category has a course and cannot be deleted",
       type: "error",
       showClose:false,
     })

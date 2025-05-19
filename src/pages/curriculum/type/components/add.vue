@@ -13,20 +13,20 @@
       class="demo-ruleForm"
     >
       <el-form-item
-        label="所属一级分类："
+        label="lv1 category:"
         class="marg-b-0"
         v-if="firstLevelData && firstLevelData.level === 1"
       >
         {{ firstLevelData.name }}
       </el-form-item>
       <el-form-item
-        label="所属二级分类："
+        label="lv2 category:"
         class="marg-b-10"
         v-if="twoLevelData && twoLevelData.level === 2"
       >
         {{ twoLevelData.name }}
       </el-form-item>
-      <el-form-item label="分类名称：" prop="name">
+      <el-form-item label="Name" prop="name">
         <div class="el-input">
           <el-input
             v-model="fromData.name"
@@ -38,13 +38,13 @@
           >
         </div>
       </el-form-item>
-      <el-form-item label="排序：" prop="index">
+      <el-form-item label="Index" prop="index">
         <el-input-number
           v-model="fromData.index"
           :min="1"
           :max="15"
           @change="handleIndex"
-          label="请输入数字，数字越小排名越靠前"
+          label="please input number, smaller one has priority"
         ></el-input-number>
       </el-form-item>
     </el-form>

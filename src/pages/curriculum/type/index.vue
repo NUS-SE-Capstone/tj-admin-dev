@@ -64,7 +64,7 @@ import TableList from "./components/TableList.vue"
 import Add from "./components/add.vue"
 // ------定义变量------
 const statusBase = statusData
-const text = ref("新增一级分类")
+const text = ref("Add lv1 Category")
 const loading = ref(false)
 const table = ref() //table ref
 let title = ref("")
@@ -126,7 +126,7 @@ const handleReset = () => {
 // 打开新增弹层
 const handleAdd = (val) => {
 
-  title.value = "新增课程分类"
+  title.value = "Add Category"
   dialogFormVisible.value = true
   if (val) {
     parentId.value = val.id
@@ -146,7 +146,7 @@ const handleAdd = (val) => {
 // 打开编辑弹层
 const handleEdit = (val) => {
   // parentId.value = id
-  title.value = "编辑课程分类"
+  title.value = "Edit Category"
   dialogFormVisible.value = true
   // fromData.value = val
   getDetailData(val.id)
