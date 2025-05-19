@@ -51,8 +51,8 @@ const formRef = ref()
 // ------定义变量------
 const checked = ref(false)
 const fromData = reactive({
-  cellPhone: "13500010002", //用户名
-  password: "admin", //密码
+  cellPhone: "", //用户名
+  password: "", //密码
   type: 1, //登录方式
 })
 // 手机号效验
