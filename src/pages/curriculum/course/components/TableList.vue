@@ -85,7 +85,7 @@
         v-if="props.status !== 1"
       >
       </el-table-column>
-      <el-table-column fixed="right" label="Action" align="center" width="170">
+      <el-table-column fixed="right" label="Action" align="center" width="200">
         <template #default="scope">
           <div class="operate">
             <span

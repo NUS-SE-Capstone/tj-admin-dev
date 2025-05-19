@@ -3,8 +3,8 @@
   <div>
     <!-- 表格 -->
     <el-table :data="baseData" border stripe v-loading="loading" :sort-change="handleSortChange">
-      <el-table-column type="index" align="center" width="100" label="序号" />
-      <el-table-column prop="" label="视频名称" min-width="250" class-name="textLeft">
+      <el-table-column type="index" align="center" width="100" label="No." />
+      <el-table-column prop="" label="Video Name" min-width="250" class-name="textLeft">
         <template #default="scope">
           <div>
             {{ ellipsis(scope.row.filename,10) }} .mp4
@@ -16,17 +16,17 @@
           {{ (scope.row.size / 1024 / 1024).toFixed(2) }}
         </template>
       </el-table-column>
-      <el-table-column prop="duration" label="视频时长" min-width="150">
+      <el-table-column prop="duration" label="Duration" min-width="150">
         <template #default="scope">
           {{ formatSeconds(scope.row.duration) }}
         </template>
       </el-table-column>
-      <el-table-column prop="creater" label="上传人" min-width="150">
+      <el-table-column prop="creater" label="Uploader" min-width="150">
       </el-table-column>
       <el-table-column
         prop="useTimes"
         sortable="custom"
-        label="当前引用次数"
+        label="Refer Num"
         min-width="170"
       >
       </el-table-column>
@@ -34,13 +34,13 @@
         prop="createTime"
         sortable="custom"
         min-width="220"
-        label="上传时间"
+        label="Upload Time"
         :formatter="formatTime"
       >
       </el-table-column>
       <el-table-column
         fixed="right"
-        label="操作"
+        label="Action"
         align="center"
         min-width="110"
         class-name="popperClass"
@@ -48,12 +48,12 @@
         <template #default="scope">
           <div class="operate">
             <span class="textDefault" @click="handlePreview(scope.row.id)"
-              >预览</span
+              >Preview</span
             >
             <span
               @click="handleOpenDelete(scope.row)"
               :class="scope.row.useTimes > 0 ? 'textForbidden' : 'textWarning'"
-              >删除</span
+              >Delete</span
             >
           </div>
         </template>
@@ -141,7 +141,7 @@ const props = defineProps({
 })
 // ------定义变量------
 const emit = defineEmits() //子组件获取父组件事件传值
-const deleteText = ref("此操作将删除该视频，是否继续？") //需要删除的提示内容
+const deleteText = ref("Confirm to delete this video?") //需要删除的提示内容
 let dialogDeleteVisible = ref(false) //控制删除弹层
 let dialogFormVisible = ref(false) //弹层隐藏显示
 let mediaId = ref("")//视频id
@@ -154,7 +154,7 @@ const handleDelete = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "删除成功!",
+          message: "Delete success!",
           type: "success",
           showClose:false,
         })

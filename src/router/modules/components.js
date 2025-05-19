@@ -210,13 +210,13 @@ export default [
     component: Layout,
     redirect: "/my/index",
     name: "my",
-    meta: { title: "个人中心", icon: '&#xe611;', hidden: true  },
+    meta: { title: "My", icon: '&#xe611;', hidden: true  },
     children: [
       {
         path: "index",
         name: "my",
         component: () => import("@/pages/my/index.vue"),
-        meta: { title: "个人中心", hidden: true  },
+        meta: { title: "Personal Info", hidden: true  },
       }
     ],
   },

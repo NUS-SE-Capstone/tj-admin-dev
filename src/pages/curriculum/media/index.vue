@@ -30,7 +30,7 @@
                   font-weight: 500;
                   font-size: 14px;
                 "
-                >上传视频</el-button
+                >Upload Video</el-button
               >
             </el-upload>
             <!-- <el-button
@@ -54,8 +54,8 @@
               class="demo-tabs"
               @tab-click="handleClick"
             >
-              <el-tab-pane label="已上传" name="first"> </el-tab-pane>
-              <el-tab-pane label="上传中" name="second"></el-tab-pane>
+              <el-tab-pane label="Uploaded" name="first"> </el-tab-pane>
+              <el-tab-pane label="Uploading" name="second"></el-tab-pane>
             </el-tabs>
           </div>
           <!-- end -->

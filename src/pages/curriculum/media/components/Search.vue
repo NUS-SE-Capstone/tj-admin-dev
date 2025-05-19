@@ -3,7 +3,7 @@
   <div class="bg-wt radius marg-tp-20">
     <div class="pad-30 searchForm">
       <el-form ref="ruleForm" :inline="true" :model="searchData">
-        <p style="font-family: PingFangSC-Medium;font-weight: 500;font-size: 14px;color: #332929;margin-bottom: 8px;">视频名称</p>
+        <p style="font-family: PingFangSC-Medium;font-weight: 500;font-size: 14px;color: #332929;margin-bottom: 8px;">Video Name</p>
         <el-row :gutter="12">
           <el-col :span="4">
             <el-form-item label="" prop="name" class="mediaSearch">
@@ -19,7 +19,7 @@
           <el-col :span="8">
             <div class="btn pd-tp-0">
               <el-button class="button primary" @click="handleSearch"
-                >搜索</el-button
+                >Search</el-button
               >
             </div>
           </el-col>

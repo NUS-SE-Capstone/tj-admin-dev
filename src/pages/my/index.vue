@@ -4,7 +4,7 @@
       <div class="detailBox">
         <!-- 标题 -->
         <div class="tit">
-          <span>个人信息</span>
+          <span>MyInfo</span>
           <!-- <el-tooltip
           class="tooltipitem"
           effect="light"
@@ -17,7 +17,7 @@
         </el-tooltip> -->
           <span class="tooltipIcon">
             <span class="hover"
-              >用户名称、手机号、角色请联系管理员进行修改</span
+              >modify username/phone/role: contact admin</span
             >
           </span>
         </div>
@@ -44,19 +44,19 @@
     <div class="BoxBottom">
       <div class="btn">
         <el-button class="button buttonSub" @click="handleGetback"
-          >取消</el-button
+          >Cancel</el-button
         >
         <el-button
           class="button primary"
           @click="rulesteacherpassWord"
           v-if="userInfo.data.type == 1"
-          >保存并返回</el-button
+          >Save</el-button
         >
         <el-button
           class="button primary"
           @click="rulesuserpassWord"
           v-if="userInfo.data.type == 2"
-          >保存并返回</el-button
+          >Save</el-button
         >
       </div>
     </div>

@@ -16,13 +16,13 @@
       >
       </el-table-column>
       <el-table-column type="index" align="center" width="100" label="序号" />
-      <el-table-column prop="name" label="视频名称" min-width="160" />
-      <el-table-column prop="size" label="大小（MB）" min-width="160">
+      <el-table-column prop="name" label="Video Name" min-width="160" />
+      <el-table-column prop="size" label="Size(MB)" min-width="160">
         <template #default="scope">
           {{ (scope.row.size / 1024 / 1024).toFixed(2) }}
         </template>
       </el-table-column>
-      <el-table-column label="状态" min-width="150">
+      <el-table-column label="Status" min-width="150">
         <template #default="scope">
           <!-- {{scope.row.status}} -->
           <el-progress
@@ -33,7 +33,7 @@
       </el-table-column>
       <el-table-column
         fixed="right"
-        label="操作"
+        label="Action"
         align="center"
         min-width="220"
       >
@@ -42,13 +42,13 @@
             <span
               v-if="scope.row.isStop"
               @click.stop="continueUpload(scope.row)"
-              >上传</span
+              >Upload</span
             >
             <span v-else @click.stop="suspendUpload(scope.row)">暂停</span>
             <span
               @click="handleOpenDelete(scope.row)"
               :class="scope.row.status > 0 ? 'textForbidden' : 'textDefault'"
-              >删除</span
+              >Delete</span
             >
           </div>
         </template>
@@ -121,7 +121,7 @@ const props = defineProps({
 });
 // ------定义变量------
 const emit = defineEmits(); //子组件获取父组件事件传值
-const deleteText = ref("此操作将取消上传视频，是否继续？"); //需要删除的提示内容
+const deleteText = ref("Cancel uploading?"); //需要删除的提示内容
 let dialogDeleteVisible = ref(false); //控制删除弹层
 let videoObj = ref({});
 let multipleSelection = ref([]);
