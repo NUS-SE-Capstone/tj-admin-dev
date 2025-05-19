@@ -12,13 +12,13 @@ export default [
     component: Layout,
     redirect: "/curriculum/index",
     name: "curriculum",
-    meta: { title: "课程管理", icon: '&#xe60f;' },
+    meta: { title: "Course", icon: '&#xe60f;' },
     children: [
       {
         path: "index",
         name: "curriculum",
         component: () => import("@/pages/curriculum/course/index.vue"),
-        meta: { title: "课程管理" },
+        meta: { title: "Course Manage" },
       },
       {
         path: "add/:id",
@@ -36,13 +36,13 @@ export default [
         path: "type",
         name: "type",
         component: () => import("@/pages/curriculum/type/index.vue"),
-        meta: { title: "课程分类" },
+        meta: { title: "Category" },
       },
       {
         path: "media",
         name: "media",
         component: () => import("@/pages/curriculum/media/index.vue"),
-        meta: { title: "媒资管理" },
+        meta: { title: "Media Manage" },
       }
     ],
   },

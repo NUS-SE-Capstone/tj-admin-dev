@@ -11,7 +11,7 @@
       <div class="el-input inputRight">
         <el-cascader
           v-model="fromData.thirdCateId"
-          placeholder="请选择"
+          placeholder="please select"
           :options="typeData.value"
           v-if="fromData.canUpdate || fromData.canUpdate === undefined"
           :props="{

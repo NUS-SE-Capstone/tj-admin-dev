@@ -5,10 +5,11 @@
       <el-form ref="ruleForm" :inline="true" :model="searchData">
         <el-row :gutter="30">
           <el-col :span="6">
-            <el-form-item label="课程分类" prop="categoryIdLv3">
+            <el-form-item label="Category" prop="categoryIdLv3">
               <div class="el-input">
                 <el-cascader
                   v-model="searchData.categoryIdLv3"
+                  placeholder="please select"
                   :options="typeData.value"
                   @change="handleChange"
                   :props="{
@@ -24,12 +25,12 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="售卖模式" prop="free">
+            <el-form-item label="SalesMode" prop="free">
               <div class="el-input">
                 <el-select
                   v-model="searchData.free"
                   clearable
-                  placeholder="请选择"
+                  placeholder="please select"
                   style="width: 100%"
                   @change="handleFree"
                 >
@@ -49,7 +50,7 @@
                 <el-select
                   v-model="searchData.status"
                   clearable
-                  placeholder="请选择"
+                  placeholder="please select"
                   style="width: 100%"
                   @change="handleSelect"
                 >
@@ -64,7 +65,7 @@
             </el-form-item>
           </el-col> -->
           <el-col :span="6">
-            <el-form-item label="课程名称" prop="keyword">
+            <el-form-item label="Course Name" prop="keyword">
               <el-input
                 placeholder="please input"
                 clearable
@@ -74,16 +75,16 @@
           </el-col>
 
           <el-col :span="6">
-            <el-form-item label="更新时间" prop="datePicker">
+            <el-form-item label="Update Time" prop="datePicker">
               <div class="el-input">
                 <el-date-picker
                   v-model="datePicker"
                   format="YYYY-MM-DD HH:mm:ss"
                   value-format="YYYY-MM-DD HH:mm:ss"
                   type="daterange"
-                  range-separator="至"
-                  start-placeholder="开始日期"
-                  end-placeholder="结束日期"
+                  range-separator="-"
+                  start-placeholder="Start Date"
+                  end-placeholder="End Date"
                   clearable
                   align="right"
                   :picker-options="dateButton"
@@ -98,10 +99,10 @@
           <el-col :span="24">
             <div class="btn curriculumBtn">
               <el-button class="button primary" @click="handleSearch"
-                >搜索</el-button
+                >Search</el-button
               >
               <el-button class="button buttonSub" @click="handleReset(ruleForm)"
-                >重置</el-button
+                >Reset</el-button
               >
             </div>
           </el-col>

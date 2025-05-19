@@ -1,14 +1,14 @@
 <!-- 主页面 -->
 <template>
-  <el-config-provider :locale="locale">
+  <el-config-provider>
     <router-view></router-view>
   </el-config-provider>
 </template>
 
 <script setup>
 import { defineComponent } from "vue";
-import zhCn from "element-plus/es/locale/lang/zh-cn";
-let locale = zhCn;
+// import zhCn from "element-plus/es/locale/lang/zh-cn";
+// let locale = zhCn;
 import { computed, onMounted } from 'vue';
 // import config from '@/config/style';
 // import { useSettingStore } from '@/store';

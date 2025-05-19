@@ -9,7 +9,7 @@
               <div class="el-input">
                 <el-cascader
                   v-model="categoryIdLv3"
-                  placeholder="请选择"
+                  placeholder="please select"
                   :options="typeData.value"
                   popper-class="cascader"
                   :props="{
@@ -38,7 +38,7 @@
                 <el-select
                   v-model="searchData.difficulty"
                   clearable
-                  placeholder="请选择"
+                  placeholder="please select"
                   style="width: 100%"
                 >
                   <el-option

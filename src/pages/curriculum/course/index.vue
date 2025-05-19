@@ -8,35 +8,35 @@
             <span class="img"></span>
             <div class="text">
               <p>81</p>
-              <p>课程总数量（个）</p>
+              <p>Total Courses</p>
             </div>
           </li>
           <li>
             <span class="img"></span>
             <div class="text">
               <p>27</p>
-              <p>上架课程（个）</p>
+              <p>Online Courses</p>
             </div>
           </li>
           <li>
             <span class="img"></span>
             <div class="text">
               <p>11</p>
-              <p>下架课程（个）</p>
+              <p>Offline Courses</p>
             </div>
           </li>
           <li>
             <span class="img"></span>
             <div class="text">
               <p>12</p>
-              <p>待上架课程（个）</p>
+              <p>Draft Courses</p>
             </div>
           </li>
           <li>
             <span class="img"></span>
             <div class="text">
               <p>31</p>
-              <p>完结课程（个）</p>
+              <p>Completed Courses</p>
             </div>
           </li>
         </ul>
@@ -122,7 +122,7 @@ import TableList from "./components/TableList.vue";
 const store = useUserStore();
 //初始化路由
 const router = useRouter();
-const text = ref("新增课程"); //弹层标题
+const text = ref("Add Course"); //弹层标题
 const loading = ref(false); //加载数据
 const serchInfo = ref(); //定义搜索ref
 let total = ref(null); //数据总条数

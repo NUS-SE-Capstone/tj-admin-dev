@@ -36,7 +36,7 @@
           v-model="fromData.roleId"
           clearable
           style="width: 371px"
-          placeholder="请选择"
+          placeholder="please select"
           @change="roleChange"
         >
           <el-option

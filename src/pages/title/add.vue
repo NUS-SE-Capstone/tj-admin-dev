@@ -32,7 +32,7 @@
               <el-select
                 v-model="fromData.courseIds"
                 clearable
-                placeholder="请选择"
+                placeholder="please select"
                 style="width: 100%"
                 filterable
                 @change="handleCourse"

@@ -9,7 +9,7 @@
                 <el-select
                   v-model="searchData.status"
                   clearable
-                  placeholder="请选择"
+                  placeholder="please select"
                   style="width: 100%"
                 >
                   <el-option

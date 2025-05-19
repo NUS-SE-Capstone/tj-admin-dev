@@ -10,8 +10,8 @@
       row-key="id"
       ref="tableItem"
     >
-      <el-table-column type="index" align="center" width="100" label="序号" />
-      <el-table-column label="课程名称" min-width="250" class-name="textLeft">
+      <el-table-column type="index" align="center" width="100" label="No." />
+      <el-table-column label="Course Name" min-width="250" class-name="textLeft">
         <template #default="scope">
           <div class="head">
             <div class="ellipsisHidden2">
@@ -22,7 +22,7 @@
       </el-table-column>
       <!-- 当数据中出现小数，导致排序错乱时用 sort来解决 -->
       <el-table-column
-        label="课程价格"
+        label="Price"
         prop="price"
         sortable
         width="150"
@@ -34,43 +34,43 @@
       >
         <template #default="scope">
           <span class="fontTip ft-wt-600">{{
-            scope.row.price === "0" ? "免费" : "￥" + scope.row.price
+            scope.row.price === "0" ? "Free" : "$" + scope.row.price
           }}</span>
         </template>
       </el-table-column>
-      <el-table-column prop="sections" label="课时" min-width="150">
+      <el-table-column prop="sections" label="Sections" min-width="150">
       </el-table-column>
       <el-table-column
         prop="categories"
-        label="所属分类"
+        label="Category"
         width="290"
         class-name="textLeft"
       >
       </el-table-column>
       <el-table-column
         prop="sold"
-        label="报名人数"
+        label="Subscribers"
         min-width="150"
         v-if="props.status !== 1"
       >
       </el-table-column>
       <el-table-column
         prop="score"
-        label="课程评分"
+        label="Score"
         min-width="150"
         sortable
         v-if="props.status !== 1"
       >
-        <template #default="scope"> {{ scope.row.score / 10 }}分 </template>
+        <template #default="scope"> {{ scope.row.score / 10 }} </template>
       </el-table-column>
       <el-table-column
         prop="updaterName"
-        label="更新人"
+        label="Updated By"
         min-width="150"
       ></el-table-column>
       <el-table-column
         prop="updateTime"
-        label="更新时间"
+        label="Updated Time"
         sortable
         min-width="200"
         :formatter="formatTime"
@@ -78,21 +78,21 @@
       </el-table-column>
       <el-table-column
         prop="publishTime"
-        label="上架时间"
+        label="Online Time"
         sortable
         min-width="200"
         :formatter="formatTime"
         v-if="props.status !== 1"
       >
       </el-table-column>
-      <el-table-column fixed="right" label="操作" align="center" width="170">
+      <el-table-column fixed="right" label="Action" align="center" width="170">
         <template #default="scope">
           <div class="operate">
             <span
               class="textDefault"
               @click="handleCheck(scope.row)"
               v-if="scope.row.status === 2 || scope.row.status === 4"
-              >查看</span
+              >View</span
             >
             <span
               :class="
@@ -102,7 +102,7 @@
               "
               v-if="scope.row.status === 1 || scope.row.status === 3"
               @click="handleEdit(scope.row)"
-              >编辑</span
+              >Edit</span
             >
             <!-- <span
                 :class="
@@ -122,20 +122,20 @@
               v-if="props.status === 1 || props.status === 3"
               :class="scope.row.step !== 5 ? 'textForbidden' : 'textDefault'"
               @click="handleOpenDescend(scope.row)"
-              >上架</span
+              >Online</span
             >
             <span
               v-else
               @click="handleOpenDescend(scope.row)"
               :class="scope.row.status === 4 ? 'textForbidden' : 'textWarning'"
             >
-              下架
+              Offline
             </span>
             <span
               :class="scope.row.status === 1 ? 'textWarning' : 'textForbidden'"
               @click="handleOpenDelete(scope.row)"
             >
-              删除
+              Delete
             </span>
           </div>
         </template>
@@ -267,7 +267,7 @@ const handleDescend = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "上架成功!",
+          message: "Publish Online Success!",
           type: "success",
           showClose: false,
         });
@@ -286,7 +286,7 @@ const handleDescend = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "下架成功!",
+          message: "Offline Success!",
           type: "success",
           showClose: false,
         });
@@ -310,7 +310,7 @@ const handleOpenDescend = async (row) => {
   if (time < newTime) {
     ElMessage({
 
-      message: "下架时间需要晚于当前时间",
+      message: "Offline time need to be later than now",
       type: "error",
       showClose: false,
     });
@@ -323,7 +323,7 @@ const handleOpenDescend = async (row) => {
       await baseBeforeUpShelf(row.id).then((res) => {
         if (res.code === 200) {
           dialogStatusVisible.value = true; //
-          title.value = "确认上架";
+          title.value = "Confirm online";
         } else {
           ElMessage({
             showClose: true,
@@ -337,10 +337,10 @@ const handleOpenDescend = async (row) => {
       if (row.purchaseEndTime) {
         dialogStatusVisible.value = true; //
         if (status.value === 1) {
-          title.value = "确认上架";
+          title.value = "Confirm online";
         } else {
-          title.value = "确认下架";
-          statusText.value = "此操作将下架该课程，是否继续？";
+          title.value = "Confirm offline";
+          statusText.value = "This course will be offline, are you sure?";
         }
       }
     }
@@ -361,7 +361,7 @@ const handleDelete = async () => {
         }, 1000);
         ElMessage({
 
-          message: "删除成功!",
+          message: "Delete Success!",
           type: "success",
           showClose: false,
         });

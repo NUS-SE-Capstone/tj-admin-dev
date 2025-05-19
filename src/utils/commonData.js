@@ -69,19 +69,19 @@ export const sellingModelData = [
 export const courseStatusData = [
   {
     value: 1,
-    label: "待上架",
+    label: "Draft",
   },
   {
     value: 2,
-    label: "已上架",
+    label: "Online",
   },
   {
     value: 3,
-    label: "已下架",
+    label: "Offline",
   },
   {
     value: 4,
-    label: "已完结",
+    label: "Compeleted",
   }
 ]
 // 步骤条数据
