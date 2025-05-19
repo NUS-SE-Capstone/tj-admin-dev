@@ -8,7 +8,7 @@
           <el-col :span="4">
             <el-form-item label="" prop="name" class="mediaSearch">
               <el-input
-                placeholder="请输入"
+                placeholder="please input"
                 v-model="searchData.name"
                 clearable
                 :prefix-icon="Search"

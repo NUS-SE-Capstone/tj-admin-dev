@@ -94,7 +94,7 @@
                 <el-input
                   v-model="fromData.name"
                   type="textarea"
-                  placeholder="请输入，最多可添加200个字"
+                  placeholder="please input (less than 200 words)"
                   resize="none"
                   @input="nameTextInput"
                 />
@@ -132,7 +132,7 @@
                     <el-input
                       v-model="fromData[item.prop]"
                       type="textarea"
-                      placeholder="请输入，最多可添加200个字"
+                      placeholder="please input (less than 200 words)"
                       resize="none"
                       @input="optionTextInput(item)"
                       @blur="optionTextBlur(item)"
@@ -177,7 +177,7 @@
                 <el-input
                   v-model="fromData.analysis"
                   type="textarea"
-                  placeholder="请输入，最多可添加300个字"
+                  placeholder="please input (less than 300 words)"
                   resize="none"
                   @input="analysisTextInput"
                 />

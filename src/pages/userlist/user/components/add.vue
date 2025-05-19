@@ -15,7 +15,7 @@
       <el-form-item label="后台用户名称：" prop="name">
         <el-input
           v-model="fromData.name"
-          placeholder="请输入"
+          placeholder="please input"
           @input="nameTextInput"
           maxlength="20"
         />
@@ -26,7 +26,7 @@
       <el-form-item label="后台用户手机号：" prop="cellPhone">
         <el-input
           v-model="fromData.cellPhone"
-          placeholder="请输入"
+          placeholder="please input"
           @blur="checkuserphone"
         />
       </el-form-item>

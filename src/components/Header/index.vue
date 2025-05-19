@@ -9,7 +9,7 @@
           v-model="input"
           class="headerSearch "
           size="large"
-          placeholder="请输入关键字"
+          placeholder="please input keyword"
           :suffix-icon="Search"
         />
       </div>

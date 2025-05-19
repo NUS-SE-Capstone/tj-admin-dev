@@ -26,7 +26,7 @@
           <el-input
             v-model="refundData.questionDesc"
             type="textarea"
-            placeholder="请输入"
+            placeholder="please input"
             resize="none"
             @input="useintroInput"
             maxlength="100"

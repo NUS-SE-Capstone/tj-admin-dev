@@ -102,7 +102,7 @@
               type="number"
               min="1"
               max="99"
-              placeholder="请输入"
+              placeholder="please input"
               :disabled="fromData.granted"
             ></el-input>
             <span class="text">天</span>

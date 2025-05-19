@@ -11,7 +11,7 @@
       <div class="el-input">
         <el-input
           v-model="fromData.name"
-          placeholder="请输入"
+          placeholder="please input"
           @input="nameTextInput"
           @keydown="channelInputKeyCode"
         />
@@ -71,7 +71,7 @@
             <el-input
               type="number"
               v-model="fromData.amountCondition"
-              placeholder="请输入"
+              placeholder="please input"
               @keydown="channelInputLimit"
             />
             <span class="text">元</span>
@@ -88,7 +88,7 @@
             ><el-input
               type="number"
               v-model="fromData.discountAmount"
-              placeholder="请输入"
+              placeholder="please input"
               @keydown="channelInputLimit"
             />
             <span class="text">元</span>
@@ -100,7 +100,7 @@
             ><el-input
               type="number"
               v-model="fromData.discountRate"
-              placeholder="请输入"
+              placeholder="please input"
               @keydown="channelInputLimit"
             />
             <span class="text">折</span>
@@ -114,7 +114,7 @@
             <span>最高减</span
             ><el-input
               v-model="fromData.maxDiscountAmount"
-              placeholder="请输入"
+              placeholder="please input"
               @keydown="channelInputLimit"
             />
             <span class="text">元</span>
@@ -173,7 +173,7 @@
         <div class="inputW inputRight">
           <el-input
             v-model="fromData.totalNum"
-            placeholder="请输入"
+            placeholder="please input"
             @input="inputTotalNum"
           />
           <span class="text">张</span>
@@ -185,7 +185,7 @@
         <div class="inputW inputRight">
           <el-input
             v-model="fromData.perNum"
-            placeholder="请输入"
+            placeholder="please input"
             @input="inputPerNum"
           />
           <span class="text">张</span>

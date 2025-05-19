@@ -37,7 +37,7 @@
           show-word-limit
           class="cursour"
           width="369"
-          placeholder="请输入"
+          placeholder="please input"
         ></el-input>
         <span class="numText" :class="jobNumVal === 0 ? 'tip' : ''"
           >{{ jobNumVal }}/200</span
@@ -49,7 +49,7 @@
         <el-input
           v-model="teachereditData.intro"
           type="textarea"
-          placeholder="请输入"
+          placeholder="please input"
           resize="none"
           @input="introTextInput"
           show-word-limit
@@ -78,7 +78,7 @@
         <el-input
           type="password"
           v-model="teacherData.cellPhone"
-          placeholder="请输入"
+          placeholder="please input"
           maxlength="20"
           disabled
         ></el-input>

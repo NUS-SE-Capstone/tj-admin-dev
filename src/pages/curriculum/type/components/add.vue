@@ -30,7 +30,7 @@
         <div class="el-input">
           <el-input
             v-model="fromData.name"
-            placeholder="请输入"
+            placeholder="please input"
             @input="textInput"
           />
           <span class="numText" :class="numVal === 0 ? 'tip' : ''"

@@ -24,7 +24,7 @@
                   v-else
                   v-model="item.name"
                   clearable
-                  placeholder="请输入"
+                  placeholder="please input"
                   @input="handleTextInput(item)"
                   @blur="handleBlur(item, i)"
                   @focus="handleFocusInput(item)"
@@ -75,7 +75,7 @@
                       ></span>
                       <el-input
                         :autofocus="i === editActive"
-                        placeholder="请输入"
+                        placeholder="please input"
                         v-else
                         v-model="val.name"
                         clearable
