@@ -9,17 +9,17 @@
     <div class="courseTeachList">
       <div class="itemCon">
         <div class="headTitle">
-          <span style="min-width: 80px">序号</span>
-          <span style="min-width: 155px; margin-right: 20px">教师名称</span>
-          <span style="min-width: 300px">教师介绍</span>
+          <span style="min-width: 80px">No.</span>
+          <span style="min-width: 155px; margin-right: 20px">Name</span>
+          <span style="min-width: 300px">Intro</span>
           <span
             style="padding-left: 15px; padding-right: 30px; min-width: 170px"
-            >排序</span
+            >Sort</span
           >
           <span style="min-width: 155px; padding-right: 35px"
-            >用户端是否显示</span
+            >showForUsers</span
           >
-          <span style="min-width: 140px">操作</span>
+          <span style="min-width: 140px">Action</span>
         </div>
         <div class="item" v-if="selectData.value && selectData.value.length">
           <ul>
@@ -72,15 +72,15 @@
                       class="iconTip"
                       :class="!val.isShow ? 'forbidIcon' : 'normalIcon'"
                     ></span
-                    >{{ val.isShow === true ? "显示" : "隐藏" }}</span
+                    >{{ val.isShow === true ? "Show" : "Hide" }}</span
                   >
                 </div>
                 <div>
                   <span class="textDefault" @click="handleIsShow(val)">{{
-                    val.isShow === true ? "隐藏" : "显示"
+                    val.isShow === true ? "Hide" : "Show"
                   }}</span>
                   <span class="textWarning" @click="handleDeleteOpen(val)"
-                    >删除</span
+                    >Delete</span
                   >
                 </div>
               </div>
@@ -162,7 +162,7 @@ let dialogVisible = ref(false); //选择老师弹层
 let pic = ref(""); //要放大的图片
 let teacherId = ref(null);
 const selectAdd = ref();
-const text = ref("选择教师");
+const text = ref("Select Teacher");
 const deleteText = ref("此操作将该老师移除本课程，是否继续？"); //删除提示
 const loading = ref(false);
 let searchData = reactive({

@@ -7,7 +7,7 @@
     label-width="130px"
     class="demo-ruleForm"
   >
-    <el-form-item label="课程分类：" prop="thirdCateId">
+    <el-form-item label="category:" prop="thirdCateId">
       <div class="el-input inputRight">
         <el-cascader
           v-model="fromData.thirdCateId"
@@ -37,7 +37,7 @@
         />
       </div>
     </el-form-item>
-    <el-form-item label="课程名称：" prop="name">
+    <el-form-item label="Name:" prop="name">
       <div class="el-input">
         <el-input
           v-model="fromData.name"
@@ -53,7 +53,7 @@
         >
       </div>
     </el-form-item>
-    <el-form-item label="课程封面：" prop="coverUrl">
+    <el-form-item label="Cover" prop="coverUrl">
       <UploadImage
         @getFlag="getFlag"
         @getCoverUrl="getCoverUrl"
@@ -62,7 +62,7 @@
         :isCourse="isCourse"
       ></UploadImage>
     </el-form-item>
-    <el-form-item label="售卖模式：" prop="free">
+    <el-form-item label="SaleMode" prop="free">
       <el-radio-group v-model="fromData.free">
         <el-radio
           v-for="(item, index) in sellingModelData"
@@ -74,7 +74,7 @@
         >
       </el-radio-group>
     </el-form-item>
-    <el-form-item label="课程价格：" prop="price" v-if="fromData.free === 1">
+    <el-form-item label="Price" prop="price" v-if="fromData.free === 1">
       <div class="el-input inputRight inputMarginR">
         <el-input
           type="number"
@@ -87,17 +87,17 @@
           @onkeyup="handleOnkeyup"
           class="courseMoney"
         />
-        <span class="text">元</span>
+        <span class="text">$</span>
       </div>
     </el-form-item>
-    <el-form-item label="下架时间：" prop="purchaseEndTime">
+    <el-form-item label="Offline:" prop="purchaseEndTime">
       <div class="el-input inputMarginR">
         <el-date-picker
           v-model="fromData.purchaseEndTime"
           value-format="YYYY-MM-DD HH:mm:ss"
           type="datetime"
           :disabledDate="expireTimeOption"
-          placeholder="请选择下架时间"
+          placeholder="please choose offline time"
           clearable
           class="OffshelfTime"
           @change="handleDate($event)"
@@ -106,14 +106,14 @@
         </el-date-picker>
       </div>
     </el-form-item>
-    <el-form-item label="学习有效期：" prop="radio">
+    <el-form-item label="Available:" prop="radio">
       <el-radio-group
         v-model="fromData.radio"
         :disabled="!fromData.canUpdate"
         @change="handleRadio"
       >
-        <el-radio label="1">限时</el-radio>
-        <el-radio label="2">永久</el-radio>
+        <el-radio label="1">Limit</el-radio>
+        <el-radio label="2">Permanent</el-radio>
       </el-radio-group>
     </el-form-item>
     <el-form-item label="" prop="validDuration" v-if="isTimeLimit">
@@ -127,10 +127,10 @@
           placeholder="please input"
           @input="inputValidDuration"
         ></el-input>
-        <span class="text">月</span>
+        <span class="text">Months</span>
       </span>
     </el-form-item>
-    <el-form-item label="课程介绍：" prop="introduce" class="textInput">
+    <el-form-item label="Intro" prop="introduce" class="textInput">
       <div class="inputText">
         <el-input
           v-model="fromData.introduce"
@@ -144,7 +144,7 @@
         >
       </div>
     </el-form-item>
-    <el-form-item label="适用人群：" prop="usePeople" class="textInput">
+    <el-form-item label="ForCrowd:" prop="usePeople" class="textInput">
       <div class="inputText">
         <el-input
           v-model="fromData.usePeople"
@@ -158,8 +158,8 @@
         >
       </div>
     </el-form-item>
-    <el-form-item
-      label="教师介绍：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+    <!-- <el-form-item
+      label="Teacher: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
       class="textInput"
     >
       <div class="tearch">
@@ -177,8 +177,8 @@
           <span class="hover">用户端将自动展示教师信息，无需手动设置</span>
         </span>
       </div>
-    </el-form-item>
-    <el-form-item label="课程详情：" prop="detail" class="textInput">
+    </el-form-item> -->
+    <el-form-item label="Detail:" prop="detail" class="textInput">
       <div class="inputText">
         <el-input
           v-model="fromData.detail"
@@ -253,13 +253,13 @@ const validateUpload = (rule, value, callback) => {
   if (flag.value) {
     callback();
   } else {
-    callback(new Error("课程封面为空，请上传课程封面"));
+    callback(new Error("cover is empty"));
   }
 };
 // 课程名称校验
 const validateName = async (rule, value, callback) => {
   if (value === "" || value === undefined) {
-    callback(new Error("课程名称为空，请填写课程名称"));
+    callback(new Error("name is empty"));
   }
   let parent = {
     name: value,
@@ -269,7 +269,7 @@ const validateName = async (rule, value, callback) => {
     if (res.code === 200) {
       const isexisted = res.data.existed;
       if (isexisted) {
-        callback(new Error("课程名称重复，请重新输入"));
+        callback(new Error("name already exist"));
       } else {
         callback();
       }
@@ -281,7 +281,7 @@ const rules = reactive({
   thirdCateId: [
     {
       required: true,
-      message: "课程分类为空，请选择课程分类",
+      message: "category is empty",
       trigger: "change",
     },
   ],
@@ -303,7 +303,7 @@ const rules = reactive({
   valid: [
     {
       required: true,
-      message: "售卖模式为空，请选择售卖模式",
+      message: "sale mode is empty",
       trigger: "change",
     },
   ],
@@ -318,20 +318,20 @@ const rules = reactive({
     {
       trigger: "blur",
       required: true,
-      message: "下架时间为空，请设置下架时间",
+      message: "offline time is empty",
     },
   ],
   free: [
     {
       required: true,
-      message: "售卖模式为空，请选择售卖模式",
+      message: "sale mode is empty",
       trigger: "change",
     },
   ],
   radio: [
     {
       required: true,
-      message: "学习有效期为空，请设置学习有效期",
+      message: "available time is empty",
       trigger: "change",
     },
   ],
@@ -345,21 +345,21 @@ const rules = reactive({
   introduce: [
     {
       required: true,
-      message: "课程介绍为空，请输入课程介绍",
+      message: "introduce is empty",
       trigger: "blur",
     },
   ],
   usePeople: [
     {
       required: true,
-      message: "适用人群为空，请输入适用人群",
+      message: "for the crowd need input",
       trigger: "blur",
     },
   ],
   detail: [
     {
       required: true,
-      message: "课程详情为空，请输入课程详情",
+      message: "details empty",
       trigger: "blur",
     },
   ],

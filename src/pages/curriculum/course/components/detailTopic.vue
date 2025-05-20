@@ -15,18 +15,18 @@
                 <span>{{ item.name }}</span>
               </div>
               <div class="textR">
-                <span class="textForbidden">添加阶段考试</span>
+                <span class="textForbidden">Add Exam</span>
               </div>
             </div>
           </template>
           <div class="itemCon" v-if="item.sections.length > 0">
             <div class="headTitle">
-              <span>序号</span>
-              <span>小节名称</span>
-              <span>题目</span>
-              <span>题目数目</span>
-              <span>题目分数</span>
-              <span>操作</span>
+              <span>No.</span>
+              <span>Sub Name</span>
+              <span>Quesion</span>
+              <span>Num</span>
+              <span>Score</span>
+              <span>Action</span>
             </div>
             <div class="item">
               <ul>
@@ -50,7 +50,7 @@
                           val.subjectNum > 0 ? 'textDefault' : 'textForbidden'
                         "
                       >
-                        查看题目</span
+                        View</span
                       >
                     </div>
                     <div>
@@ -61,7 +61,7 @@
                     </div>
                     <div>
                       <span class="textForbidden" v-if="val.type === 3"
-                        >删除阶段考试</span
+                        >Delete</span
                       >
                     </div>
                   </div>

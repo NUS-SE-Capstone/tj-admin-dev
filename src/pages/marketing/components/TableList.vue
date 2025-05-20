@@ -211,7 +211,7 @@ const props = defineProps({
 // ------定义变量------
 const emit = defineEmits(); //子组件获取父组件事件传值
 const router = useRouter();
-const deleteText = ref("此操作将永久删除该优惠券，是否继续？");
+const deleteText = ref("Confirm to delete the coupon forever?");
 let redeem = ref(); //定义兑换码弹层的ref
 let couponId = ref(""); //优惠券id
 let dialogDeleteVisible = ref(false); //删除弹层显示隐藏

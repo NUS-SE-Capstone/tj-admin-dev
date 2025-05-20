@@ -2,7 +2,7 @@
   <div class="deleteDialog">
     <el-dialog
       v-model="dialogVisible"
-      title="确认隐藏"
+      title="Confirm to Hide"
       :show-close="false"
     >
       
@@ -10,10 +10,10 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >再想想</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >确认隐藏</el-button
+            >Confirm</el-button
           >
         </span>
       </template>

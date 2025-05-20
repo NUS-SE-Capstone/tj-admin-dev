@@ -2,11 +2,11 @@
   <div class="topicBox" v-if="dialogVisible">
     <el-dialog
       v-model="dialogVisible"
-      title="查看题目"
+      title="View Question"
       :before-close="handleClose"
     >
       <div class="transHearder">
-        <span class="transHearder-title">已选题目：</span><span class="transHearder-item">{{ tableName.length }}</span><span class="transHearder-title">&nbsp;&nbsp;&nbsp;&nbsp;  总分：</span><span class="transHearder-item">{{ score }}</span>分
+        <span class="transHearder-title">selected </span><span class="transHearder-item">{{ tableName.length }}</span><span class="transHearder-title">&nbsp;&nbsp;&nbsp;&nbsp;  Score:</span><span class="transHearder-item">{{ score }}</span>分
       </div>
       <!-- 题目列表 -->
       <el-table
@@ -17,8 +17,8 @@
         row-key="id"
         height="475"
       >
-        <el-table-column type="index" align="center" width="60px" label="序号" />
-        <el-table-column label="题目名称" min-width="250" class-name="textLeft">
+        <el-table-column type="index" align="center" width="60px" label="No." />
+        <el-table-column label="Name" min-width="250" class-name="textLeft">
           <template #default="scope">
             <!-- 添加el-Popover弹出框 -->
             <el-popover
@@ -41,7 +41,7 @@
                   </li>
                 </ul>
                 <div class="answer">
-                  <div class="item">正确答案：
+                  <div class="item">Answer:
                     <span
                       v-for="(val, index) in scope.row.answers"
                       :key="index"
@@ -49,13 +49,13 @@
                     {{numLetter(val)}}
                     </span>
                   </div>
-                  <div class="item">答案解析：<div v-html="scope.row.analysis===''?'无':scope.row.analysis"></div></div>
+                  <div class="item">Reason:<div v-html="scope.row.analysis===''?'无':scope.row.analysis"></div></div>
                 </div>
                 
               </div>
               <div class="topicFoot">
-                <p>题目难度：{{scope.row.difficult===1?'简单':scope.row.difficult===2?'中等':'困难'}}</p>
-                <p>题目分数：{{scope.row.score}}</p>
+                <p>Level:{{scope.row.difficult===1?'简单':scope.row.difficult===2?'中等':'困难'}}</p>
+                <p>Score:{{scope.row.score}}</p>
               </div>
             </el-popover>
           </template>

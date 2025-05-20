@@ -24,13 +24,13 @@ export default [
         path: "add/:id",
         name: "curriculumAdd",
         component: () => import("@/pages/curriculum/course/add.vue"),
-        meta: { title: "添加编辑", hidden: true, fmeta: {path: '/curriculum/index', title: '课程管理'} },
+        meta: { title: "添加编辑", hidden: true, fmeta: {path: '/curriculum/index', title: 'Course'} },
       },
       {
         path: "details/:id",
         name: "curriculumDetail",
         component: () => import("@/pages/curriculum/course/details.vue"),
-        meta: { title: "课程详情", hidden: true, fmeta: {path: '/curriculum/index', title: '课程管理'} },
+        meta: { title: "CourseDetails", hidden: true, fmeta: {path: '/curriculum/index', title: 'Course'} },
       },
       {
         path: "type",
@@ -150,7 +150,7 @@ export default [
     component: Layout,
     redirect: "/user/index",
     name: "user",
-    meta: { title: "User Manage", icon: '&#xe610;' },
+    meta: { title: "User", icon: '&#xe610;' },
     children: [
       {
         path: "index",

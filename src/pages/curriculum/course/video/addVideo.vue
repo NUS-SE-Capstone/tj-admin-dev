@@ -2,14 +2,14 @@
   <div class="dialogMain videoBox dialogHeignt">
     <el-dialog
       v-model="dialogVisible"
-      title="选择媒资视频"
+      title="Select Media"
       :before-close="handleClose"
     >
       <div class="searchForm">
         <el-form ref="ruleForm" :inline="true" :model="searchData">
           <el-form-item label="" prop="name" class="mediaSearch">
             <el-input
-              placeholder="请选择视频名称关键字"
+              placeholder="select keyword"
               v-model="searchData.name"
               clearable
               :prefix-icon="Search"
@@ -18,7 +18,7 @@
             />
             <div class="btn pd-tp-0">
               <el-button class="button primary" @click="handleSearch"
-                >搜索</el-button
+                >Search</el-button
               >
             </div>
           </el-form-item>
@@ -47,27 +47,27 @@
             type="index"
             align="center"
             width="80"
-            label="序号"
+            label="No."
           />
-          <el-table-column prop="filename" label="视频名称" min-width="150" />
-          <el-table-column prop="size" label="大小（MB）" min-width="120">
+          <el-table-column prop="filename" label="Name" min-width="150" />
+          <el-table-column prop="size" label="Size(MB)" min-width="120">
             <template #default="scope">
               {{ (scope.row.size / 1024 / 1024).toFixed(2) }}
             </template>
           </el-table-column>
-          <el-table-column prop="duration" label="视频时长" min-width="120">
+          <el-table-column prop="duration" label="Duration" min-width="120">
             <template #default="scope">
               {{ formatSeconds(scope.row.duration) }}
             </template>
           </el-table-column>
-          <el-table-column prop="creater" label="上传人" min-width="120">
+          <el-table-column prop="creater" label="Uploader" min-width="120">
           </el-table-column>
-          <el-table-column prop="useTimes" label="当前引用次数" min-width="120">
+          <el-table-column prop="useTimes" label="Refer Num" min-width="120">
           </el-table-column>
           <el-table-column
             prop="createTime"
             min-width="220"
-            label="上传时间"
+            label="UploadAt"
             width="180px"
           >
             <template #default="scope">
@@ -97,10 +97,10 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >提交</el-button
+            >Submit</el-button
           >
         </span>
       </template>

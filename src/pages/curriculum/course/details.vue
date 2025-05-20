@@ -18,54 +18,54 @@
             {{ courseData.data.cateNames }}
             <!-- 1：待上架，2：已上架，3：下架，4：已完结 -->
             <span v-if="courseData.data.status == 1" class="waitgrounding"
-              >待上架</span
+              >Pending</span
             >
             <span v-else-if="courseData.data.status == 2" class="ongrounding"
-              >已上架</span
+              >Online</span
             >
             <span v-else-if="courseData.data.status == 3" class="undercarriage"
-              >已下架</span
+              >Offline</span
             >
             <span v-else-if="courseData.data.status == 4" class="end"
-              >已完结</span
+              >Compeleted</span
             >
           </div>
           <div class="item-card">
             <div class="card">
-              <div class="tit">报名人数</div>
-              <div class="info">{{ courseData.data.enrollNum }}人</div>
+              <div class="tit">subscribers</div>
+              <div class="info"> {{ courseData.data.enrollNum }}</div>
             </div>
             <div class="card">
-              <div class="tit">学习人数</div>
-              <div class="info">{{ courseData.data.studyNum }}人</div>
+              <div class="tit">learners</div>
+              <div class="info"> {{ courseData.data.studyNum }}</div>
             </div>
             <div class="card">
-              <div class="tit">退款人数</div>
-              <div class="info">{{ courseData.data.refundNum }}人</div>
+              <div class="tit">refunders</div>
+              <div class="info"> {{ courseData.data.refundNum }}</div>
             </div>
             <div class="card bd-non">
-              <div class="tit">课程实付金额</div>
+              <div class="tit">price</div>
               <div class="info">
-                {{ (courseData.data.price / 100).toFixed(2) }}元
+                $ {{ (courseData.data.price / 100).toFixed(2) }}
               </div>
             </div>
           </div>
           <div class="item-card-bottom">
             <div class="card-bottom">
               <div class="tit-botom">
-                课时数量：
+                SectionNum:
                 <span class="text-bottom">{{
                   courseData.data.cataTotalNum
                 }}</span>
               </div>
               <div class="tit-botom">
-                课程创建人：
+                Creator:
                 <span class="text-bottom">{{
                   courseData.data.createrName
                 }}</span>
               </div>
               <div class="tit-botom">
-                创建时间：
+                CreateAt:
                 <span class="text-bottom">{{
                   formatTimeOrdinary(courseData.data.createTime)
                 }}</span>
@@ -73,19 +73,19 @@
             </div>
             <div class="card-bottom">
               <div class="tit-botom">
-                课程评分：
+                Score:
                 <span class="text-bottom">{{
                   courseData.data.coureScore
                 }}</span>
               </div>
               <div class="tit-botom">
-                课程更新人：
+                Updater:
                 <span class="text-bottom">{{
                   courseData.data.updaterName
                 }}</span>
               </div>
               <div class="tit-botom">
-                更新时间：
+                UpdateAt:
                 <span class="text-bottom">{{
                   formatTimeOrdinary(courseData.data.updateTime)
                 }}</span>
@@ -125,7 +125,7 @@
       <div class="BoxBottom">
         <div class="btn">
           <el-button class="button primary" @click="handleGetback"
-            >返回</el-button
+            >Back</el-button
           >
         </div>
       </div>
@@ -133,6 +133,7 @@
   </div>
 </template>
 <script setup>
+import defaultCover from '@/assets/default-cover.png'
 import { ref, reactive, onMounted } from "vue"
 import { useRoute, useRouter } from "vue-router"
 import { formatTimeOrdinary } from "@/utils/index";
@@ -165,7 +166,7 @@ const courseTeacher = reactive({
 const detailId = ref(null)//当前课程详情id
 
 // table切换数据 - 静态数据
-const tableBar = [{ id: 1, name: '课程介绍' }, { id: 2, name: '课程目录' }, { id: 3, name: '课程视频' }, { id: 4, name: '课程题目' }]
+const tableBar = [{ id: 1, name: 'Intro' }, { id: 2, name: 'Catalog' }, { id: 3, name: 'Video' }, { id: 4, name: 'Question' }]
 // 课程目录数据
 const courseListData = reactive({
 })
@@ -191,6 +192,9 @@ const getcourseDetailData = async () => {
       if (res.code === 200) {
         // courseData.value = res.data;
         courseData.data = res.data
+        if(courseData.data.coverUrl == '/img-tx/default-cover-url.jpg') {
+          courseData.data.coverUrl = defaultCover
+        }
       }
       else {
         ElMessage({

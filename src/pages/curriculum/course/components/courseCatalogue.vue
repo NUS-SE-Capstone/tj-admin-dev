@@ -21,21 +21,21 @@
               </div>
               <div class="textR">
                 <span class="textForbidden" aria-disabled="true"
-                  >章排序</span
+                  >Sort</span
                 ><span class="textForbidden"
-                  >添加小节</span
+                  >Add Sub</span
                 ><span class="textForbidden"
-                  >删除本章</span
+                  >Delete</span
                 >
               </div>
             </div>
           </template>
           <div class="itemCon" v-if="item.sections.length > 0">
             <div class="headTitle">
-              <span>序号</span>
-              <span class="padl">小节名称</span>
-              <span>排序</span>
-              <span>操作</span>
+              <span>No.</span>
+              <span class="padl">Sub Name</span>
+              <span>Sort</span>
+              <span>Action</span>
             </div>
             <div class="item">
               <ul>
@@ -68,7 +68,7 @@
                     <div
                       class="textForbidden"
                     >
-                      删除本节
+                      Delete
                     </div>
                   </div>
                 </li>

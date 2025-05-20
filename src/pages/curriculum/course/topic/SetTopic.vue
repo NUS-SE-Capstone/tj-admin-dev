@@ -3,14 +3,14 @@
   <div class="dialogMain topicBox dialogHeignt" v-if="dialogVisible">
     <el-dialog
       v-model="dialogVisible"
-      title="选择题目"
+      title="Set Question"
       :before-close="handleClose"
     >
       <div class="searchForm">
         <el-form ref="ruleForm" :inline="true" :model="searchData">
           <el-row :gutter="30">
             <el-col :span="9">
-              <el-form-item label="题目分类" prop="categoryIdLv3">
+              <el-form-item label="Category" prop="categoryIdLv3">
                 <div class="el-input">
                   <el-cascader
                     v-model="searchData.categoryIdLv3"
@@ -37,7 +37,7 @@
               </el-form-item>
             </el-col>
             <el-col :span="9">
-              <el-form-item label="题目名称" prop="name">
+              <el-form-item label="Name" prop="name">
                 <el-input
                   placeholder="please input"
                   clearable
@@ -48,12 +48,12 @@
             <el-col :span="6">
               <div class="btn">
                 <el-button class="button primary" @click="handleSearch"
-                  >搜索</el-button
+                  >Search</el-button
                 >
                 <el-button
                   class="button buttonSub"
                   @click="handleReset(ruleForm)"
-                  >重置</el-button
+                  >Set</el-button
                 >
               </div>
             </el-col>
@@ -63,11 +63,11 @@
       <!-- 穿梭框 -->
       <div class="transferBox">
         <div class="transHearder">
-          已选题目：{{ value.length }}/40 总分：{{ score }}分
+          selected {{ value.length }}/40 Total Score: {{ score }}
         </div>
         <el-transfer
           v-model="value"
-          :titles="['题目库', '已选题目']"
+          :titles="['Question Lib', 'Selected']"
           :props="{
             key: 'id',
             label: 'name',
@@ -101,7 +101,7 @@
                 </ul>
                 <div class="answer">
                   <div class="item">
-                    正确答案：
+                    answer:
                     <span
                       v-for="(val, index) in tipicData.answers"
                       :key="index"
@@ -110,7 +110,7 @@
                     </span>
                   </div>
                   <div class="item">
-                    答案解析：
+                    reason:
                     <div
                       v-html="
                         tipicData.analysis === '' ? '无' : tipicData.analysis
@@ -121,15 +121,15 @@
               </div>
               <div class="topicFoot">
                 <p>
-                  题目难度：{{
+                  Level: {{
                     tipicData.difficult === 1
-                      ? "简单"
+                      ? "easy"
                       : tipicData.difficult === 2
-                      ? "中等"
-                      : "困难"
+                      ? "medium"
+                      : "hard"
                   }}
                 </p>
-                <p>题目分数：{{ tipicData.score }}</p>
+                <p>score: {{ tipicData.score }}</p>
               </div>
             </el-popover>
           </template>
@@ -138,10 +138,10 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >保存</el-button
+            >Save</el-button
           >
         </span>
       </template>
@@ -277,7 +277,7 @@ const handleSubmit = async () => {
   } else {
     ElMessage({
 
-      message: "已选题目为空，请设置测试题目！",
+      message: "selected questions empty",
       type: "error",
       showClose: false,
     })
@@ -323,7 +323,7 @@ const handleTransfer = (val) => {
   if (val.length > 40) {
     ElMessage({
 
-      message: "最多选择40条数据！",
+      message: "no more than 40 questions!",
       type: "error",
       showClose: false,
     })
@@ -413,7 +413,7 @@ const handleShow = async (val) => {
         top: 140px;
         left: 156px;
         &::after {
-          content: "一条数据也没有~";
+          content: "empty data";
           display: block;
           text-align: center;
           color: #332929;

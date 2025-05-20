@@ -2,18 +2,18 @@
 <template>
   <el-dialog
     v-model="dialogSortVisible"
-    title="章排序"
+    title="Section Sort"
     :before-close="handleClose"
   >
     <div>
       <el-form ref="ruleFormRef" label-width="150px" class="demo-ruleForm">
-        <el-form-item label="将本章移动至序号：" class="marg-b-0">
+        <el-form-item label="Move current to No." class="marg-b-0">
           <el-input-number
             v-model="num"
             @change="handleChange"
             :min="minNum"
             :max="itemData.length"
-            label="描述文字"
+            label="Desc"
           ></el-input-number>
         </el-form-item>
       </el-form>
@@ -21,9 +21,9 @@
     <template #footer>
       <span class="dialog-footer">
         <el-button class="button buttonPrimary" @click="handleClose"
-          >取消</el-button
+          >Cancel</el-button
         >
-        <el-button class="button primary" @click="handleSubmit">提交</el-button>
+        <el-button class="button primary" @click="handleSubmit">Submit</el-button>
       </span>
     </template>
   </el-dialog>

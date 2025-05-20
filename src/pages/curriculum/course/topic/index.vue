@@ -19,19 +19,19 @@
                   :class="!item.isCheck ? 'textDefault' : 'textForbidden'"
                   class=""
                   @click.stop="handleAdd(item)"
-                  >添加阶段考试</span
+                  >Add Exam</span
                 >
               </div>
             </div>
           </template>
           <div class="itemCon topicCon" v-if="item.sections.length > 0">
             <div class="headTitle">
-              <span>序号</span>
-              <span>小节名称</span>
-              <span>题目</span>
-              <span>题目数目</span>
-              <span>题目分数</span>
-              <span>操作</span>
+              <span>No.</span>
+              <span>sub name</span>
+              <span>Question</span>
+              <span>Num</span>
+              <span>Score</span>
+              <span>Action</span>
             </div>
             <div class="item">
               <ul>
@@ -52,7 +52,7 @@
                     </div>
                     <div>
                       <span class="textDefault" @click="handleSetOpen(val)">{{
-                        val.subjectNum > 0 ? "查看题目" : "设置题目"
+                        val.subjectNum > 0 ? "view" : "set"
                       }}</span>
                     </div>
                     <div>
@@ -66,7 +66,7 @@
                         class="textWarning"
                         v-if="val.type === 3"
                         @click="handleDeleteOpen(val)"
-                        >删除阶段考试</span
+                        >delete</span
                       >
                     </div>
                   </div>
@@ -128,7 +128,7 @@ const props = defineProps({
 const router = useRouter(); //获取全局
 const route = useRoute(); //获取局部
 const emit = defineEmits(); //子组件获取父组件事件传值
-const deleteText = ref("此操作将永久删除阶段测试，是否继续？"); //删除提示
+const deleteText = ref("Confirm to delete the exam forever?"); //删除提示
 let dialogVisible = ref(false); //弹层隐藏显示
 let itemData = reactive([]); //目录数据
 let activeNames = reactive(["1"]);

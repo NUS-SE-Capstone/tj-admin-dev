@@ -2,41 +2,41 @@
 <template>
   <div class="classAbout">
     <div class="title">
-      <span class="itemtitle">课程分类</span>
+      <span class="itemtitle">Catalog</span>
       <span class="item">{{ courseData.cateNames }}</span>
     </div>
     <div class="title">
-      <span class="itemtitle">课程名称</span>
+      <span class="itemtitle">Name</span>
       <span class="item">{{ courseData.name }}</span>
     </div>
     <div class="title">
-      <span class="itemtitle">售卖模式</span>
-      <span class="item">{{ courseData.free ? "免费" : "收费" }}</span>
+      <span class="itemtitle">SaleMode</span>
+      <span class="item">{{ courseData.free ? "Free" : "Paid" }}</span>
     </div>
     <div class="title">
-      <span class="itemtitle">课程价格</span>
-      <span class="item">{{ (courseData.price / 100).toFixed(2) }}元</span>
+      <span class="itemtitle">Price</span>
+      <span class="item">$ {{ (courseData.price / 100).toFixed(2) }}</span>
     </div>
     <div class="title">
-      <span class="itemtitle">课程下架时间</span>
+      <span class="itemtitle">Offline</span>
       <span class="item">{{ formatTimeOrdinary(courseData.purchaseEndTime) }}</span>
     </div>
     <div class="title">
-      <span class="itemtitle">课程有效期</span>
+      <span class="itemtitle">Available</span>
       <span class="item"
-        >{{ courseData.validDuration > 99 ? "永久" : courseData.validDuration }}
-        <span v-if="courseData.validDuration <= 99">月</span>
+        >{{ courseData.validDuration > 99 ? "Permanent" : courseData.validDuration }}
+        <span v-if="courseData.validDuration <= 99"> Months</span>
       </span>
     </div>
     <div class="title">
-      <span class="itemtitle">课程介绍</span>
+      <span class="itemtitle">Intro</span>
       <span class="item">{{ courseData.introduce }}</span>
     </div>
     <div class="title">
-      <span class="itemtitle">适学人群</span>
+      <span class="itemtitle">ForCrowd</span>
       <span class="item">{{ courseData.usePeople }}</span>
     </div>
-    <div class="title">授课老师</div>
+    <div class="title">Teacher</div>
     <div class="classTeacher">
       <div class="swiper-button" v-show="courseTeacher.data.length > 2">
         <span class="prev"><span class="iconfont icon-a-shouqi2x"></span></span>
@@ -64,7 +64,7 @@
           >
             <div class="teacherInfo">
               <div class="teach">
-                <img :src="item.icon" alt="" />
+                <img src="../../../../assets/img_touxiang_small@2x.png" alt="" />
                 <div>
                   <div class="name">{{ item.name }}</div>
                   <div>{{ item.job }}</div>
@@ -90,7 +90,7 @@
         </swiper>
       </div>
     </div>
-    <div class="title">课程详情</div>
+    <div class="title">Detail</div>
     <div class="item">{{ courseData.detail }}</div>
   </div>
 </template>

@@ -184,7 +184,7 @@ const props = defineProps({
 //初始化路由
 const router = useRouter();
 const emit = defineEmits(); //子组件获取父组件事件传值
-const deleteText = ref("此操作将永久删除该题目，是否继续？"); //删除提示
+const deleteText = ref("Confirm to delete the question forever?"); //删除提示
 const drawer = ref(false); //标题抽屉弹层显示隐藏
 let titleId = ref(""); //要重置的题目id
 let dialogDeleteVisible = ref(false); //控制删除弹层

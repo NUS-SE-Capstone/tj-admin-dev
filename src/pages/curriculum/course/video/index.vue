@@ -18,11 +18,11 @@
           </template>
           <div class="itemCon" v-if="item.sections.length > 0">
             <div class="headTitle">
-              <span>序号</span>
-              <span style="margin-left: 14px">小节名称</span>
-              <span class="textLeft">视频名称</span>
-              <span>视频时长</span>
-              <span>免费试看</span>
+              <span>No.</span>
+              <span style="margin-left: 14px">Sub Name</span>
+              <span class="textLeft">Name</span>
+              <span>Duration</span>
+              <span>Try</span>
             </div>
             <div class="item">
               <ul>
@@ -53,7 +53,7 @@
                           class="textDefault"
                           @click="handleOpen(val.id)"
                           style="margin-left: 0px"
-                          >选择视频</span
+                          >Select</span
                         ><span class="textDefault">
                           <el-upload
                             class="upload-demo"
@@ -71,7 +71,7 @@
                             :file-list="fileList"
                           >
                             <el-button size="small" type="primary"
-                              >本地上传</el-button
+                              >Local</el-button
                             >
                           </el-upload></span
                         >
@@ -88,7 +88,7 @@
                       <el-switch
                         v-model="val.trailer"
                         active-color="#00BE76"
-                        active-text="试看3分钟"
+                        active-text="Try 3 min"
                         :disabled="free"
                         @change="handleTrailer($event, val)"
                       >

@@ -6,25 +6,25 @@
       :show-close="false"
     >
       <div v-if="title==='确认上架'">
-        <p>请确认是否立即上架？</p>
-        <p>上架后课程将在用户端进行展示，上架后若修改课程信息，需将课程先进行下架</p>
+        <p>Confirm online?</p>
+        <p>After course online, it will be displayed on the user end. It needs offline first if you want to modify course info.</p>
       </div>
       <p v-else>{{statusText}}</p>
 
       <div class="statusList" v-if="title==='确认下架'">
          <ul>
-           <li><label>课程名称：</label>{{courseData.name}}</li>
-           <li><label>报名人数：</label>{{courseData.sold}}</li>
-           <li><label>下架时间：</label>{{courseData.purchaseEndTime}}</li>
+           <li><label>name:</label>{{courseData.name}}</li>
+           <li><label>subscribers:</label>{{courseData.sold}}</li>
+           <li><label>offline:</label>{{courseData.purchaseEndTime}}</li>
          </ul>
       </div>
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >再想想</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >确认</el-button
+            >Confirm</el-button
           >
         </span>
       </template>

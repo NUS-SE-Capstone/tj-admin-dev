@@ -17,11 +17,11 @@
           </template>
           <div class="itemCon" v-if="item.sections.length > 0">
             <div class="headTitle">
-              <span>序号</span>
-              <span>小节名称</span>
-              <span>视频名称</span>
-              <span>视频时长</span>
-              <span>免费试看</span>
+              <span>No.</span>
+              <span>sub name</span>
+              <span>video</span>
+              <span>duration</span>
+              <span>try</span>
             </div>
             <div class="item">
               <ul>
@@ -46,7 +46,7 @@
                       <el-switch
                         v-model="val.trailer"
                         active-color="#00BE76"
-                        active-text="试看3分钟"
+                        active-text="Try 3 min"
                         :disabled="free"
                         @change="handleTrailer($event, val)"
                       >

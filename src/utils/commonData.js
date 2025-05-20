@@ -13,56 +13,56 @@ export const statusData = [
 export const difficultyData = [
   {
     value: 1,
-    label: "简单",
+    label: "easy",
   },
   {
     value: 2,
-    label: "中等",
+    label: "medium",
   },
   {
     value: 3,
-    label: "困难",
+    label: "hard",
   },
 ]
 // 題目類型
 export const titleTypeData = [
   {
     value: 1,
-    label: "单选题",
+    label: "select",
   },
   {
     value: 2,
-    label: "多选题",
+    label: "multi-select",
   },
   {
     value: 3,
-    label: "不定向选择",
+    label: "any-select",
   },
   {
     value: 4,
-    label: "判断题",
+    label: "judge",
   }
 ]
 // 答案类型
 export const titleAnswerData = [
   {
     value: 1,
-    label: "正确",
+    label: "true",
   },
   {
     value: 0,
-    label: "错误",
+    label: "false",
   }
 ]
 // 售卖模式
 export const sellingModelData = [
   {
     value: 0,
-    label: "免费",
+    label: "free",
   },
   {
     value: 1,
-    label: "付费",
+    label: "paid",
   }
 ]
 // 课程状态
@@ -88,23 +88,23 @@ export const courseStatusData = [
 export const stepData = [
   {
     value: 1,
-    label: "基本信息",
+    label: "Basic",
   },
   {
     value: 2,
-    label: "课程目录",
+    label: "Catalog",
   },
   {
     value: 3,
-    label: "课程视频",
+    label: "Video",
   },
   {
     value: 4,
-    label: "课程题目",
+    label: "Question",
   },
   {
     value: 5,
-    label: "课程老师",
+    label: "Teacher",
   }
 ]
 // 优惠卷类型数据
@@ -267,11 +267,11 @@ export const resultData = [
 export const questionsData = [
   {
     value: 1,
-    label: "已查看",
+    label: "Seen",
   },
   {
     value: 0,
-    label: "未查看",
+    label: "Not see",
   }
 ]
 // 性别
@@ -322,10 +322,10 @@ export const redeemTypeData = [
 export const showStautsData = [
   {
     value: 0,
-    label: "显示",
+    label: "Show",
   },
   {
     value: 1,
-    label: "隐藏",
+    label: "Hide",
   }
 ]

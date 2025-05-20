@@ -30,7 +30,7 @@
                   @focus="handleFocusInput(item)"
                 ></el-input
                 ><span v-if="item.name === ''" class="tipError"
-                  >章名称为空，请输入章名称</span
+                  >Section is empty, please input</span
                 >
               </div>
               <div class="textR">
@@ -38,24 +38,24 @@
                   class="textDefault"
                   :class="!item.canUpdate ? 'textForbidden' : ''"
                   @click.stop="handleSortOpen(item)"
-                  >章排序</span
+                  >Sort</span
                 ><span class="textDefault" @click.stop="handleAddMinutia(item)"
-                  >添加小节</span
+                  >Add sub</span
                 ><span
                   class="textWarning"
                   :class="!item.canUpdate ? 'textForbidden' : ''"
                   @click.stop="handleDeleteOpen(item)"
-                  >删除本章</span
+                  >Delete</span
                 >
               </div>
             </div>
           </template>
           <div class="itemCon" v-if="item.sections.length > 0">
             <div class="headTitle">
-              <span>序号</span>
-              <span class="padl">小节名称</span>
-              <span>排序</span>
-              <span>操作</span>
+              <span>No.</span>
+              <span class="padl">SubName</span>
+              <span>Sort</span>
+              <span>Action</span>
             </div>
             <div class="item">
               <ul>
@@ -85,7 +85,7 @@
                         @focus="handleFocusInput(val)"
                       ></el-input
                       ><span v-if="val.name === ''" class="tipError"
-                        >小节名称为空，请输入小节名称</span
+                        >Sub name is empty</span
                       >
                     </div>
                     <div class="sortIcon">
@@ -126,7 +126,7 @@
                       :class="!item.canUpdate ? 'textForbidden' : ''"
                       @click="handleDeleteMinutiaOpen(val)"
                     >
-                      删除本节
+                      Delete
                     </div>
                   </div>
                 </li>
@@ -184,7 +184,7 @@ const props = defineProps({
 const router = useRouter(); //获取全局
 const route = useRoute(); //获取局部
 const emit = defineEmits(); //子组件获取父组件事件传值
-const text = ref("新增章");
+const text = ref("Add Section");
 const deleteText = ref(""); //删除提示
 // let dialogFormVisible = ref(false); //弹层隐藏显示
 let editActive = ref(0); //当前小节的下标值
@@ -225,7 +225,7 @@ const getCatalogue = async () => {
           id: null,
           subId: "010" + 1,
           index: 1,
-          name: "章名称",
+          name: "Section Name",
           courseId: 1,
           type: 1,
           sections: [],
@@ -255,7 +255,7 @@ const handleSubmit = async (str) => {
         isName.value = false;
         ElMessage({
           showClose: true,
-          message: "章名称为空,请输入章名称",
+          message: "section name empty",
           type: "error",
           showClose: false,
         });
@@ -268,7 +268,7 @@ const handleSubmit = async (str) => {
           isKnobbleName.value = false;
           ElMessage({
             showClose: true,
-            message: "小节名称为空,请输入小节名称",
+            message: "sub name empty",
             type: "error",
             showClose: false,
           });
@@ -346,7 +346,7 @@ const handleDelete = async () => {
           val.sections.splice(i, 1);
           ElMessage({
             showClose: true,
-            message: "删除成功",
+            message: "del success",
             type: "success",
             showClose: false,
           });
@@ -366,7 +366,7 @@ const handleDelete = async () => {
         itemData.value.splice(index, 1);
         ElMessage({
           showClose: true,
-          message: "删除成功",
+          message: "del success",
           type: "success",
           showClose: false,
         });
@@ -394,7 +394,7 @@ const handleDeleteOpen = (item) => {
           itemData.value.splice(index, 1);
           ElMessage({
             showClose: true,
-            message: "删除成功",
+            message: "del success",
             type: "success",
             showClose: false,
           });
@@ -409,7 +409,7 @@ const handleDeleteMinutiaOpen = (item) => {
     if (item.id || item.subId) {
       knobData.value = item;
       dialogDeleteVisible.value = true;
-      deleteText.value = `若删除该小节，阶段三、四中的小节将一同删除，是否继续删除？`;
+      deleteText.value = `If this section is deleted, sections in stages 3/4 will be deleted. Continue?`;
     }
   }
 };
@@ -426,7 +426,7 @@ const handleAddMinutia = (item) => {
         id: null,
         subId: val.sections.length + 1, //给小节添加临时id
         index: null,
-        name: "小节名称",
+        name: "sub name",
         isEdit: false,
         type: 2,
         canUpdate: true,
@@ -462,7 +462,7 @@ const handleAdd = () => {
     id: null,
     subId: "010" + num,
     index: num,
-    name: "章名称",
+    name: "section name",
     courseId: 1,
     type: 1,
     sections: [],
@@ -497,10 +497,10 @@ const handleTextInput = (obj) => {
 //
 const handleFocusInput = (obj) => {
   console.log(obj);
-  if (obj.name === "章名称") {
+  if (obj.name === "section name") {
     obj.name = "";
   }
-  if (obj.name === "小节名称") {
+  if (obj.name === "sub name") {
     obj.name = "";
   }
 };

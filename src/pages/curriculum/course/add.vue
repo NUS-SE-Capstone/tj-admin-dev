@@ -50,24 +50,24 @@
       <div class="detailBox" style="border-top: 1px solid #F5EFEE;">
         <div class="btn">
           <el-button class="button buttonSub" @click="handleOpenCancel"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button class="button buttonSub" v-if="active !== 0" @click="handleBack"
-            >上一步</el-button
+            >Back</el-button
           >
           <el-button
             class="button"
             v-preventReClick
             :class="active === 4 ? 'primary' : 'buttonSub'"
             @click="handleSubmit('getback')"
-            >保存并返回</el-button
+            >Save</el-button
           >
           <el-button
             v-if="active !== 4"
             v-preventReClick
             class="button primary"
             @click="handleNext"
-            >保存并下一步</el-button
+            >Next</el-button
           >
         </div>
       </div>
