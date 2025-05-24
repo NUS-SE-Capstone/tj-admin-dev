@@ -5,7 +5,7 @@ import {USER_KEY, TOKEN_NAME} from "../config/global";
 import  router  from '../router';
 import proxy from '../config/proxy';
 const env = import.meta.env.MODE || "development";
-const host = proxy[env].host; // 如果是mock模式 就不配置host 会走本地Mock拦截
+const host = env === 'mock' ? 'https://tjxt-dev.itheima.net/api' : proxy[env].host; // 如果是mock模式 就不配置host 会走本地Mock拦截
 const CODE = {
   LOGIN_TIMEOUT: 1000,
   REQUEST_SUCCESS: 200,
