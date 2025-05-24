@@ -10,7 +10,8 @@
     "build": "vite build --mode development",
     "build:test": "vite build --mode test",
     "build:prod": "vite build --mode pro",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "@tinymce/tinymce-vue": "^5.0.0",
