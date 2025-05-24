@@ -326,7 +326,6 @@ const handleOpenDescend = async (row) => {
           title.value = "Confirm online";
         } else {
           ElMessage({
-            showClose: true,
             message: res.data.msg,
             type: "error",
             showClose: false,

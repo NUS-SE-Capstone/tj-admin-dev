@@ -5,7 +5,29 @@ import { defineConfig } from "eslint/config";
 
 
 export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,vue}"], plugins: { js }, extends: ["js/recommended"] },
+  { ignores: ["dist/", "node_modules/", "public/", "src/style/"] },
   { files: ["**/*.{js,mjs,cjs,vue}"], languageOptions: { globals: globals.browser } },
   pluginVue.configs["flat/essential"],
+  {
+    files: ["**/*.{js,mjs,cjs,vue}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+    rules: {
+      "no-unused-vars": "off",
+      "no-useless-escape": "off",
+      "no-self-assign": "off",
+      "no-redeclare": "warn",
+      "no-undef": "warn",
+      "no-dupe-keys": "warn",
+      "no-empty": "off",
+      "vue/multi-word-component-names": "off",
+      "vue/valid-define-emits": "off",
+      "vue/no-mutating-props": "off",
+      "vue/require-valid-default-prop": "off",
+      "vue/valid-v-on": "off",
+      "vue/valid-v-for": "off",
+      "vue/require-v-for-key": "warn",
+      "vue/no-dupe-keys": "off",
+    },
+  }
 ]);

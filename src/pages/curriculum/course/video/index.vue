@@ -166,7 +166,7 @@ let courseId = route.params.id //课程id
 let mediaId = ref("")//视频id
 let preview = ref(null)
 const startLoading = () => {
-  loadingInstance = ElLoading.service({
+  loadingInstance.value = ElLoading.service({
     lock: true,
     text: "视频上传中…",
     background: "rgba(51, 51, 51, 0.4)",
@@ -296,7 +296,7 @@ const httpRequest = (file, id) => {
   uploader.on("media_progress", function (info) {
     if (info.percent === 1) {
       // 上传成功后关闭tost加载弹层
-      loadingInstance.close()
+      loadingInstance.value.close()
     }
   })
   // 视频上传完成时
@@ -320,7 +320,7 @@ const httpRequest = (file, id) => {
         .then((res) => {
           const data = res.data
           if (res.code === 200) {
-            loadingInstance.close()
+            loadingInstance.value.close()
             ElMessage({
 
               message: "上传成功",

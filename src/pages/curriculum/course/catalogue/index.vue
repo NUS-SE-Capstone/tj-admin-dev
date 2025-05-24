@@ -244,7 +244,6 @@ const handleSubmit = async (str) => {
   let courId = props.courseId !== "null" ? props.courseId : route.params.id;
   if (itemData.value.length === 0) {
     ElMessage({
-      showClose: true,
       message: "未设置章，请设置章",
       type: "error",
       showClose: false,
@@ -254,7 +253,6 @@ const handleSubmit = async (str) => {
       if (itemData.value[i].name === "") {
         isName.value = false;
         ElMessage({
-          showClose: true,
           message: "section name empty",
           type: "error",
           showClose: false,
@@ -267,7 +265,6 @@ const handleSubmit = async (str) => {
         if (itemData.value[i].sections[j].name === "") {
           isKnobbleName.value = false;
           ElMessage({
-            showClose: true,
             message: "sub name empty",
             type: "error",
             showClose: false,
@@ -302,7 +299,6 @@ const handleSubmit = async (str) => {
             }
           } else {
             ElMessage({
-              showClose: true,
               message: res.data.msg,
               type: "error",
               showClose: false,
@@ -319,9 +315,9 @@ const handleSortOpen = (item) => {
     sortValue.value = item.index;
     minNum.value = item.maxIndexOnShelf + 1;
     if (item.id) {
-      chapterId = item.id; //后传传的id
+      chapterId.value = item.id; //后传传的id
     } else {
-      chapterId = item.subId; //获取章的前端自定义id
+      chapterId.value = item.subId; //获取章的前端自定义id
     }
 
     dialogSortVisible.value = true;
@@ -345,7 +341,6 @@ const handleDelete = async () => {
         ) {
           val.sections.splice(i, 1);
           ElMessage({
-            showClose: true,
             message: "del success",
             type: "success",
             showClose: false,
@@ -365,7 +360,6 @@ const handleDelete = async () => {
       ) {
         itemData.value.splice(index, 1);
         ElMessage({
-          showClose: true,
           message: "del success",
           type: "success",
           showClose: false,
@@ -393,7 +387,6 @@ const handleDeleteOpen = (item) => {
         } else {
           itemData.value.splice(index, 1);
           ElMessage({
-            showClose: true,
             message: "del success",
             type: "success",
             showClose: false,
@@ -479,7 +472,7 @@ const handleClose = () => {
 //获取设置的配许值
 const getSortValue = (num) => {
   itemData.value.forEach((val, index) => {
-    if (val.id === chapterId || val.subId === chapterId) {
+    if (val.id === chapterId.value || val.subId === chapterId.value) {
       // 此处减1，原因是num是从1开始的，数组索引值是从0开始的
       let obj = val; //先把当前的要排序的对象用变量保存，然后删除当前触发的对象
       itemData.value.splice(index, 1);

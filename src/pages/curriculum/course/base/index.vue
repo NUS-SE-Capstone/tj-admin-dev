@@ -388,9 +388,9 @@ watch(fromData, (newValue, oldValue) => {
     // 学习有效期选择
     if (isTimeLimit.value) {
       if (validDuration < 1) {
-        fromData.validDuration = 1;
+        fromData.value.validDuration = 1;
       } else if (validDuration > 99) {
-        fromData.validDuration = 99;
+        fromData.value.validDuration = 99;
       }
     }
   });
@@ -554,7 +554,7 @@ const handleSubmit = async (str) => {
 };
 // 选择课程分类
 const handleChange = (val) => {
-  fromData.thirdCateId = val;
+  fromData.value.thirdCateId = val;
 };
 // 名字控制30个字符
 const nameTextInput = () => {

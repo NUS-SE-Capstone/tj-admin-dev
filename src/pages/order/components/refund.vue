@@ -127,7 +127,6 @@ const handleSubmit = async () => {
           }
         })
         .catch((err) => { })
-    } else {
     }
   })
 

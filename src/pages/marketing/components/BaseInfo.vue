@@ -604,10 +604,10 @@ watch(fromData, (newValue, oldValue) => {
       fromData.value.discountAmount = parseInt(discountVal * 100) / 100
     }
     if (maxDiscountVal < 10000 && maxDiscountVal > 0) {
-      fromData.maxDiscountAmount = parseInt(maxDiscountVal * 100) / 100
+      fromData.value.maxDiscountAmount = parseInt(maxDiscountVal * 100) / 100
     }
     if (discountRate < 11 && discountRate > -1) {
-      fromData.discountRate = parseInt(discountRate * 10) / 10
+      fromData.value.discountRate = parseInt(discountRate * 10) / 10
     }
   })
 })
