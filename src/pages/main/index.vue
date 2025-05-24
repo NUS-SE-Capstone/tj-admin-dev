@@ -124,7 +124,7 @@
       </div> -->
       <!-- 常用功能 -->
       <div class="CommonUse bg-wt">
-        <p class="CommonUsetitle">CommonUse</p>
+        <p class="CommonUsetitle">Common Use</p>
         <!-- <div class="item-card">
           <router-link to="/user/users">
             <div class="card">
