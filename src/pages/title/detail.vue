@@ -125,7 +125,7 @@
               </td>
               <td colspan="3">
                 <span v-if="detailData.data.categories">
-                  <span v-for="(c,i) in detailData.data.categories">
+                  <span v-for="(c,i) in detailData.data.categories" :key="i">
                     {{c}} {{i < detailData.data.categories.length-1 ? "/" : ""}}
                   </span></span
                 >
