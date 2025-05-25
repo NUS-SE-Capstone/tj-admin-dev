@@ -18,18 +18,18 @@
         class="avatar"
       />
 
-      <div v-else class="avatar-uploader-icon"><span></span>上传<Plus /></div>
+      <div v-else class="avatar-uploader-icon"><span></span>Upload<Plus /></div>
       <div v-if="imageUrl || upladImg">
         <span class="el-delect" @click.stop="handleRemove"></span>
         <div class="el-upload-list__item-actions">
-          <div class="avatar-uploader-icon"><span></span>重新上传<Plus /></div>
+          <div class="avatar-uploader-icon"><span></span>reupload<Plus /></div>
         </div>
       </div>
     </el-upload>
     <div>
-      图片大小不超过2M<br /><span v-if="isCourse"
-        >建议图片尺寸472*264<br /></span
-      >仅能上传PNG JPG JPEG类型图片
+      pic size should be smaller than 2M<br /><span v-if="isCourse"
+        >suggest size 472*264<br /></span
+      >only JPG/JPEG
     </div>
   </div>
 </template>
@@ -84,7 +84,7 @@ const beforeAvatarUpload = (file) => {
   if (!isLt2M) {
     ElMessage({
 
-      message: "图片大小不超过 2MB!",
+      message: "pic size should be smaller than 2MB!",
       type: "error",
       showClose:false,
     })

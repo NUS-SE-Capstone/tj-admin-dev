@@ -60,10 +60,11 @@ export const sellingModelData = [
     value: 0,
     label: "free",
   },
-  {
-    value: 1,
-    label: "paid",
-  }
+  // todo: pay service will be added in the future
+  // {
+  //   value: 1,
+  //   label: "paid",
+  // }
 ]
 // 课程状态
 export const courseStatusData = [
