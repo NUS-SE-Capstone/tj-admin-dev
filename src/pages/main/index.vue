@@ -124,7 +124,7 @@
       </div> -->
       <!-- 常用功能 -->
       <div class="CommonUse bg-wt">
-        <p class="CommonUsetitle">Common Use</p>
+        <p class="CommonUsetitle">Common Functions</p>
         <!-- <div class="item-card">
           <router-link to="/user/users">
             <div class="card">
@@ -161,17 +161,17 @@
                   class="CommonUseicon"
                 />
               </div>
-              <div class="CommonUseinfo">add course</div>
+              <div class="CommonUseinfo">Course</div>
             </div>
           </router-link>
-          <!-- <router-link to="/order/index">
+          <router-link to="/title/index">
             <div class="card">
               <div class="CommonUsetit">
                 <img src="@/assets/order.png" alt="" class="CommonUseicon" />
               </div>
-              <div class="CommonUseinfo">订单管理</div>
+              <div class="CommonUseinfo">Question</div>
             </div>
-          </router-link> -->
+          </router-link>
         </div>
       </div>
       <!-- 关键词top10 -->
