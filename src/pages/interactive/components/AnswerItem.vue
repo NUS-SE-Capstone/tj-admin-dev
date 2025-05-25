@@ -1,11 +1,11 @@
 <!-- 回答列表 -->
 <template>
   <div class="bg-wt radius">
-    <div class="titleInfo">回答列表</div>
+    <div class="titleInfo">AnswerList</div>
     <!-- 表格 -->
     <el-table :data="itemData" border stripe v-loading="loading">
-      <el-table-column type="index" align="center" width="100" label="序号" />
-      <el-table-column label="学员昵称" min-width="180" class-name="textLeft">
+      <el-table-column type="index" align="center" width="100" label="No." />
+      <el-table-column label="User" min-width="180" class-name="textLeft">
         <template #default="scope">
           <div class="studentHead">
             <img :src="scope.row.userIcon" />
@@ -15,7 +15,7 @@
       </el-table-column>
       <el-table-column
         prop=""
-        label="回答内容"
+        label="Content"
         width="350"
         class-name="textLeft"
       >
@@ -38,11 +38,11 @@
       <el-table-column
         prop="replyTimes"
         align="center"
-        label="回答数量"
+        label="ReplyNum"
         width="150"
       >
       </el-table-column>
-      <el-table-column align="center" label="点赞数量" width="150">
+      <el-table-column align="center" label="Like" width="150">
         <template #default="scope">
           <span class="praise">
             <i
@@ -56,30 +56,30 @@
       <el-table-column
         prop="createTime"
         align="center"
-        label="回答时间"
+        label="Time"
         min-width="200"
         :formatter="formatTime"
       >
       </el-table-column>
       <el-table-column
         fixed="right"
-        label="操作"
+        label="Action"
         align="center"
         min-width="220"
       >
         <template #default="scope">
           <div class="operate">
             <span class="textDefault" @click="handleReply(scope.row)"
-              >回复</span
+              >Reply</span
             >
             <span
               class="textDefault"
               :class="!scope.row.hidden ? 'textWarning' : ''"
               @click="handleSetStatus(scope.row)"
-              >{{ !scope.row.hidden ? "隐藏" : "显示" }}</span
+              >{{ !scope.row.hidden ? "Hide" : "Show" }}</span
             >
             <span class="textDefault" @click="handleCheck(scope.row)"
-              >查看更多</span
+              >More</span
             >
           </div>
         </template>
@@ -125,7 +125,7 @@
     <div class="bottomBtn">
       <div class="btn">
         <el-button class="button primary" @click="handleGetback"
-          >返回</el-button
+          >Back</el-button
         >
       </div>
     </div>
@@ -178,7 +178,7 @@ const props = defineProps({
 const router = useRouter();
 const emit = defineEmits(); //子组件获取父组件事件传值
 const statusText = ref(
-  "此操作将隐藏该条提问及所属的回答和评价，是否继续隐藏？"
+  "Confirm to hide this QA?"
 ); //删除提示
 let replyRef = ref(); //回复弹层的ref
 let Ishidden = ref(""); //是否隐藏：true隐藏、false显示
@@ -204,7 +204,7 @@ const handleSubmit = async () => {
   if (reply.content === undefined) {
     ElMessage({
 
-      message: "回复内容不能为空，请输入",
+      message: "reply can't be empty",
       type: "error",
       showClose:false,
     });
@@ -215,7 +215,7 @@ const handleSubmit = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });
@@ -266,7 +266,7 @@ const handlePraise = async (row) => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });
@@ -281,7 +281,7 @@ const handleSetStatus = (row) => {
   if (hidden) {
     ElMessage({
 
-      message: "上一级回复为隐藏状态，无法显示",
+      message: "upper hidden, can't show",
       type: "error",
       showClose:false,
     });
@@ -290,12 +290,12 @@ const handleSetStatus = (row) => {
     Ishidden.value = row.hidden ? false : true;
     if (row.hidden) {
       // 设置显示
-      msg.value = "该条回答已显示";
+      msg.value = "QA is shown";
       handleStatus();
     } else {
       // 打开隐藏弹层
       dialogShowVisible.value = true;
-      msg.value = "该条回答已隐藏";
+      msg.value = "QA is hidden";
     }
   }
 };

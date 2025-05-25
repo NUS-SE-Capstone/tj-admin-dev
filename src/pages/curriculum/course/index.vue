@@ -15,14 +15,14 @@
             <span class="img"></span>
             <div class="text">
               <p>27</p>
-              <p>Online Courses</p>
+              <p>Onshelf Courses</p>
             </div>
           </li>
           <li>
             <span class="img"></span>
             <div class="text">
               <p>11</p>
-              <p>Offline Courses</p>
+              <p>Offshelf Courses</p>
             </div>
           </li>
           <li>

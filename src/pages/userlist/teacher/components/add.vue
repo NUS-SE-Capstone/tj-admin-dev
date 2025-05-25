@@ -12,7 +12,7 @@
       class="demo-ruleForm"
       label-position="right"
     >
-      <el-form-item label="教师名称：" prop="name">
+      <el-form-item label="Name: " prop="name">
         <div class="el-input">
           <el-input
             v-model="fromData.name"
@@ -24,7 +24,7 @@
           >
         </div>
       </el-form-item>
-      <el-form-item label="教师形象照：" prop="photo">
+      <el-form-item label="Phone: " prop="photo">
         <UploadImage
           @getFlag="getFlag"
           @getCoverUrl="getCoverUrl"
@@ -34,14 +34,14 @@
           ref="uploadImg"
         ></UploadImage>
       </el-form-item>
-      <el-form-item label="教师手机号：" prop="cellPhone">
+      <el-form-item label="Phone: " prop="cellPhone">
         <el-input
           v-model="fromData.cellPhone"
           placeholder="please input"
           @blur="checkteacherphone"
         />
       </el-form-item>
-      <el-form-item label="岗位：" prop="job">
+      <el-form-item label="Position: " prop="job">
         <div class="el-input">
           <el-input
             v-model="fromData.job"
@@ -54,7 +54,7 @@
           >
         </div>
       </el-form-item>
-      <el-form-item label="教师介绍：" prop="intro" class="textInput">
+      <el-form-item label="Intro: " prop="intro" class="textInput">
         <div class="inputText">
           <el-input
             v-model="fromData.intro"
@@ -72,10 +72,10 @@
     <template #footer>
       <span class="dialog-footer">
         <el-button class="button buttonPrimary" @click="handleClose"
-          >取消</el-button
+          >Cancel</el-button
         >
         <el-button class="button primary" v-preventReClick @click="handleSubmit"
-          >保存</el-button
+          >Save</el-button
         >
       </span>
     </template>
@@ -137,7 +137,7 @@ const validateUpload = (rule, value, callback) => {
   if (flag.value) {
     callback();
   } else {
-    callback(new Error("形象照为空，请上传形象照"));
+    callback(new Error("Phone is empty"));
   }
 };
 watch(
@@ -164,7 +164,7 @@ const rules = reactive({
     },
     {
       min: 2,
-      message: "请至少输入2个字符",
+      message: "at least 2 words",
       trigger: "blur",
     },
   ],
@@ -182,7 +182,7 @@ const rules = reactive({
         // 延迟执行0.3s，防止重复校验和校验不准确
         setTimeout(() => {
           if (isPhone.value === true) {
-            callback(new Error("教师手机号已存在，请重新输入"));
+            callback(new Error("already exists"));
           } else {
             callback();
           }
@@ -199,19 +199,19 @@ const rules = reactive({
     },
     {
       min: 2,
-      message: "请至少输入2个字符",
+      message: "at least 2 words",
       trigger: "blur",
     },
   ],
   intro: [
     {
       required: true,
-      message: "教师介绍为空，请输入教师介绍",
+      message: "introduction empty",
       trigger: "blur",
     },
     {
       min: 10,
-      message: "请至少输入10个字",
+      message: "at least 10 words",
       trigger: "blur",
     },
   ],
@@ -240,7 +240,7 @@ const handleSubmit = async () => {
           if (res.code === 200) {
             ElMessage({
 
-              message: "新增成功!",
+              message: "success!",
               type: "success",
               showClose: false,
             });
@@ -268,7 +268,7 @@ const handleSubmit = async () => {
           if (res.code === 200) {
             ElMessage({
 
-              message: "教师账号信息修改成功!",
+              message: "success!",
               type: "success",
               showClose: false,
             });

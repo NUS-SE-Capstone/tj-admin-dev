@@ -36,7 +36,7 @@
           @row-click="handleTable"
           min-width="1094px"
         >
-          <el-table-column label="选择" width="80">
+          <el-table-column label="Select" width="80">
             <template #default="scope">
               <el-radio v-model="sourceId" :label="scope.row.id"
                 ><i></i

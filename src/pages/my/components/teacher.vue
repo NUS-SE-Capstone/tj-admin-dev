@@ -210,28 +210,28 @@ const setRules = () => {
     job: [
       {
         required: true,
-        message: "岗位为空，请输入岗位名称",
+        message: "position is empty",
         trigger: "blur",
       },
-      { min: 2, max: 20, message: "请至少输入2个字", trigger: "blur" },
+      { min: 2, max: 20, message: "at least 2 words", trigger: "blur" },
       {
         pattern: /^[\u4e00-\u9fa5_a-zA-Z0-9]+$/,
-        message: "岗位名称格式错误，请输入中英文、数字",
+        message: "postion format error",
         trigger: "blur",
       },
     ],
     intro: [
       {
         required: true,
-        message: "教师介绍为空，请输入教师介绍",
+        message: "intro empty",
         trigger: "blur",
       },
-      { min: 10, max: 200, message: "请至少输入10个字符", trigger: "blur" },
+      { min: 10, max: 200, message: "at least 10", trigger: "blur" },
     ],
     photo: [
       {
         required: true,
-        message: "教师形象照为空，请上传教师形象照",
+        message: "photo empty",
         trigger: "blur",
       },
     ],
@@ -240,7 +240,7 @@ const setRules = () => {
     oldPassword: [
       {
         required: true,
-        message: "密码为空，请输入密码",
+        message: "password empty",
         trigger: "blur",
       },
       // 根据isPassword的值，验证是否与旧密码一致，若isPassword的值为true，则不一致，出错误文本提示：旧密码不正确，请重新输入；
@@ -250,7 +250,7 @@ const setRules = () => {
           // 延迟执行0.3s，防止重复校验和校验不准确
           setTimeout(() => {
             if (isPassword.value === false) {
-              callback(new Error("旧密码不正确，请重新输入"));
+              callback(new Error("reinput password"));
             } else {
               callback();
             }

@@ -60,10 +60,10 @@
               format="YYYY-MM-DD HH:mm:ss"
               value-format="YYYY-MM-DD HH:mm:ss"
               type="datetimerange"
-              range-separator="至"
+              range-separator="-"
               popper-class="gettime"
-              start-placeholder="请设置开始日期"
-              end-placeholder="请设置结束日期"
+              start-placeholder="start"
+              end-placeholder="end"
               :disabledDate="dateReceiveTimeOption"
               :default-time="defaultTime"
               clearable
@@ -120,9 +120,9 @@
               format="YYYY-MM-DD HH:mm:ss"
               value-format="YYYY-MM-DD HH:mm:ss"
               type="datetimerange"
-              range-separator="至"
-              start-placeholder="请设置开始日期"
-              end-placeholder="请设置结束日期"
+              range-separator="-"
+              start-placeholder="start"
+              end-placeholder="end"
               :disabledDate="dateUseTimeOption"
               clearable
               :disabled="
@@ -140,10 +140,10 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >保存</el-button
+            >Save</el-button
           >
         </span>
       </template>
@@ -588,7 +588,7 @@ const handleSubmit = async (str) => {
         if (res.code === 200) {
           ElMessage({
 
-            message: "恭喜你，操作成功！",
+            message: "action success",
             type: "success",
             showClose: false,
           })

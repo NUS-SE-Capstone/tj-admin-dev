@@ -90,14 +90,14 @@
         <span class="text">$</span>
       </div>
     </el-form-item>
-    <el-form-item label="Offline:" prop="purchaseEndTime">
+    <el-form-item label="PurchaseEnd:" prop="purchaseEndTime">
       <div class="el-input inputMarginR">
         <el-date-picker
           v-model="fromData.purchaseEndTime"
           value-format="YYYY-MM-DD HH:mm:ss"
           type="datetime"
           :disabledDate="expireTimeOption"
-          placeholder="please choose offline time"
+          placeholder="please choose offshelf time"
           clearable
           class="OffshelfTime"
           @change="handleDate($event)"
@@ -318,7 +318,7 @@ const rules = reactive({
     {
       trigger: "blur",
       required: true,
-      message: "offline time is empty",
+      message: "offshelf time is empty",
     },
   ],
   free: [
@@ -522,7 +522,7 @@ const handleSubmit = async (str) => {
         if (res.code === 200) {
           ElMessage({
 
-            message: "恭喜你，操作成功！",
+            message: "action success",
             type: "success",
             showClose: false,
           });

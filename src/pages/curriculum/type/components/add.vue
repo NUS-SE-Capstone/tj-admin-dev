@@ -51,9 +51,9 @@
     <template #footer>
       <span class="dialog-footer">
         <el-button class="button buttonPrimary" @click="handleClose"
-          >取消</el-button
+          >Cancel</el-button
         >
-        <el-button class="button primary" @click="handleSubmit">保存</el-button>
+        <el-button class="button primary" @click="handleSubmit">Save</el-button>
       </span>
     </template>
   </el-dialog>

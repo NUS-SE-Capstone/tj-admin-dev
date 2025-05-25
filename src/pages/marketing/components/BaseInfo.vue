@@ -131,9 +131,9 @@
           format="YYYY-MM-DD HH:mm:ss"
           value-format="YYYY-MM-DD HH:mm:ss"
           type="datetimerange"
-          range-separator="至"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
+          range-separator="-"
+          start-placeholder="start"
+          end-placeholder="end"
           :disabledDate="dateReceiveTimeOption"
           clearable
         >
@@ -147,9 +147,9 @@
           format="YYYY-MM-DD HH:mm:ss"
           value-format="YYYY-MM-DD HH:mm:ss"
           type="datetimerange"
-          range-separator="至"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
+          range-separator="-"
+          start-placeholder="start"
+          end-placeholder="end"
           :disabledDate="dateUseTimeOption"
           :disabled="!fromData.dateReceivePicker"
           clearable
@@ -717,7 +717,7 @@ const handleSubmit = async (str) => {
         if (res.code === 200) {
           ElMessage({
 
-            message: "恭喜你，操作成功！",
+            message: "action success",
             type: "success",
             showClose:false,
           })

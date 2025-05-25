@@ -21,13 +21,13 @@
       <div class="detailBox" style="padding-top:0">
         <div class="btn">
           <el-button class="button buttonSub" @click="handleGetback"
-            >返回</el-button
+            >Back</el-button
           >
           <el-button
             class="button primary"
             v-preventReClick
             @click="handleSubmit('getback')"
-            >保存并返回</el-button
+            >Save</el-button
           >
         </div>
       </div>

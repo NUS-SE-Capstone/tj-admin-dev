@@ -2,7 +2,7 @@
   <div class="contentBox">
     <div class="bg-wt radius marg-tp-20">
       <div class="detailBox">
-        <div class="tit" style="margin-top: 0"><span>题目信息</span></div>
+        <div class="tit" style="margin-top: 0"><span>Question</span></div>
         <!-- 主体内容 -->
         <!-- 选择题 -->
         <div
@@ -31,37 +31,37 @@
         <div class="title" v-if="detailData.data.type === 4">
           <h3 class="step" v-html="detailData.data.name"></h3>
         </div>
-        <div class="tit" style="padding-bottom: 0"><span>题目统计</span></div>
+        <div class="tit" style="padding-bottom: 0"><span>Summary</span></div>
         <div class="tableBox">
           <!-- 表格 -->
           <table class="table">
             <tr>
               <th class="tabletitle" style="border-left: 1px solid #f5efee">
-                题目类型
+                Type
               </th>
               <th>
-                <span v-if="detailData.data.type === 1">单选题</span>
-                <span v-if="detailData.data.type === 2">多选题</span>
+                <span v-if="detailData.data.type === 1">Select</span>
+                <span v-if="detailData.data.type === 2">Multi-select</span>
                 <span v-if="detailData.data.type === 3"
-                  >不定项选择题</span
+                  >Any-select</span
                 >
-                <span v-if="detailData.data.type === 4">判断题</span>
+                <span v-if="detailData.data.type === 4">Judge</span>
               </th>
-              <th class="tabletitle">难易程度</th>
+              <th class="tabletitle">Level</th>
               <th>
-                <span v-if="detailData.data.difficulty === 1">简单</span>
-                <span v-if="detailData.data.difficulty === 2">中等</span>
-                <span v-if="detailData.data.difficulty === 3">困难</span>
+                <span v-if="detailData.data.difficulty === 1">easy</span>
+                <span v-if="detailData.data.difficulty === 2">medium</span>
+                <span v-if="detailData.data.difficulty === 3">hard</span>
               </th>
-              <th class="tabletitle">正确答案</th>
-              <!-- 单选题答案 -->
+              <th class="tabletitle">Correct Answer</th>
+              <!-- Select答案 -->
               <th v-if="detailData.data.type === 1">
                 <span v-if="detailData.data.answers[0] === 1">A</span>
                 <span v-if="detailData.data.answers[0] === 2">B</span>
                 <span v-if="detailData.data.answers[0] === 3">C</span>
                 <span v-if="detailData.data.answers[0] === 4">D</span>
               </th>
-              <!-- 多选题答案 -->
+              <!-- Multi-select答案 -->
               <th v-if="detailData.data.type === 2">
                 <span v-if="detailData.data.answers[0] === 1">A</span>
                 <span v-if="detailData.data.answers[1] === 1">A</span>
@@ -101,27 +101,27 @@
               </th>
               <!-- 判断题答案 -->
               <th v-if="detailData.data.type === 4">
-                <span v-if="detailData.data.answers[0] === 1">正确</span>
-                <span v-if="detailData.data.answers[0] === 2">错误</span>
+                <span v-if="detailData.data.answers[0] === 1">True</span>
+                <span v-if="detailData.data.answers[0] === 2">False</span>
               </th>
-              <th class="tabletitle">分值</th>
+              <th class="tabletitle">Score</th>
               <th>{{ detailData.data.score }}分</th>
             </tr>
             <tr>
               <td class="tabletitle" style="border-left: 1px solid #f5efee">
-                引用次数
+                ReferTimes
               </td>
               <td>{{ detailData.data.useTimes || 0}}</td>
-              <td class="tabletitle">作答次数</td>
+              <td class="tabletitle">AnswerTimes</td>
               <td>{{ detailData.data.answerTimes || 0}}</td>
-              <td class="tabletitle">正确率</td>
+              <td class="tabletitle">Correct</td>
               <td>{{ detailData.data.correctTimes===0?0+'%':Math.round( parseFloat(detailData.data.correctTimes * 100 / detailData.data.answerTimes)*100) / 100+'%' }}</td>
-              <td class="tabletitle">更新人</td>
+              <td class="tabletitle">Updater</td>
               <td>{{ detailData.data.updater }}</td>
             </tr>
             <tr>
               <td class="tabletitle" style="border-left: 1px solid #f5efee">
-                所属分类
+                Category
               </td>
               <td colspan="3">
                 <span v-if="detailData.data.categories">
@@ -130,15 +130,15 @@
                   </span></span
                 >
               </td>
-              <td class="tabletitle">更新时间</td>
+              <td class="tabletitle">UpdateTime</td>
               <td colspan="3">{{ formatTimeOrdinary(detailData.data.updateTime) }}</td>
             </tr>
             <tr>
               <td class="tabletitle" style="border-left: 1px solid #f5efee">
-                题目解析
+                Reason
               </td>
               <td colspan="7">
-                <span v-if="detailData.data.analysis === ''">暂无解析</span>
+                <span v-if="detailData.data.analysis === ''">None</span>
                 <span v-else v-html="detailData.data.analysis"></span>
               </td>
             </tr>
@@ -149,7 +149,7 @@
     <div class="BoxBottom">
       <div class="btn">
         <el-button class="button primary" @click="handleGetback"
-          >返回</el-button
+          >Back</el-button
         >
       </div>
     </div>

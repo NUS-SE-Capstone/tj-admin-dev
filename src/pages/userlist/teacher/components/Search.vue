@@ -5,7 +5,7 @@
       <el-form ref="ruleForm" :inline="true" :model="searchData">
         <el-row :gutter="30">
           <el-col :span="6">
-            <el-form-item label="教师状态" prop="status">
+            <el-form-item label="Status" prop="status">
               <div class="el-input">
                 <el-select
                   v-model="searchData.status"
@@ -24,7 +24,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="教师名称" prop="name">
+            <el-form-item label="Name" prop="name">
               <el-input
                 placeholder="please input"
                 v-model="searchData.name"
@@ -34,17 +34,17 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="教师手机号" prop="phone">
+            <el-form-item label="Phone" prop="phone">
               <el-input placeholder="please input" clearable v-model="searchData.phone" />
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <div class="btn">
               <el-button class="button primary" @click="handleSearch"
-                >搜索</el-button
+                >Search</el-button
               >
               <el-button class="button buttonSub" @click="handleReset(ruleForm)"
-                >重置</el-button
+                >Reset</el-button
               >
             </div>
           </el-col>

@@ -71,7 +71,7 @@ import Add from "./components/add.vue"
 import CreateSuccee from "./components/addSuccee.vue"
 // ------定义变量------
 const statusBase = statusData
-const text = ref("新增教师")
+const text = ref("Add Teacher") //弹层标题
 const loading = ref(false)
 const add = ref()
 let title = ref("")
@@ -137,12 +137,12 @@ const handleCurrentChange = (val) => {
 }
 // 打开新增弹层
 const handleAdd = () => {
-  title.value = "新增教师账号"
+  title.value = "Create Teacher Account"
   dialogFormVisible.value = true
 }
 // 打开编辑弹层
 const handleEdit = (id) => {
-  title.value = "编辑教师信息"
+  title.value = "Edit Teacher"
   dialogFormVisible.value = true
   getDetailData(id)
 }

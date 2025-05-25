@@ -95,9 +95,9 @@
                   format="YYYY-MM-DD HH:mm:ss"
                   value-format="YYYY-MM-DD HH:mm:ss"
                   type="datetimerange"
-                  range-separator="至"
-                  start-placeholder="开始日期"
-                  end-placeholder="结束日期"
+                  range-separator="-"
+                  start-placeholder="start"
+                  end-placeholder="end"
                   clearable
                   @change="handleDate($event)"
                 >
@@ -108,10 +108,10 @@
           <el-col :span="12">
             <div class="btn">
               <el-button class="button primary" @click="handleSearch"
-                >搜索</el-button
+                >Search</el-button
               >
               <el-button class="button buttonSub" @click="handleReset(ruleForm)"
-                >重置</el-button
+                >Reset</el-button
               >
             </div>
           </el-col>

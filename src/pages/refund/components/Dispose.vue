@@ -6,14 +6,14 @@
     <el-dialog v-model="dialogVisible" :title="title">
       <div class="icon"><component :is="Result403Icon"></component></div>
       <div class="succeeCon">
-        <p class="tit">恭喜您，已经完成了所有待审批退款订单的审批！</p>
+        <p class="tit">Finish all refund order examination!</p>
         <p class="tip">
-          请返回退款审批页面吧！
+          Back to the refund order list page
         </p>
       </div>
       <div class="btn">
         <el-button class="button primary" @click="handleGetback"
-          >我知道了</el-button
+          >OK</el-button
         >
       </div>
     </el-dialog>

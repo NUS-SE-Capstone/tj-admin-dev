@@ -63,7 +63,7 @@
       </el-table>
       <template #footer>
         <span class="dialog-footer">
-          <el-button class="button primary" @click="handleClose">返回</el-button>
+          <el-button class="button primary" @click="handleClose">Back</el-button>
         </span>
       </template>
     </el-dialog>

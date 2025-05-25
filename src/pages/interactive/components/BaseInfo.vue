@@ -14,39 +14,39 @@
               @click="handleReply"
               class="button primary"
               v-preventReClick
-              >我来回复</el-button
+              >Reply</el-button
             >
             <el-button
               @click="handleSetStatus"
               v-preventReClick
               class="button buttonSub"
-              >{{ baseData.hidden ? "显示" : "隐藏" }}</el-button
+              >{{ baseData.hidden ? "Show" : "Hide" }}</el-button
             >
           </div>
         </div>
-        <div class="time"><span>提问时间：</span>{{ formatTimeOrdinary(baseData.createTime)}}</div>
+        <div class="time"><span>Time: </span>{{ formatTimeOrdinary(baseData.createTime)}}</div>
         <div class="description">
           {{ baseData.description }}
         </div>
       </div>
       <div class="food">
         <ul>
-          <li><span class="littletitle">课程分类：</span><span>{{ baseData.categoryName }}</span></li>
-          <li>课程名称：{{ baseData.courseName }}</li>
+          <li><span class="littletitle">Category: </span><span>{{ baseData.categoryName }}</span></li>
+          <li>Course: {{ baseData.courseName }}</li>
           <li class="end">
-            课程负责老师：{{
+            Teacher: {{
               baseData.teacherName || ""
             }}
           </li>
           <li>
-            <p class="littletitle">所属章节：</p><p>{{ baseData.chapterName }}/{{ baseData.sectionName }}</p>
+            <p class="littletitle">Section: </p><p>{{ baseData.chapterName }}/{{ baseData.sectionName }}</p>
           </li>
           <li>
-            回答数量：{{
-              baseData.answerAmount === 0 ? "暂无" : baseData.answerAmount
+            AnswerNum: {{
+              baseData.answerAmount === 0 ? "None" : baseData.answerAmount
             }}
           </li>
-          <li class="end">用户端状态：{{ baseData.hidden ? "隐藏" : "显示" }}</li>
+          <li class="end">UserStatus: {{ baseData.hidden ? "Hidden" : "Shown" }}</li>
         </ul>
       </div>
     </div>
@@ -97,7 +97,7 @@ const emit = defineEmits() //子组件获取父组件事件传值
 let replyRef = ref() //回复弹层的ref
 let dialogVisible = ref(false) //回复弹层显示/隐藏
 let dialogShowVisible = ref(false) //问题弹层的显示/隐藏
-let statusText = ref("此操作将隐藏该条提问及所属的回答和评价，是否继续隐藏？") //隐藏弹层提示的信息
+let statusText = ref("Confirm to hide this QA?") //隐藏弹层提示的信息
 let targetReplyId = ref(null) //问题id
 // ------生命周期------
 onMounted(() => { })
@@ -119,7 +119,7 @@ const handleStatus = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         })
@@ -143,7 +143,7 @@ const handleSubmit = async () => {
   if (reply.content === undefined) {
     ElMessage({
 
-      message: "回复内容不能为空，请输入",
+      message: "reply can't be empty",
       type: "error",
       showClose:false,
     })
@@ -154,7 +154,7 @@ const handleSubmit = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         })

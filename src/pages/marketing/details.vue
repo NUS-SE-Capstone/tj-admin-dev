@@ -97,7 +97,7 @@
             v-preventReClick
             class="button primary"
             @click="handleGetback"
-            >返回</el-button
+            >Back</el-button
           >
         </div>
       </div>

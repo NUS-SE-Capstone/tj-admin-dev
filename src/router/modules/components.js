@@ -24,7 +24,7 @@ export default [
         path: "add/:id",
         name: "curriculumAdd",
         component: () => import("@/pages/curriculum/course/add.vue"),
-        meta: { title: "添加编辑", hidden: true, fmeta: {path: '/curriculum/index', title: 'Course'} },
+        meta: { title: "Add", hidden: true, fmeta: {path: '/curriculum/index', title: 'Course'} },
       },
       {
         path: "details/:id",
@@ -46,39 +46,39 @@ export default [
       }
     ],
   },
-  // {
-  //   path: "/title",
-  //   component: Layout,
-  //   redirect: "/title/index",
-  //   name: "title",
-  //   meta: { title: "题目管理", icon: '&#xe60b;' },
-  //   children: [
-  //     {
-  //       path: "index",
-  //       name: "title",
-  //       component: () => import("@/pages/title/index.vue"),
-  //       meta: { title: "题目管理" },
-  //     },
-  //     {
-  //       path: "add/:id",
-  //       name: "titleAdd",
-  //       component: () => import("@/pages/title/add.vue"),
-  //       meta: { title: "添加编辑", hidden: true ,fmeta: {path: '/title/index', title: '题目管理'}},
-  //     },
-  //     {
-  //       path: "details/:id",
-  //       name: "titleDetails",
-  //       component: () => import("@/pages/title/details.vue"),
-  //       meta: { title: "题目编辑", hidden: true ,fmeta: {path: '/title/index', title: '题目管理'} },
-  //     },
-  //     {
-  //       path: "detail/:id",
-  //       name: "titleDetail",
-  //       component: () => import("@/pages/title/detail.vue"),
-  //       meta: { title: "题目详情", hidden: true ,fmeta: {path: '/title/index', title: '题目管理'} },
-  //     }
-  //   ],
-  // },
+  {
+    path: "/title",
+    component: Layout,
+    redirect: "/title/index",
+    name: "title",
+    meta: { title: "Question", icon: '&#xe60b;' },
+    children: [
+      {
+        path: "index",
+        name: "title",
+        component: () => import("@/pages/title/index.vue"),
+        meta: { title: "Question Manage" },
+      },
+      {
+        path: "add/:id",
+        name: "titleAdd",
+        component: () => import("@/pages/title/add.vue"),
+        meta: { title: "Add", hidden: true ,fmeta: {path: '/title/index', title: 'QuestionManage'} },
+      },
+      {
+        path: "details/:id",
+        name: "titleDetails",
+        component: () => import("@/pages/title/details.vue"),
+        meta: { title: "Edit", hidden: true ,fmeta: {path: '/title/index', title: 'QuestionManage'} },
+      },
+      {
+        path: "detail/:id",
+        name: "titleDetail",
+        component: () => import("@/pages/title/detail.vue"),
+        meta: { title: "Detail", hidden: true ,fmeta: {path: '/title/index', title: 'QuestionManage'} },
+      }
+    ],
+  },
   // {
   //   path: "/marketing",
   //   component: Layout,
@@ -106,45 +106,45 @@ export default [
   //     },
   //   ],
   // },
-  // {
-  //   path: "/interactive",
-  //   component: Layout,
-  //   redirect: "/interactive/index",
-  //   name: "interactive",
-  //   meta: { title: "互动问答", icon: '&#xe60e;' },
-  //   children: [
-  //     {
-  //       path: "index",
-  //       name: "interactive",
-  //       component: () => import("@/pages/interactive/index.vue"),
-  //       meta: { title: "问答管理" },
-  //     },
-  //     {
-  //       path: "details/:id",
-  //       name: "answersDetails",
-  //       component: () => import("@/pages/interactive/details.vue"),
-  //       meta: { title: "问题详情", hidden: true ,fmeta: {path: '/interactive/index', title: '问答管理'} },
-  //     },
-  //     {
-  //       path: "replies",
-  //       name: "repliesDetails",
-  //       component: () => import("@/pages/interactive/commentDetails.vue"),
-  //       meta: { title: "回答详情", hidden: true ,fmeta: {path: '/interactive/index', title: '问答管理'} },
-  //     },
-  //     {
-  //       path: "note",
-  //       name: "note",
-  //       component: () => import("@/pages/note/index.vue"),
-  //       meta: { title: "笔记管理" },
-  //     },
-  //     {
-  //       path: "noteDetails/:id",
-  //       name: "noteDetails",
-  //       component: () => import("@/pages/note/details.vue"),
-  //       meta: { title: "笔记详情", hidden: true ,fmeta: {path: '/note/index', title: '笔记管理'} },
-  //     },
-  //   ],
-  // },
+  {
+    path: "/interactive",
+    component: Layout,
+    redirect: "/interactive/index",
+    name: "interactive",
+    meta: { title: "Interaction", icon: '&#xe60e;' },
+    children: [
+      {
+        path: "index",
+        name: "interactive",
+        component: () => import("@/pages/interactive/index.vue"),
+        meta: { title: "QA Manage" },
+      },
+      {
+        path: "details/:id",
+        name: "answersDetails",
+        component: () => import("@/pages/interactive/details.vue"),
+        meta: { title: "QA Detail", hidden: true ,fmeta: {path: '/interactive/index', title: 'QA Manage'} },
+      },
+      {
+        path: "replies",
+        name: "repliesDetails",
+        component: () => import("@/pages/interactive/commentDetails.vue"),
+        meta: { title: "Reply Detail", hidden: true ,fmeta: {path: '/interactive/index', title: 'QA Manage'} },
+      },
+      {
+        path: "note",
+        name: "note",
+        component: () => import("@/pages/note/index.vue"),
+        meta: { title: "Note Manage" },
+      },
+      {
+        path: "noteDetails/:id",
+        name: "noteDetails",
+        component: () => import("@/pages/note/details.vue"),
+        meta: { title: "Note Detail", hidden: true ,fmeta: {path: '/note/index', title: 'Note Manage'} },
+      },
+    ],
+  },
   {
     path: "/user",
     component: Layout,
@@ -158,12 +158,12 @@ export default [
         component: () => import("@/pages/userlist/student/index.vue"),
         meta: { title: "Student Manage" },
       },
-      // {
-      //   path: "teacher",
-      //   name: "teacher",
-      //   component: () => import("@/pages/userlist/teacher/index.vue"),
-      //   meta: { title: "教师管理" },
-      // },
+      {
+        path: "teacher",
+        name: "teacher",
+        component: () => import("@/pages/userlist/teacher/index.vue"),
+        meta: { title: "Teacher Manage" },
+      },
       // {
       //   path: "users",
       //   name: "users",

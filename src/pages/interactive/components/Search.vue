@@ -5,7 +5,7 @@
       <el-form ref="ruleForm" :inline="true" :model="searchData">
         <el-row :gutter="30">
           <el-col :span="6">
-            <el-form-item label="问题状态" prop="status">
+            <el-form-item label="Status" prop="status">
               <div class="el-input">
                 <el-select
                   v-model="searchData.status"
@@ -24,7 +24,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="课程名称" prop="courseName">
+            <el-form-item label="Course" prop="courseName">
               <el-input
                 placeholder="please input"
                 clearable
@@ -33,16 +33,16 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="提问时间" prop="datePicker">
+            <el-form-item label="Time" prop="datePicker">
               <div class="el-input">
                 <el-date-picker
                   v-model="datePicker"
                   format="YYYY-MM-DD HH:mm:ss"
                   value-format="YYYY-MM-DD HH:mm:ss"
                   type="datetimerange"
-                  range-separator="至"
-                  start-placeholder="开始日期"
-                  end-placeholder="结束日期"
+                  range-separator="-"
+                  start-placeholder="Start"
+                  end-placeholder="End"
                   clearablea
                   align="right"
                   :popper-class="questionTime"
@@ -55,10 +55,10 @@
           <el-col :span="6">
             <div class="btn">
               <el-button class="button primary" @click="handleSearch"
-                >搜索</el-button
+                >Search</el-button
               >
               <el-button class="button buttonSub" @click="handleReset(ruleForm)"
-                >重置</el-button
+                >Reset</el-button
               >
             </div>
           </el-col>

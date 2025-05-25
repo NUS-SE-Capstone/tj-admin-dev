@@ -14,17 +14,17 @@
             @click="handleReply"
             class="button primary"
             v-preventReClick
-            >我来评论</el-button
+            >Comment</el-button
           >
           <el-button
             @click="handleSetStatus"
             v-preventReClick
             class="button buttonSub"
-            >{{ baseData.hidden ? "显示" : "隐藏" }}</el-button
+            >{{ baseData.hidden ? "Show" : "Hide" }}</el-button
           >
         </div>
       </div>
-      <div class="time">回答时间：{{ formatTimeOrdinary(baseData.createTime) }}</div>
+      <div class="time">Reply Time: {{ formatTimeOrdinary(baseData.createTime) }}</div>
       <div class="con">
         <div class="description">
           {{ baseData.content }}
@@ -35,7 +35,7 @@
           <i :class="baseData.liked ? 'active' : ''" @click="handlePraise"></i>
           {{ baseData.likedTimes }}
         </div>
-        <div class="text">回答数量：{{ baseData.replyTimes }}</div>
+        <div class="text">Reply Num: {{ baseData.replyTimes }}</div>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@ const route = useRoute(); //获取局部
 let replyRef = ref(); //回复弹层的ref
 let dialogVisible = ref(false); //回复弹层显示/隐藏
 let dialogShowVisible = ref(false); //问题弹层的显示/隐藏
-let statusText = ref("此操作将隐藏该条提问及所属的回答和评价，是否继续隐藏？"); //隐藏弹层提示的信息
+let statusText = ref("Confirm to hide this QA?"); //隐藏弹层提示的信息
 let targetReplyId = ref(null); //目标评论id
 let targetUserId = ref(null); //目标用户id
 // ------生命周期------
@@ -113,7 +113,7 @@ const handleStatus = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });
@@ -139,7 +139,7 @@ const handleSubmit = async () => {
   if (reply.content === undefined) {
     ElMessage({
 
-      message: "回复内容不能为空，请输入",
+      message: "reply can't be empty",
       type: "error",
       showClose:false,
     });
@@ -150,7 +150,7 @@ const handleSubmit = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });
@@ -168,7 +168,7 @@ const handleSetStatus = () => {
   if (hidden) {
     ElMessage({
 
-      message: "上一级回复为隐藏状态，无法显示",
+      message: "upper hidden, can't show",
       type: "error",
       showClose:false,
     });
@@ -217,7 +217,7 @@ const handlePraise = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });

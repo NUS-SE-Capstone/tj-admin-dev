@@ -7,7 +7,7 @@
         <div class="headerBox-left">
           <div>
             <img
-              :src="courseData.data.coverUrl"
+              :src="courseData.data.coverUrl || defaultCover"
               alt=""
               style="width: 382px; height: 215px; border-radius: 8px"
             />
@@ -21,10 +21,10 @@
               >Pending</span
             >
             <span v-else-if="courseData.data.status == 2" class="ongrounding"
-              >Online</span
+              >onshelf</span
             >
             <span v-else-if="courseData.data.status == 3" class="undercarriage"
-              >Offline</span
+              >Offshelf</span
             >
             <span v-else-if="courseData.data.status == 4" class="end"
               >Compeleted</span

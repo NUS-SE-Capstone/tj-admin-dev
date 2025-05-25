@@ -10,7 +10,7 @@
           label-width="130px"
           class="demo-ruleForm"
         >
-          <el-form-item label="所属题目分类：" prop="cates">
+          <el-form-item label="Category" prop="cates">
             <div class="el-input">
               <el-cascader
                 v-model="fromData.cateIds"
@@ -27,7 +27,7 @@
               </el-cascader>
             </div>
           </el-form-item>
-          <el-form-item label="所属课程：">
+          <el-form-item label="Course">
             <div class="el-input">
               <el-select
                 v-model="fromData.courseIds"
@@ -46,7 +46,7 @@
               </el-select>
             </div>
           </el-form-item>
-          <el-form-item label="题目类型：" prop="type">
+          <el-form-item label="Type" prop="type">
             <el-radio-group v-model="fromData.type" @change="handleSubjectType">
               <el-radio
                 v-for="(item, index) in titleTypeData"
@@ -56,7 +56,7 @@
               >
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="难易程度：" prop="difficulty">
+          <el-form-item label="Level" prop="difficulty">
             <el-radio-group v-model="fromData.difficulty">
               <el-radio
                 v-for="(item, index) in difficultyData"
@@ -66,7 +66,7 @@
               >
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="分值：" prop="score">
+          <el-form-item label="Score" prop="score">
             <el-input-number
               v-model="fromData.score"
               :min="0"
@@ -75,7 +75,7 @@
             ></el-input-number>
           </el-form-item>
           <div class="selectBox">
-            <el-form-item label="题目名称：" prop="name">
+            <el-form-item label="Question" prop="name">
               <!-- TODO由于此组件不满足设计需求，因此先暂时停用此组件，放在二期 -->
               <!-- <Tinymce
               :content="'editor01'"
@@ -108,7 +108,7 @@
           <div class="errTip" v-if="nameTipText !== ''">{{ nameTipText }}</div>
           <!-- 判断题 -->
           <div v-if="fromData.type === 4">
-            <el-form-item label="正确答案：" prop="radioanswer">
+            <el-form-item label="Answer" prop="radioanswer">
               <el-radio-group v-model="fromData.radioanswer">
                 <el-radio
                   v-for="(item, index) in titleAnswerData"
@@ -120,11 +120,11 @@
             </el-form-item>
           </div>
           <!-- end -->
-          <!-- 单选题、多选题、不定项选择 -->
+          <!-- Select、Multi-select、不定项选择 -->
           <div v-else>
             <div v-for="(item, index) in list" :key="index">
               <div class="selectBox">
-                <el-form-item :prop="item.prop" :label="'选项' + item.name">
+                <el-form-item :prop="item.prop" :label="'Choice' + item.name">
                   <!-- <template #label>
                     <span class="star">*</span>选项{{ item.name }}
                   </template> -->
@@ -152,10 +152,10 @@
                       fromData.type === 2 || fromData.type === 3
                     "
                     @change="handleCheck($event, index)"
-                    >正确</el-checkbox
+                    >Correct</el-checkbox
                   >
                   <el-radio v-model="radio" :label="index + 1" v-else
-                    >正确</el-radio
+                    >Correct</el-radio
                   >
                   
                 </span>
@@ -164,7 +164,7 @@
           </div>
           <!-- end -->
           <div class="selectBox">
-            <el-form-item label="答案解析：" prop="analysis">
+            <el-form-item label="Reason" prop="analysis">
               <!-- <Tinymce
               :content="'editor03'"
               :height="200"
@@ -199,19 +199,19 @@
             class="button buttonSub"
             @click="handleGo"
             style="width: 130px"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button
             class="button buttonSub"
             v-preventReClick
             @click="handleSubmit('getback')"
-            >保存并返回</el-button
+            >Save</el-button
           >
           <el-button
             class="button primary"
             v-preventReClick
             @click="handleSubmit()"
-            >保存并继续</el-button
+            >Continue</el-button
           >
         </div>
       </div>
@@ -304,7 +304,7 @@ const validateName = async (rule, value, callback) => {
   if (value !== undefined && value !== "") {
     const nameValue = validateTextLength(value, 300);
     if (nameValue.numVal < 5) {
-      callback(new Error("题目名称需输入5-200个字"));
+      callback(new Error("5-200 words"));
     }
     let parent = {
       name: value,
@@ -315,7 +315,7 @@ const validateName = async (rule, value, callback) => {
         if (res.code === 200) {
           const isexisted = res.data.existed;
           if (isexisted) {
-            callback(new Error("该题目已存在"));
+            callback(new Error("already exists"));
           } else {
             callback();
           }
@@ -323,7 +323,7 @@ const validateName = async (rule, value, callback) => {
       })
       .catch((err) => {});
   } else {
-    callback(new Error("题目为空，请设置题目"));
+    callback(new Error("empty"));
   }
 };
 // 校验选项
@@ -331,14 +331,14 @@ const validateOption = (rule, value, callback) => {
   if (value !== undefined && value !== "") {
     const nameValue = validateTextLength(value, 200);
     if (nameValue.numVal < 1) {
-      callback(new Error("选项内容需输入1-200个字"));
+      callback(new Error("1-200 words"));
     } else {
       // 四个选项名字不能重复
       let name = rule.field.substring(6, 7);
       list.forEach((val) => {
         if (value === val.content) {
           if (val.name !== name) {
-            callback(new Error("选项重复，请重新输入"));
+            callback(new Error("duplicate"));
           } else {
             callback();
           }
@@ -346,19 +346,19 @@ const validateOption = (rule, value, callback) => {
       });
     }
   } else {
-    callback(new Error("选项内容为空，请输入选项内容"));
+    callback(new Error("choice empty"));
   }
 };
 const validateAnalysis = (rule, value, callback) => {
   if (value !== undefined && value !== "") {
     const nameValue = validateTextLength(value, 300);
     if (nameValue.numVal < 5) {
-      callback(new Error("答案解析需输入5-300个字"));
+      callback(new Error("5-300 words"));
     } else {
       callback();
     }
   } else {
-    callback(new Error("答案解析为空，请输入答案解析"));
+    callback(new Error("reason empty"));
   }
 };
 // 表单校验
@@ -366,21 +366,21 @@ const rules = reactive({
   cateIds: [
     {
       required: true,
-      message: "所属题目分类为空，请选择所属题目分类",
+      message: "category empty",
       trigger: "change",
     },
   ],
   type: [
     {
       required: true,
-      message: "题目类型为空，请设置题目类型",
+      message: "type empty",
       trigger: "change",
     },
   ],
   difficulty: [
     {
       required: true,
-      message: "难易程度为空，请设置难易程度",
+      message: "difficulty level empty",
       trigger: "change",
     },
   ],
@@ -445,14 +445,14 @@ const rules = reactive({
   answer: [
     {
       required: true,
-      message: "正确答案为空，请设置正确答案",
+      message: "correct answer empty",
       trigger: "change",
     },
   ],
   radioanswer: [
     {
       required: true,
-      message: "正确答案为空，请设置正确答案",
+      message: "correct answer empty",
       trigger: "change",
     },
   ],
@@ -576,7 +576,7 @@ const handleSubmit = async (str) => {
     if (!baseVal.name || baseVal.name === "") {
       ElMessage({
 
-        message: "题目为空，请设置题目",
+        message: "name empty",
         type: "error",
         showClose: false,
       });
@@ -589,7 +589,7 @@ const handleSubmit = async (str) => {
       // 选项内容
       ElMessage({
 
-        message: "选项内容为空，请输入选项内容",
+        message: "choice empty",
         type: "error",
         showClose: false,
       });
@@ -600,7 +600,7 @@ const handleSubmit = async (str) => {
       if (baseVal.options === undefined || baseVal.options.length < 4) {
         ElMessage({
 
-          message: "选项内容为空，请输入选项内容",
+          message: "choice empty",
           type: "error",
           showClose: false,
         });
@@ -608,7 +608,7 @@ const handleSubmit = async (str) => {
       } else if (radio.value === "") {
         ElMessage({
 
-          message: "正确答案为空，请设置正确答案",
+          message: "correct answer empty",
           type: "error",
           showClose: false,
         });
@@ -622,7 +622,7 @@ const handleSubmit = async (str) => {
       if (baseVal.options === undefined || baseVal.options.length < 4) {
         ElMessage({
 
-          message: "选项内容为空，请输入选项内容",
+          message: "choice empty",
           type: "error",
           showClose: false,
         });
@@ -631,7 +631,7 @@ const handleSubmit = async (str) => {
       if (baseVal.answer === undefined || baseVal.answer.length === 0) {
         ElMessage({
 
-          message: "正确答案为空，请设置正确答案",
+          message: "correct answer empty",
           type: "error",
           showClose: false,
         });
@@ -641,7 +641,7 @@ const handleSubmit = async (str) => {
         if (baseVal.answer === undefined || baseVal.answer.length < 2) {
           ElMessage({
 
-            message: "请至少设置两个答案",
+            message: "at least 2 correct answers",
             type: "error",
             showClose: false,
           });
@@ -688,7 +688,7 @@ const handleSubmit = async (str) => {
         if (res.code === 200) {
           ElMessage({
 
-            message: "恭喜你，操作成功！",
+            message: "action success",
             type: "success",
             showClose: false,
           });
@@ -855,7 +855,7 @@ const getCheckName = async (e, editor) => {
       if (res.code === 200) {
         const isexisted = res.data.existed;
         if (isexisted) {
-          nameTipText.value = "该题目已存在";
+          nameTipText.value = "already exists";
         } else {
           nameTipText.value = "";
         }

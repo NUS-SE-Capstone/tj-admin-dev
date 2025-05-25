@@ -2,27 +2,27 @@
 <template>
   <div class="orderInfo">
     <!-- 标题 -->
-    <div class="tit"><span>笔记课程信息</span></div>
+    <div class="tit"><span>Note</span></div>
     <!-- end -->
     <div class="noteItem">
       <table class="tableBox">
         <tr>
-          <td>ID编号</td>
+          <td>ID</td>
           <td colspan="2">{{fromData.id}}</td>
-          <td>课程分类</td>
+          <td>Category</td>
           <td colspan="2">{{fromData.categoryNames}}</td>
         </tr>
         <tr>
-          <td>所属章节</td>
+          <td>Section</td>
           <td colspan="5">{{fromData.chapterName}}/{{fromData.chapterName}}</td>
         </tr>
         <tr>
-          <td>所选时间</td>
+          <td>Time</td>
           <td width="20%">{{formatSeconds(fromData.noteMoment)}}</td>
-          <td>被引用次数</td>
+          <td>Refer</td>
           <td>{{fromData.usedTimes?fromData.usedTimes:0}}</td>
-          <td width="60%">是否展示</td>
-          <td width="20%">{{!fromData.hidden?'显示':'隐藏'}}</td>
+          <td width="60%">Visible</td>
+          <td width="20%">{{!fromData.hidden?'shown':'hidden'}}</td>
         </tr>
       </table>
       <!-- <ul>
@@ -50,25 +50,25 @@
     </div>
     <div>
     <!-- 标题 -->
-    <div class="tit"><span>笔记内容</span></div>
+    <div class="tit"><span>Note</span></div>
     <!-- end -->
     <!-- 笔记内容 -->
     <div class="noteItem">
       <table class="tableBox">
         <tr>
-          <td>笔记作者</td>
+          <td>Author</td>
           <td>{{fromData.authorName}}</td>
-          <td>作者手机号</td>
+          <td>Phone</td>
           <td>{{fromData.authorPhone}}</td>
-          <td>笔记发布时间</td>
+          <td>Time</td>
           <td>{{formatTimeOrdinary(fromData.createTime)}}</td>
         </tr>
         <tr>
-          <td>引用人信息</td>
+          <td>Referby</td>
           <td colspan="5">{{fromData.gathers?fromData.gathers.toString():null}}</td>
         </tr>
         <tr>
-          <td>笔记内容</td>
+          <td>Content</td>
           <td colspan="5">{{fromData.content}}</td>
         </tr>
       </table>

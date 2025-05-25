@@ -24,7 +24,7 @@
                 :indeterminate="isIndeterminate"
                 v-model="checkAll"
                 @change="handleCheckAllChange"
-                >全选</el-checkbox
+                >All</el-checkbox
               >
               <el-checkbox-group
                 class="groupBox"
@@ -40,7 +40,7 @@
                 >
               </el-checkbox-group>
               <el-checkbox v-model="ownChecked" @change="handleOwnChange"
-                >仅看我录入的</el-checkbox
+                >Mine</el-checkbox
               >
             </div>
             <!-- end -->
@@ -83,7 +83,7 @@ import TableList from "./components/TableList.vue"
 const router = useRouter()
 const search = ref() //定义搜索ref
 const statusBase = statusData //状态数据
-const text = ref("新增题目") //弹层标题
+const text = ref("Add Question") //弹层标题
 const loading = ref(false) //加载数据
 let total = ref(null) //数据总条数
 let dialogSucceeVisible = ref(false) //创建成功弹层显示
@@ -218,13 +218,13 @@ const handleCheckedCitiesChange = (value) => {
     checkedCount > 0 && checkedCount < titleData.value.length
   let types = []
   checkedCities.value.map((val) => {
-    if (val === "单选题") {
+    if (val === "Select") {
       types.push(1)
-    } else if (val === "多选题") {
+    } else if (val === "Multi-select") {
       types.push(2)
-    } else if (val === "不定向选择") {
+    } else if (val === "Any-select") {
       types.push(3)
-    } else if (val === "判断题") {
+    } else if (val === "Judge") {
       types.push(4)
     }
   })

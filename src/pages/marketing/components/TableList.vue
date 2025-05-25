@@ -79,13 +79,13 @@
               @click="handleCheck(scope.row)"
               v-if="scope.row.status !== 1"
               :class="scope.row.status !== 1 ? 'textDefault' : 'textForbidden'"
-              >查看</span
+              >View</span
             >
             <span
               v-else
               @click="handleEdit(scope.row)"
               :class="scope.row.status === 1 ? 'textDefault' : 'textForbidden'"
-              >编辑</span
+              >Edit</span
             >
             <span
               @click="handleStatusOpen(scope.row)"
@@ -269,7 +269,7 @@ const handleGrant = async (row) => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });
