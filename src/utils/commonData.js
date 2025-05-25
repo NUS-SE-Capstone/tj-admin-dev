@@ -188,27 +188,27 @@ export const couponsGrantData = [
 export const orderStatusData = [
   {
     value: 1,
-    label: "未支付",
+    label: "Paying",
   },
   {
     value: 2,
-    label: "已支付",
+    label: "Paid",
   },
   {
     value: 3,
-    label: "已关闭",
+    label: "Closed",
   },
   {
     value: 4,
-    label: "已完成",
+    label: "Finished",
   },
   {
     value: 5,
-    label: "已报名",
+    label: "SignedUp",
   },
   // {
   //   value: 6,
-  //   label: "已退款",
+  //   label: "Refunded",
   // }
 ]
 // 退款状态数据
@@ -257,11 +257,11 @@ export const payChannelCodeData = [
 export const resultData = [
   {
     value: 1,
-    label: "同意",
+    label: "Approved",
   },
   {
     value: 2,
-    label: "拒绝",
+    label: "Rejected",
   }
 ]
 // 问题状态

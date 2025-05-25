@@ -258,7 +258,7 @@ const handleSubmit = async (str) => {
     } else {
       ElMessage({
 
-        message: "请至少选择一名在用户端展示的教师",
+        message: "at least one teacher",
         type: "error",
         showClose: false,
       });

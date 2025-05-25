@@ -106,7 +106,7 @@
         <template #default="scope">
           <div class="operate">
             <span class="textDefault" @click="handleCheck(scope.row)"
-              >查看</span
+              >View</span
             >
           </div>
         </template>

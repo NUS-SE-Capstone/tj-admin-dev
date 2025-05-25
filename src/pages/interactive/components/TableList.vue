@@ -4,8 +4,8 @@
     <div>
       <!-- 表格 -->
       <el-table :data="baseData" border stripe v-loading="loading">
-        <el-table-column type="index" align="center" width="100" label="序号" />
-        <el-table-column label="问题标题" min-width="300" class-name="textLeft">
+        <el-table-column type="index" align="center" width="100" label="No." />
+        <el-table-column label="Question" min-width="300" class-name="textLeft">
           <template #default="scope">
             <div class="ellipsisHidden2">
               <el-popover
@@ -13,7 +13,7 @@
                 title=""
                 width="300px"
                 trigger="hover"
-                :content="'' + '问题描述：' + scope.row.description"
+                :content="'' + 'Description: ' + scope.row.description"
                 v-if="scope.row.description"
                   open-delay="200"
               >
@@ -24,7 +24,7 @@
         </el-table-column>
         <el-table-column
           prop=""
-          label="课程所属章节"
+          label="Secion"
           width="350"
           class-name="textLeft"
         >
@@ -32,39 +32,39 @@
             {{ scope.row.chapterName }}-{{ scope.row.sectionName }}
           </template>
         </el-table-column>
-        <el-table-column label="课程名称" prop="courseName" width="350">
+        <el-table-column label="Course" prop="courseName" width="350">
         </el-table-column>
-        <el-table-column prop="categoryName" label="课程分类" width="350">
+        <el-table-column prop="categoryName" label="Category" width="350">
         </el-table-column>
-        <el-table-column prop="userName" label="提问学员昵称" min-width="150">
+        <el-table-column prop="userName" label="Author" min-width="150">
         </el-table-column>
         <el-table-column
           prop="answerAmount"
-          label="回答数量"
+          label="AnswerNum"
           sortable
-          min-width="150"
+          min-width="180"
         >
         </el-table-column>
         <el-table-column
           prop="createTime"
-          label="提问时间"
+          label="AskTime"
           min-width="220"
           :formatter="formatTime"
         >
         </el-table-column>
-        <el-table-column prop="" label="用户端状态" min-width="140">
+        <el-table-column prop="" label="UserStatus" min-width="140">
           <template #default="scope">
-            {{ !scope.row.folded ? "显示" : "隐藏" }}
+            {{ !scope.row.folded ? "shown" : "hidden" }}
           </template>
         </el-table-column>
-        <el-table-column prop="" label="问题状态" min-width="150">
+        <el-table-column prop="" label="Status" min-width="150">
           <template #default="scope">
-            {{ scope.row.status === 0 ? "未查看" : "已查看" }}
+            {{ scope.row.status === 0 ? "unseen" : "seen" }}
           </template>
         </el-table-column>
         <el-table-column
           fixed="right"
-          label="操作"
+          label="Action"
           align="center"
           min-width="115"
           class-name="textCenter"
@@ -72,20 +72,20 @@
           <template #default="scope">
             <div class="operate">
               <span class="textDefault" @click="handleCheck(scope.row)"
-                >查看</span
+                >View</span
               >
               <span
                 class="textWarning"
                 @click="handleSetStatus(scope.row)"
                 v-if="!scope.row.hidden"
               >
-                隐藏
+                Hide
               </span>
               <span
                 class="textDefault"
                 @click="handleSetStatus(scope.row)"
                 v-if="scope.row.hidden"
-                >显示
+                >Show
               </span>
             </div>
           </template>
@@ -169,7 +169,7 @@ const props = defineProps({
 const router = useRouter();
 const emit = defineEmits(); //子组件获取父组件事件传值
 const statusText = ref(
-  "此操作将隐藏该条提问及所属的回答和评价，是否继续隐藏？"
+  "Confirm to hide this QA?"
 ); //隐藏提示信息
 
 let answerId = ref(""); //问答id
@@ -217,11 +217,11 @@ const handleSetStatus = (row) => {
   answerId.value = row.id;
   Isfolded.value = row.hidden ? false : true;
   if (row.hidden) {
-    msg.value = "该条问答已显示";
+    msg.value = "QA shown";
     handleStatus();
   } else {
     dialogVisible.value = true;
-    msg.value = "该条问答已隐藏";
+    msg.value = "QA hidden";
   }
 };
 // 关闭删除弹层

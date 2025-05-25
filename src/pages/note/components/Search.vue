@@ -5,7 +5,7 @@
       <el-form ref="ruleForm" :inline="true" :model="searchData">
         <el-row :gutter="30">
           <el-col :span="6">
-            <el-form-item label="状态" prop="hidden">
+            <el-form-item label="Status" prop="hidden">
               <div class="el-input">
                 <el-select
                   v-model="searchData.hidden"
@@ -24,7 +24,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="课程名称" prop="noteName">
+            <el-form-item label="Course" prop="noteName">
               <el-input
                 placeholder="please input"
                 clearable
@@ -33,16 +33,16 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="笔记发布时间" prop="datePicker">
+            <el-form-item label="Time" prop="datePicker">
               <div class="el-input">
                 <el-date-picker
                   v-model="datePicker"
                   format="YYYY-MM-DD HH:mm:ss"
                   value-format="YYYY-MM-DD HH:mm:ss"
                   type="datetimerange"
-                  range-separator="至"
-                  start-placeholder="开始日期"
-                  end-placeholder="结束日期"
+                  range-separator="-"
+                  start-placeholder="Start"
+                  end-placeholder="End"
                   clearable
                   @change="handleDate($event)"
                 >

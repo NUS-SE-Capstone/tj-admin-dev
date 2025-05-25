@@ -4,9 +4,9 @@
       <div class="icon"><component :is="Result403Icon"></component></div>
       <div class="succeeCon">
         <p class="tit"><span>{{fromData.name}}</span> account create success</p>
-        <p class="phone">教师手机号：{{fromData.cellPhone}}</p>
+        <p class="phone">Phone: {{fromData.cellPhone}}</p>
         <p class="tip">
-          注：请通知教师登录账号后，尽快修改密码，并完善个人信息
+          Please inform the user to change the password as soon as possible, and complete the personal information.
         </p>
       </div>
       <div class="btn">

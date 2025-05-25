@@ -103,7 +103,7 @@ const rules = reactive({
     },
     {
       min: 2,
-      message: "请至少输入2个字符",
+      message: "at least 2 words", 
       trigger: "blur",
     },
   ],

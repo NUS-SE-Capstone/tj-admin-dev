@@ -3,9 +3,9 @@
   <div>
     <!-- 表格 -->
     <el-table :data="baseData" border stripe v-loading="loading">
-      <el-table-column type="index" align="center" width="100" label="序号" />
+      <el-table-column type="index" align="center" width="100" label="No." />
       <el-table-column
-        label="课程名称"
+        label="Course"
         prop=""
         min-width="350"
         class-name="textLeft"
@@ -17,7 +17,7 @@
 
       <el-table-column
         prop=""
-        label="所属章节"
+        label="Section"
         width="350"
         class-name="textLeft"
       >
@@ -25,7 +25,7 @@
           {{ scope.row.chapterName }}-{{ scope.row.sectionName }}
         </template>
       </el-table-column>
-      <el-table-column label="笔记内容" prop="courseName" width="350" class-name="textLeft">
+      <el-table-column label="Content" prop="" width="350" class-name="textLeft">
         <template #default="scope">
           <div class="ellipsisHidden">
             <el-popover
@@ -42,35 +42,35 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="authorName" label="笔记作者" width="180">
+      <el-table-column prop="authorName" label="Author" width="180">
       </el-table-column>
       <el-table-column
         prop="createTime"
-        label="发布时间"
+        label="Time"
         min-width="220"
         :formatter="formatTime"
       >
       </el-table-column>
       <el-table-column
         prop="usedTimes"
-        label="引用次数"
+        label="Refer"
         sortable
         min-width="150"
       >
       </el-table-column>
-      <el-table-column label="点赞次数" sortable min-width="150">
+      <el-table-column label="Like" sortable min-width="150">
         <template #default="scope">
           {{ scope.row.answerAmount ? scope.row.answerAmount : "0" }}
         </template>
       </el-table-column>
-      <el-table-column prop="" label="状态" min-width="100">
+      <el-table-column prop="" label="Status" min-width="100">
         <template #default="scope">
-          {{ !scope.row.hidden ? "显示" : "隐藏" }}
+          {{ !scope.row.hidden ? "Shown" : "Hidden" }}
         </template>
       </el-table-column>
       <el-table-column
         fixed="right"
-        label="操作"
+        label="Action"
         align="center"
         min-width="115"
         class-name="noteOperate"
@@ -78,12 +78,12 @@
         <template #default="scope">
           <div class="operate">
             <span class="textDefault" @click="handleCheck(scope.row)"
-              >查看</span
+              >View</span
             >
             <span
               :class="scope.row.hidden ? 'textDefault' : 'textWarning'"
               @click="handleSetStatus(scope.row)"
-              >{{ !scope.row.hidden ? "隐藏" : "显示" }}</span
+              >{{ !scope.row.hidden ? "Hide" : "Show" }}</span
             >
           </div>
         </template>
@@ -220,11 +220,11 @@ const handleCurrentChange = (val) => {
 const handleSetStatus = (row) => {
   answerId.value = row.id;
   if (row.hidden) {
-    msg.value = "该条笔记已显示";
+    msg.value = "Note is shown";
     handleShow();
   } else {
     dialogVisible.value = true;
-    msg.value = "该条笔记已隐藏";
+    msg.value = "Note is hidden";
   }
 };
 // 关闭删除弹层

@@ -17,19 +17,19 @@
         <!-- 按钮 -->
         <div class="btn">
           <el-button class="button buttonSub" @click="handleCancel"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button
             class="button buttonSub"
             v-preventReClick
             @click="handleSubmit('getback')"
-            >保存并返回</el-button
+            >Save</el-button
           >
           <el-button
             v-preventReClick
             class="button primary"
             @click="handleNext"
-            >保存并继续</el-button
+            >Continue</el-button
           >
         </div>
       </div>

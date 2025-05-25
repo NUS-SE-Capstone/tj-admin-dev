@@ -28,7 +28,7 @@
         <div class="btn">
 
             <el-button  class="button buttonSub" @click="handleGetback"
-              >返回</el-button
+              >Back</el-button
             >
 
             <el-button
@@ -36,7 +36,7 @@
               class="button buttonSub"
               v-preventReClick
               @click="handleSubmit('getback')"
-              >保存并返回</el-button
+              >Save</el-button
             >
             <!-- v-if="fromData.refundStatus===1"  -->
             <el-button
@@ -44,7 +44,7 @@
               v-preventReClick
               class="button primary"
               @click="handleNext"
-              >保存并继续</el-button
+              >Continue</el-button
             >
         </div>
       </div>

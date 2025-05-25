@@ -46,7 +46,7 @@
             <span
               @click="handleEdit(scope.row)"
               :class="scope.row.status === 0 ? 'textForbidden' : 'textDefault'"
-              >编辑</span
+              >Edit</span
             >
             <span
               @click="handleOpenStatus(scope.row)"
@@ -57,7 +57,7 @@
             <span
               @click="handleResetPwd(scope.row)"
               :class="scope.row.status === 0 ? 'textForbidden' : 'textDefault'"
-              >重置密码</span
+              >ResetPassword</span
             >
             <!-- <span
               @click="handleDelete(scope.row)"

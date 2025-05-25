@@ -95,9 +95,9 @@
                   format="YYYY-MM-DD HH:mm:ss"
                   value-format="YYYY-MM-DD HH:mm:ss"
                   type="datetimerange"
-                  range-separator="至"
-                  start-placeholder="开始日期"
-                  end-placeholder="结束日期"
+                  range-separator="-"
+                  start-placeholder="start"
+                  end-placeholder="end"
                   clearable
                   @change="handleDate($event)"
                 >

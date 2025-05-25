@@ -2,7 +2,7 @@
 <template>
   <div class="orderInfo">
     <!-- 标题 -->
-    <div class="tit"><span>审批操作</span></div>
+    <div class="tit"><span>Examination</span></div>
     <!-- end -->
     <!-- <div v-if="baseData.refundStatus===1"> -->
     <div>
@@ -13,7 +13,7 @@
         label-width="150px"
         class="demo-ruleForm"
       >
-        <el-form-item label="用户端是否展示：" prop="approvalType">
+        <el-form-item label="VisibleInUser" prop="approvalType">
           <el-radio-group v-model="baseData.hidden">
             <el-radio
               v-for="item in showStautsData"
@@ -74,7 +74,7 @@ const rules = reactive({
   folded: [
     {
       required: true,
-      message: "审批结果为空，请选择审批结果",
+      message: "examination empty",
       trigger: "change",
     },
   ],

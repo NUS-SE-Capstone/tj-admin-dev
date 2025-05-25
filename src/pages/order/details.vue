@@ -21,7 +21,7 @@
         <!-- 按钮 -->
         <div class="btn">
           <el-button class="button primary" @click="handleGetback" style="width: 130px">
-            返回</el-button
+            Back</el-button
           >
         </div>
         <!-- end -->

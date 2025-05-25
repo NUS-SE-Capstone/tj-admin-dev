@@ -3,7 +3,7 @@
   <div class="dialogBox">
     <el-dialog
       v-model="dialogVisible"
-      title="我来回复"
+      title="Reply"
       :before-close="handleClose"
     >
       <div>
@@ -17,7 +17,7 @@
             <el-input
               v-model="fromData.content"
               type="textarea"
-              placeholder="请输入您的回复，学员很期待您的回复哦！"
+              placeholder="please input your reply, others are expected to see"
               resize="none"
               @change="handleChange"
               @input="textInput"
@@ -31,10 +31,10 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button buttonPrimary" @click="handleClose"
-            >取消</el-button
+            >Cancel</el-button
           >
           <el-button class="button primary" @click="handleSubmit"
-            >保存</el-button
+            >Save</el-button
           >
         </span>
       </template>

@@ -10,9 +10,9 @@
       :row-style="{ height: '60px' }"
       class="teacherTableList"
     >
-      <el-table-column type="index" align="center" width="100" label="序号" />
+      <el-table-column type="index" align="center" width="100" label="No." />
       <el-table-column
-        label="教师名称"
+        label="Name"
         min-width="240"
         class-name="teachername"
       >
@@ -27,10 +27,10 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="cellPhone" label="教师手机号" min-width="160" />
+      <el-table-column prop="cellPhone" label="Phone" min-width="160" />
       <el-table-column
         prop=""
-        label="岗位"
+        label="Position"
         min-width="215"
         class-name="textLeft"
       >
@@ -40,7 +40,7 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column label="教师介绍" min-width="350" class-name="textLeft">
+      <el-table-column label="Introduction" min-width="350" class-name="textLeft">
         <template #default="scope">
           <div class="ellipsisHidden2">
             <el-popover
@@ -57,35 +57,35 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="courseAmount" label="负责课程数量" min-width="150">
+      <el-table-column prop="courseAmount" label="CourseNum" min-width="150">
       </el-table-column>
       <el-table-column
         prop="examQuestionAmount"
-        label="出题数量"
-        min-width="150"
+        label="QuestionNum"
+        min-width="160"
       >
       </el-table-column>
       <el-table-column
         prop="createTime"
         min-width="220"
-        label="注册时间"
+        label="registerTime"
         :formatter="formatTime"
       >
       </el-table-column>
-      <el-table-column label="状态" min-width="120">
+      <el-table-column label="Status" min-width="150">
         <template #default="scope">
           <span
             class="iconTip"
             :class="scope.row.status === 0 ? 'forbidIcon' : 'normalIcon'"
           ></span>
-          {{ scope.row.status === 0 ? '禁用' : '正常' }}
+          {{ scope.row.status === 0 ? 'Disabled' : 'Enabled' }}
         </template>
       </el-table-column>
       <el-table-column
         fixed="right"
-        label="操作"
+        label="Action"
         align="center"
-        width="190"
+        width="260"
         class-name="teacherList"
       >
         <template #default="scope">
@@ -94,15 +94,15 @@
             <span
               @click="handleEdit(scope.row)"
               :class="scope.row.status === 0 ? 'textForbidden' : 'textDefault'"
-              >编辑</span
+              >Edit</span
             >
             <span @click="handleOpenStatus(scope.row)" class="textWarning">
-              {{ scope.row.status === 1 ? '禁用' : '启用' }}
+              {{ scope.row.status === 1 ? 'disable' : 'enable' }}
             </span>
             <span
               @click="handleResetPwd(scope.row)"
               :class="scope.row.status === 0 ? 'textForbidden' : 'textDefault'"
-              >重置密码</span
+              >ResetPassword</span
             >
           </div>
         </template>
