@@ -5,7 +5,7 @@
       <el-form ref="ruleForm" :inline="true" :model="searchData">
         <el-row :gutter="30">
           <el-col :span="6">
-            <el-form-item label="题目分类" prop="categoryIdLv3">
+            <el-form-item label="Category" prop="categoryIdLv3">
               <div class="el-input">
                 <el-cascader
                   v-model="categoryIdLv3"
@@ -33,13 +33,14 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="难易程度" prop="difficulty">
+            <el-form-item label="Difficulty Level" prop="difficulty">
               <div class="el-input">
                 <el-select
                   v-model="searchData.difficulty"
                   clearable
                   placeholder="please select"
                   style="width: 100%"
+                  size="large"
                 >
                   <el-option
                     v-for="item in difficultyData"
@@ -52,7 +53,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="题目名称" prop="keyword">
+            <el-form-item label="Name" prop="keyword">
               <el-input
                 placeholder="please input"
                 clearable
@@ -63,10 +64,10 @@
           <el-col :span="6">
             <div class="btn">
               <el-button class="button primary" @click="handleSearch"
-                >搜索</el-button
+                >Search</el-button
               >
               <el-button class="button buttonSub" @click="handleReset(ruleForm)"
-                >重置</el-button
+                >Reset</el-button
               >
             </div>
           </el-col>

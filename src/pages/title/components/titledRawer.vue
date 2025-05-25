@@ -3,7 +3,7 @@
   <div class="drawerBox">
     <el-drawer
       v-model="drawer"
-      title="题目信息"
+      title="Question"
       :direction="direction"
       :before-close="handleClose"
     >
@@ -16,8 +16,8 @@
         </ul>
         <div class="drawerInfo">
           <p>
-            正确答案：<span v-if="detailData.type === 4">{{
-              detailData.answers[0] === 1 ? '正确' : '错误'
+            Answer: <span v-if="detailData.type === 4">{{
+              detailData.answers[0] === 1 ? 'True' : 'False'
             }}</span
             ><span v-else v-for="(val, i) in detailData.answers" :key="i">{{
               statusWord(val)
@@ -25,8 +25,8 @@
           </p>
           <div>
             <p class="analysisText">
-              <span>答案解析：</span>
-              <span>{{detailData.analysis===''?'暂无':detailData.analysis}}</span>
+              <span>Reason: </span>
+              <span>{{detailData.analysis===''?'None':detailData.analysis}}</span>
             </p>
           </div>
         </div>

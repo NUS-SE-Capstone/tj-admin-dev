@@ -3,8 +3,8 @@
   <div>
     <!-- 表格 -->
     <el-table :data="baseData" border stripe v-loading="loading">
-      <el-table-column type="index" align="center" width="100" label="序号" />
-      <el-table-column label="题目名称" min-width="300" class-name="textLeft">
+      <el-table-column type="index" align="center" width="100" label="No." />
+      <el-table-column label="Name" min-width="300" class-name="textLeft">
         <template #default="scope">
           <div
             class="ellipsisHidden2 titleDrawer"
@@ -16,7 +16,7 @@
       </el-table-column>
       <el-table-column
         prop="categories"
-        label="所属分类"
+        label="Category"
         width="290"
         class-name="textLeft"
       >
@@ -32,45 +32,45 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column label="类型" min-width="150">
+      <el-table-column label="Type" min-width="150">
         <template #default="scope">
-          <span v-if="scope.row.type === 1">单选题</span>
-          <span v-if="scope.row.type === 2">多选题</span>
-          <span v-if="scope.row.type === 3">不定向选择题</span>
-          <span v-if="scope.row.type === 4">判断题</span>
+          <span v-if="scope.row.type === 1">Select</span>
+          <span v-if="scope.row.type === 2">Multi-select</span>
+          <span v-if="scope.row.type === 3">Any-select</span>
+          <span v-if="scope.row.type === 4">Judge</span>
         </template>
       </el-table-column>
-      <el-table-column label="难易程度" min-width="150">
+      <el-table-column label="Level" min-width="150">
         <template #default="scope">
           {{
             difficultDesc(scope.row.difficulty)
           }}
         </template>
       </el-table-column>
-      <el-table-column prop="score" label="分值" min-width="120">
+      <el-table-column prop="score" label="Score" min-width="120">
       </el-table-column>
       <el-table-column
         prop="useTimes"
-        label="引用次数"
+        label="Refer"
         sortable
         min-width="150"
       >
       </el-table-column>
       <el-table-column
         prop="answerTimes"
-        label="作答次数"
+        label="Answer"
         sortable
         min-width="150"
       >
       </el-table-column>
       <el-table-column
         prop="updater"
-        label="更新人"
+        label="Updater"
         min-width="150"
       ></el-table-column>
       <el-table-column
         prop="updateTime"
-        label="更新时间"
+        label="Update Time"
         sortable
         min-width="220"
         :formatter="formatTime"
@@ -78,7 +78,7 @@
       </el-table-column>
       <el-table-column
         fixed="right"
-        label="操作"
+        label="Action"
         align="center"
         min-width="160"
         class-name="textRight"
@@ -86,10 +86,10 @@
         <template #default="scope">
           <div class="operate">
             <!-- 禁止的时候不能触发查看和重置密码,因此按钮置灰 -->
-            <span class="textDefault" @click="handleCheck(scope.row)">查看</span>
-            <span class="textDefault" @click="handleEdit(scope.row)">编辑</span>
+            <span class="textDefault" @click="handleCheck(scope.row)">View</span>
+            <span class="textDefault" @click="handleEdit(scope.row)">Edit</span>
             <span class="textWarning" @click="handleOpenDelete(scope.row)"
-              >删除</span
+              >Delete</span
             >
           </div>
         </template>
@@ -190,7 +190,7 @@ let titleId = ref(""); //要重置的题目id
 let dialogDeleteVisible = ref(false); //控制删除弹层
 let detailData = reactive({}); //详情数据
 // ------定义方法------
-const difficultArr = ["简单","中等","困难"]
+const difficultArr = ["easy","medium","hard"]
 // 难易程度
 const difficultDesc = (i) =>{
   return difficultArr[i - 1];
@@ -214,7 +214,7 @@ const handleDelete = async () => {
         handleClose();
         ElMessage({
 
-          message: "删除成功!",
+          message: "sucess",
           type: "success",
           showClose:false,
         });
@@ -254,7 +254,7 @@ const handleOpenDelete = (row) => {
   if (row.useTimes > 0) {
     ElMessage({
 
-      message: "当前题目已被引用，无法删除!",
+      message: "refered, cannot be deleted",
       type: "error",
       showClose:false,
     });
