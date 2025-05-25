@@ -11,13 +11,13 @@
       :before-upload="beforeAvatarUpload"
     >
       <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-      <div v-else class="avatar-uploader-icon"><span></span>上传<Plus /></div>
+      <div v-else class="avatar-uploader-icon"><span></span>Upload<Plus /></div>
       <div v-if="imageUrl" class="el-upload-list__item-actions">
         <span class="el-delect" @click.stop="handleRemove"></span>
-        <div class="avatar-uploader-icon"><span></span>上传<Plus /></div>
+        <div class="avatar-uploader-icon"><span></span>Upload<Plus /></div>
       </div>
     </el-upload>
-    <div>图片大小不超过2M<br>建议图片尺寸472*264<br>仅能上传PNG JPG JPEG类型图片</div>
+    <div>pic size should be smaller than 2M<br>suggest size 472*264<br>only JPG/JPEG</div>
   </div>
 </template>
 <script setup>
@@ -64,7 +64,7 @@ const beforeAvatarUpload = (file) => {
   if (!isLt2M) {
     ElMessage({
 
-      message: "图片大小不超过 2MB!",
+      message: "pic size should be smaller than 2MB!",
       type: "error",
       showClose:false,
     });
