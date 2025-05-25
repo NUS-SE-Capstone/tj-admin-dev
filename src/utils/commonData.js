@@ -28,19 +28,19 @@ export const difficultyData = [
 export const titleTypeData = [
   {
     value: 1,
-    label: "select",
+    label: "Select",
   },
   {
     value: 2,
-    label: "multi-select",
+    label: "Multi-select",
   },
   {
     value: 3,
-    label: "any-select",
+    label: "Any-select",
   },
   {
     value: 4,
-    label: "judge",
+    label: "Judge",
   }
 ]
 // 答案类型
