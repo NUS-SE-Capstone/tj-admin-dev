@@ -11,7 +11,7 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="size" label="大小（MB）" min-width="160">
+      <el-table-column prop="size" label="Size(MB)" min-width="160">
         <template #default="scope">
           {{ (scope.row.size / 1024 / 1024).toFixed(2) }}
         </template>
@@ -42,7 +42,7 @@
         fixed="right"
         label="Action"
         align="center"
-        min-width="110"
+        min-width="130"
         class-name="popperClass"
       >
         <template #default="scope">
@@ -179,6 +179,14 @@ const handleSortChange = (column, prop, order) => {
 }
 // 打开删除弹层
 const handleOpenDelete = (row) => {
+  if(row.useTimes > 0) {
+    ElMessage({
+      message: "This video is being used and cannot be deleted!",
+      type: "warning",
+      showClose:false,
+    })
+    return
+  }
   dialogDeleteVisible.value = true
   mediaId.value = row.id
 }

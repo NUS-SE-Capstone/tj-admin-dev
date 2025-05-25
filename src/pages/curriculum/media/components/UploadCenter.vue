@@ -15,7 +15,7 @@
         @selection-change="handleSelectionChange"
       >
       </el-table-column>
-      <el-table-column type="index" align="center" width="100" label="序号" />
+      <el-table-column type="index" align="center" width="100" label="No." />
       <el-table-column prop="name" label="Video Name" min-width="160" />
       <el-table-column prop="size" label="Size(MB)" min-width="160">
         <template #default="scope">
@@ -35,7 +35,7 @@
         fixed="right"
         label="Action"
         align="center"
-        min-width="220"
+        min-width="240"
       >
         <template #default="scope">
           <div class="operate">
@@ -44,7 +44,7 @@
               @click.stop="continueUpload(scope.row)"
               >Upload</span
             >
-            <span v-else @click.stop="suspendUpload(scope.row)">暂停</span>
+            <span v-else @click.stop="suspendUpload(scope.row)">Suspend</span>
             <span
               @click="handleOpenDelete(scope.row)"
               :class="scope.row.status > 0 ? 'textForbidden' : 'textDefault'"
