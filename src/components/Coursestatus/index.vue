@@ -6,8 +6,8 @@
       :show-close="false"
     >
       <div v-if="title==='确认上架'">
-        <p>Confirm online?</p>
-        <p>After course online, it will be displayed on the user end. It needs offline first if you want to modify course info.</p>
+        <p>Confirm onshelf?</p>
+        <p>After course onshelf, it will be displayed on the user end. It needs offshelf first if you want to modify course info.</p>
       </div>
       <p v-else>{{statusText}}</p>
 
@@ -15,7 +15,7 @@
          <ul>
            <li><label>name:</label>{{courseData.name}}</li>
            <li><label>subscribers:</label>{{courseData.sold}}</li>
-           <li><label>offline:</label>{{courseData.purchaseEndTime}}</li>
+           <li><label>offshelf:</label>{{courseData.purchaseEndTime}}</li>
          </ul>
       </div>
       <template #footer>

@@ -269,7 +269,7 @@ const handleGrant = async (row) => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });

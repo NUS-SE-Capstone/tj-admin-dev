@@ -3,7 +3,7 @@
     <el-dialog v-model="dialogSucceeVisible" :title="title">
       <div class="icon"><component :is="Result403Icon"></component></div>
       <div class="succeeCon">
-        <p class="tit">恭喜您，<span>{{fromData.name}}</span> 的账号创建成功！</p>
+        <p class="tit"><span>{{fromData.name}}</span> account create success</p>
         <p class="phone">教师手机号：{{fromData.cellPhone}}</p>
         <p class="tip">
           注：请通知教师登录账号后，尽快修改密码，并完善个人信息
@@ -11,7 +11,7 @@
       </div>
       <div class="btn">
         <el-button class="button primary" @click="handleClose"
-          >我知道了</el-button
+          >OK</el-button
         >
       </div>
     </el-dialog>

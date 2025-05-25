@@ -306,7 +306,7 @@ const saveSubject = async () => {
         emit("getActive", 4);
         ElMessage({
 
-          message: "恭喜你，操作成功！",
+          message: "action success",
           type: "success",
           showClose:false,
         });

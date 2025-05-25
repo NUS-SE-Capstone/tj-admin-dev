@@ -18,7 +18,7 @@
       <span class="item">$ {{ (courseData.price / 100).toFixed(2) }}</span>
     </div>
     <div class="title">
-      <span class="itemtitle">Offline</span>
+      <span class="itemtitle">Offshelf</span>
       <span class="item">{{ formatTimeOrdinary(courseData.purchaseEndTime) }}</span>
     </div>
     <div class="title">

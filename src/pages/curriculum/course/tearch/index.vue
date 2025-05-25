@@ -238,7 +238,7 @@ const handleSubmit = async (str) => {
           if (res.code === 200) {
             ElMessage({
 
-              message: "恭喜你，操作成功！",
+              message: "action success",
               type: "success",
               showClose: false,
             });
@@ -266,7 +266,7 @@ const handleSubmit = async (str) => {
   } else {
     ElMessage({
 
-      message: "请至少设置一名教师",
+      message: "please select at least one teacher",
       type: "error",
       showClose: false,
     });

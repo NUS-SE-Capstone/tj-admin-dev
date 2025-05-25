@@ -74,11 +74,11 @@ export const courseStatusData = [
   },
   {
     value: 2,
-    label: "Online",
+    label: "Onshelf",
   },
   {
     value: 3,
-    label: "Offline",
+    label: "Offshelf",
   },
   {
     value: 4,

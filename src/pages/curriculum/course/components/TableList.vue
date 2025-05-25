@@ -78,7 +78,7 @@
       </el-table-column>
       <el-table-column
         prop="publishTime"
-        label="Online Time"
+        label="onshelf Time"
         sortable
         min-width="200"
         :formatter="formatTime"
@@ -122,14 +122,14 @@
               v-if="props.status === 1 || props.status === 3"
               :class="scope.row.step !== 5 ? 'textForbidden' : 'textDefault'"
               @click="handleOpenDescend(scope.row)"
-              >Online</span
+              >Onshelf</span
             >
             <span
               v-else
               @click="handleOpenDescend(scope.row)"
               :class="scope.row.status === 4 ? 'textForbidden' : 'textWarning'"
             >
-              Offline
+              Offshelf
             </span>
             <span
               :class="scope.row.status === 1 ? 'textWarning' : 'textForbidden'"
@@ -267,7 +267,7 @@ const handleDescend = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "Publish Online Success!",
+          message: "Onshelf Success!",
           type: "success",
           showClose: false,
         });
@@ -286,7 +286,7 @@ const handleDescend = async () => {
       if (res.code === 200) {
         ElMessage({
 
-          message: "Offline Success!",
+          message: "Offshelf Success!",
           type: "success",
           showClose: false,
         });
@@ -310,7 +310,7 @@ const handleOpenDescend = async (row) => {
   if (time < newTime) {
     ElMessage({
 
-      message: "Offline time need to be later than now",
+      message: "Offshelf time need to be later than now",
       type: "error",
       showClose: false,
     });
@@ -323,7 +323,7 @@ const handleOpenDescend = async (row) => {
       await baseBeforeUpShelf(row.id).then((res) => {
         if (res.code === 200) {
           dialogStatusVisible.value = true; //
-          title.value = "Confirm online";
+          title.value = "Confirm onshelf";
         } else {
           ElMessage({
             message: res.data.msg,
@@ -336,10 +336,10 @@ const handleOpenDescend = async (row) => {
       if (row.purchaseEndTime) {
         dialogStatusVisible.value = true; //
         if (status.value === 1) {
-          title.value = "Confirm online";
+          title.value = "Confirm onshelf";
         } else {
-          title.value = "Confirm offline";
-          statusText.value = "This course will be offline, are you sure?";
+          title.value = "Confirm offshelf";
+          statusText.value = "This course will be offshelf, are you sure?";
         }
       }
     }
