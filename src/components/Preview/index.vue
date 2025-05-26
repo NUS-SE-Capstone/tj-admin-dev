@@ -42,9 +42,10 @@ const getId = async (mediaId) => {
   await getMediasSignatureData(mediaId)
     player.value.loadVideoByID(
       {
-        appID: '1312394356',
+        appID: '1361028219',
         fileID:fileId.value,
         psign: signature.value,
+        licenseUrl: 'license/url',
       }
     )
     player.value.currentTime(0)
@@ -54,7 +55,7 @@ const getId = async (mediaId) => {
 // ------定义方法------
 const initPlay = (fileID, psign) => {
   player.value = new TCPlayer(videoRef.value.id, {
-    appID: "1312394356",
+    appID: "1361028219",
     fileID,
     psign,
     posterImage: true,
@@ -62,6 +63,7 @@ const initPlay = (fileID, psign) => {
     width: 100 + "%",
     preload: "auto",
     hlsConfig: {},
+    licenseUrl: 'license/url',
   });
   player.value.on('timeupdate', function() {
   });
