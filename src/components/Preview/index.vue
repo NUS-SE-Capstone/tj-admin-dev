@@ -45,6 +45,7 @@ const getId = async (mediaId) => {
         appID: '1361028219',
         fileID:fileId.value,
         psign: signature.value,
+        licenseUrl: 'license/url',
       }
     )
     player.value.currentTime(0)
@@ -62,6 +63,7 @@ const initPlay = (fileID, psign) => {
     width: 100 + "%",
     preload: "auto",
     hlsConfig: {},
+    licenseUrl: 'license/url',
   });
   player.value.on('timeupdate', function() {
   });
