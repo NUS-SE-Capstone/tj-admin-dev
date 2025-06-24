@@ -55,7 +55,7 @@ jobs:
         with:
           # 私钥, 存在secrets的PRIVATE_KEY中
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的所有文件
+          # 复制操作的参数。"-avzr --delete":部署时清空服务器目标目录下所有文件
           ARGS: "-avzr --delete" 
           # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
           SOURCE: "./dist/"
