@@ -41,6 +41,10 @@ export const titleTypeData = [
   {
     value: 4,
     label: "Judge",
+  },
+  {
+    value: 5,
+    label: "Subjective"
   }
 ]
 // 答案类型

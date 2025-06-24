@@ -42,10 +42,9 @@
               <th>
                 <span v-if="detailData.data.type === 1">Select</span>
                 <span v-if="detailData.data.type === 2">Multi-select</span>
-                <span v-if="detailData.data.type === 3"
-                  >Any-select</span
-                >
+                <span v-if="detailData.data.type === 3">Any-select</span>
                 <span v-if="detailData.data.type === 4">Judge</span>
+                <span v-if="detailData.data.type === 5">Subjective</span>
               </th>
               <th class="tabletitle">Level</th>
               <th>
@@ -103,6 +102,10 @@
               <th v-if="detailData.data.type === 4">
                 <span v-if="detailData.data.answers[0] === 1">True</span>
                 <span v-if="detailData.data.answers[0] === 2">False</span>
+              </th>
+              <!-- 主观题答案 -->
+              <th v-if="detailData.data.type === 5">
+                <span>{{ detailData.data.subjectiveAnswer }}</span>
               </th>
               <th class="tabletitle">Score</th>
               <th>{{ detailData.data.score }}分</th>
@@ -178,6 +181,7 @@ const detailData = reactive({
       },
     ],
     answers: [],
+    subjectiveAnswer: "",
   },
 })
 const detailId = ref(null)//当前题目详情id
@@ -198,6 +202,10 @@ const gettitleDetail = async () => {
       if (res.code === 200) {
         detailData.data = res.data
         detailData.data.answers = res.data.answer.split(",").map(s => parseInt(s));
+        // 主观题处理
+        if (res.data.type === 5) {
+          detailData.data.subjectiveAnswer = res.data.answer || "No answer provided";
+        }
       }
     })
     .catch((err) => { })

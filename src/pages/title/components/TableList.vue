@@ -38,6 +38,7 @@
           <span v-if="scope.row.type === 2">Multi-select</span>
           <span v-if="scope.row.type === 3">Any-select</span>
           <span v-if="scope.row.type === 4">Judge</span>
+          <span v-if="scope.row.type === 5">Subjective</span>
         </template>
       </el-table-column>
       <el-table-column label="Level" min-width="150">
