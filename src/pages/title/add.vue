@@ -120,6 +120,17 @@
             </el-form-item>
           </div>
           <!-- end -->
+          <!-- Subjective主观题 -->
+          <div v-else-if="fromData.type === 5">
+            <el-form-item label="Answer" prop="subjectiveAnswer">
+              <el-input
+                v-model="fromData.subjectiveAnswer"
+                type="textarea"
+                placeholder="please input answer guidance (less than 300 words)"
+                resize="none"
+              />
+            </el-form-item>
+          </div>
           <!-- Select、Multi-select、不定项选择 -->
           <div v-else>
             <div v-for="(item, index) in list" :key="index">
@@ -456,6 +467,13 @@ const rules = reactive({
       trigger: "change",
     },
   ],
+  subjectiveAnswer: [
+    {
+      required: true,
+      message: "subjective answer empty",
+      trigger: "blur",
+    },
+  ],
 });
 // ------生命周期------
 onMounted(() => {
@@ -505,11 +523,16 @@ const getDetailData = async () => {
   await getDetails(courseId.value)
     .then((res) => {
       if (res.code === 200) {
+        if (res.data.type === 5) {
+          // 先处理主观题逻辑
+          res.data.subjectiveAnswer = res.data.answer
+        }
         res.data.answer = res.data.answer.split(",").map(s => parseInt(s));
+
         fromData.value = res.data;
         const objData = fromData.value;
         // 处理选项内容
-        if (fromData.value.type !== 4) {
+        if (fromData.value.type !== 4 && fromData.value.type !== 5) {
           objData.optionA = objData.options[0];
           objData.optionB = objData.options[1];
           objData.optionC = objData.options[2];
@@ -522,8 +545,8 @@ const getDetailData = async () => {
           //   });
           // });
         }
-
-        // 处理单选数据
+        
+        // 处理单选数据/主观题
         if (fromData.value.type === 1) {
           radio.value = fromData.value.answer[0];
         } else if (fromData.value.type === 4) {
@@ -654,6 +677,12 @@ const handleSubmit = async (str) => {
       baseVal.answer = [];
       fromData.value.options = null;
       baseVal.answer.push(baseVal.radioanswer);
+    }
+
+    if (baseVal.type === 5) {
+      baseVal.answer = [];
+      fromData.value.options = null;
+      baseVal.answer.push(baseVal.subjectiveAnswer);
     }
     baseVal.courseIds = courseIds;
     // 处理课程分类数据，提交的时候只传1-3级的id

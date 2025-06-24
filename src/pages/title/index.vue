@@ -115,6 +115,8 @@ const getList = async () => {
   loading.value = true
   let {subjectTypes , ... params} = searchData;
   params.types = subjectTypes;
+  console.log("params", params);
+  
   await getSubjectPage(params)
     .then((res) => {
       if (res.code === 200) {
@@ -226,9 +228,11 @@ const handleCheckedCitiesChange = (value) => {
       types.push(3)
     } else if (val === "Judge") {
       types.push(4)
+    } else if (val === "Subjective") {
+      types.push(5)
     }
   })
-  searchData.subjectTypes = types.join(",")
+  searchData.subjectTypes = checkedCities.value.join(",")
   getList()
 }
 //紧录入我的
