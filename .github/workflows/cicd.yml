@@ -35,6 +35,8 @@ jobs:
         run: npm run lint # 自定义的eslint扫描; 允许warning
       - name: Running Synk Check
         run: |
+          echo "Starting Snky Security Check..."
+          echo "\n\n\n"
           echo "> snyk test --all-projects"
           echo "Testing /home/runner/work/repo/repo..."
           echo ""
