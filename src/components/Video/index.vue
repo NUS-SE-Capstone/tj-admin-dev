@@ -2,16 +2,16 @@
   <div class="videoDialog">
     <el-dialog
       v-model="dialogVisible"
-      title="确认隐藏"
+      title="Video"
       :show-close="false"
     >
       
-      <div class="uploadTitle"><i class="icon succeed"></i>共上传{{videoNumber}}个视频</div>
-      <div class="uploadCon">{{videoNumber}}个视频上传成功，0个视频上传失败</div>
+      <div class="uploadTitle"><i class="icon succeed"></i>{{videoNumber}} videos uploaded!</div>
+      <div class="uploadCon">{{videoNumber}} videos upload successfully, 0 video failed.</div>
       <template #footer>
         <span class="dialog-footer">
           <el-button class="button primary" @click="handleClose"
-            >我知道了</el-button
+            >OK</el-button
           >
         </span>
       </template>

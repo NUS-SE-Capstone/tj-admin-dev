@@ -168,7 +168,7 @@ let preview = ref(null)
 const startLoading = () => {
   loadingInstance.value = ElLoading.service({
     lock: true,
-    text: "视频上传中…",
+    text: "video uploading...",
     background: "rgba(51, 51, 51, 0.4)",
   })
 }
