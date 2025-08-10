@@ -36,7 +36,7 @@ jobs:
       - name: Running Synk Check
         run: |
           echo "Starting Snky Security Check..."
-          echo "\n\n\n"
+          printf "\n\n\n"
           echo "> snyk test --all-projects"
           echo "Testing /home/runner/work/repo/repo..."
           echo ""
