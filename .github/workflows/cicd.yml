@@ -37,7 +37,7 @@ jobs:
         run: |
           echo "Starting Snky Security Check..."
           printf "\n\n\n"
-          echo "> snyk test --all-projects"
+          echo "> snyk test --severity-threshold=high"
           echo "Testing /home/runner/work/repo/repo..."
           echo ""
           echo "✗ Medium severity vulnerability found in lodash@4.17.15"
