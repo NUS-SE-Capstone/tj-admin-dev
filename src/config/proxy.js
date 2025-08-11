@@ -1,4 +1,4 @@
-const HOST = 'http://118.31.57.194:10010'
+const HOST = 'http://121.199.73.232:10010'
 
 export default {
   development: {
